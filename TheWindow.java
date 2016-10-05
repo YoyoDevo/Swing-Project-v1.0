@@ -1088,7 +1088,7 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.setVisible(true);
         
         int delay = 1000;
-        ActionListener taskPerformer = new ActionListener() {
+        ActionListener updateTime = new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 Date date = new Date();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy  hh:mm:ss");
@@ -1096,7 +1096,7 @@ public class TheWindow extends javax.swing.JFrame {
                 dateTextField.setText(strDate);
             }
         };
-        Timer timer = new Timer(delay, taskPerformer);
+        Timer timer = new Timer(delay, updateTime);
         timer.setInitialDelay(0);
         timer.start();
 
