@@ -1,9 +1,11 @@
+package hangman;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hangmanmain;
+//package hangmanmain;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -26,6 +28,7 @@ public class TheWindow extends javax.swing.JFrame {
     private JPanel[] lines;
     private JPanel[] theHangMan;
     private int z;
+    private int finalCount;
     
     /**
      * Creates new form TheWindow
@@ -35,7 +38,7 @@ public class TheWindow extends javax.swing.JFrame {
        lines = new JPanel[8];
        theHangMan = new JPanel[6];
        z = 0;
-        initComponents();
+       initComponents();
         
     }
 
@@ -44,7 +47,7 @@ public class TheWindow extends javax.swing.JFrame {
         Random r = new Random();
         String[] wordList = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
         
-        word = wordList[r.nextInt(4)];
+        word = wordList[r.nextInt(5)];
        
     }
     
@@ -171,17 +174,18 @@ public class TheWindow extends javax.swing.JFrame {
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addContainerGap(475, Short.MAX_VALUE)
-                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(creditsButton)
-                    .addComponent(highscoreButton)
-                    .addComponent(playButton))
+                .addContainerGap(438, Short.MAX_VALUE)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(creditsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(playButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(highscoreButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(77, 77, 77))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addContainerGap(270, Short.MAX_VALUE)
+                .addContainerGap(252, Short.MAX_VALUE)
                 .addComponent(playButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(highscoreButton)
@@ -1117,6 +1121,15 @@ public class TheWindow extends javax.swing.JFrame {
         
     }
     
+    //takes user to end screen after losing/skip
+    public void toSkip(){
+        menu.setVisible(false);
+        highscores.setVisible(false);
+        credits.setVisible(false);
+        hangmanGame.setVisible(false);
+        endPage.setVisible(true);
+    }
+    
     public void hideMan()
     {
         head.setVisible(false);
@@ -1158,8 +1171,7 @@ public class TheWindow extends javax.swing.JFrame {
         
     }
     public void showMan()
-    {
-        
+    {  
         theHangMan[z].setVisible(true);
         z++;
     }
@@ -1180,6 +1192,8 @@ public class TheWindow extends javax.swing.JFrame {
         }
        
     }
+    
+    
     private void aButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aButtonActionPerformed
         // TODO add your handling code here:
         
@@ -1192,6 +1206,7 @@ public class TheWindow extends javax.swing.JFrame {
                 //set letter
                 jtf[i].setText("A");
                 letterCount++;
+                finalCount++;
             } 
         }
         if(letterCount == 0)
@@ -1201,7 +1216,7 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
         }
         if(isGameOver()){
-            //end game
+             toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
         
@@ -1235,7 +1250,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_bButtonActionPerformed
@@ -1250,7 +1265,7 @@ public class TheWindow extends javax.swing.JFrame {
             {
                 //set letter
                 jtf[i].setText("C");
-                letterCount++;
+letterCount++;                finalCount++;            
             } 
         }
         if(letterCount == 0)
@@ -1260,7 +1275,7 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_cButtonActionPerformed
@@ -1285,7 +1300,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_dButtonActionPerformed
@@ -1310,7 +1325,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_eButtonActionPerformed
@@ -1335,7 +1350,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_fButtonActionPerformed
@@ -1360,7 +1375,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_gButtonActionPerformed
@@ -1385,7 +1400,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_hButtonActionPerformed
@@ -1410,7 +1425,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_iButtonActionPerformed
@@ -1435,7 +1450,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_jButtonActionPerformed
@@ -1460,7 +1475,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_kButtonActionPerformed
@@ -1485,7 +1500,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_lButtonActionPerformed
@@ -1510,7 +1525,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_mButtonActionPerformed
@@ -1535,7 +1550,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_nButtonActionPerformed
@@ -1560,7 +1575,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_oButtonActionPerformed
@@ -1585,7 +1600,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_pButtonActionPerformed
@@ -1610,7 +1625,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_qButtonActionPerformed
@@ -1635,7 +1650,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_rButtonActionPerformed
@@ -1660,7 +1675,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_sButtonActionPerformed
@@ -1685,7 +1700,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_tButtonActionPerformed
@@ -1710,7 +1725,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_uButtonActionPerformed
@@ -1735,7 +1750,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_vButtonActionPerformed
@@ -1760,7 +1775,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_wButtonActionPerformed
@@ -1785,7 +1800,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_xButtonActionPerformed
@@ -1810,7 +1825,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_yButtonActionPerformed
@@ -1835,7 +1850,7 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_zButtonActionPerformed
