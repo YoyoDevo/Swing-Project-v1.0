@@ -1,0 +1,14 @@
+TO-DO List
+
+- Disable button after wrong guess, pop up for user that guess incorrect
+- Does not give game over screen after 6 guesses. 
+- score goes under 40 (because game doesnt end)
+- after guesing word correctly, does not go to end screen
+- when end screen is done, we should be brought back to the menu and able to start a new game
+
+
+- skip displays an empty score screen
+- need 3 second intro screen
+- need logo in our menu
+- need scores in highscores screen
+- pretty up the java code
