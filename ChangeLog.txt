@@ -10,3 +10,7 @@ OCT 5 11:54 - Tuan
 -Added Start screen with 3 second delay
 -Buttons can only be pressed once
 -Skip button leads to end screen with correct score
+
+OCT 6 12:04 - Devin
+
+-Updated logo and added in code
