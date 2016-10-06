@@ -15,3 +15,4 @@ OCT 6 12:04 - Devin
 
 -Updated logo and added in code
 -Fixed high score screen
+-Cleaned up code
