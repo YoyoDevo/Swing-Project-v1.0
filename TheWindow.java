@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangmanmain;
 import java.awt.*;
 import java.awt.image.*;
@@ -22,9 +17,9 @@ import javax.swing.*;
 /**
  *
  * @author Nick
+ * @author Devin
  */
 public class TheWindow extends javax.swing.JFrame {
-
     private String word;
     private int score;
     private JTextField[] jtf;
@@ -51,9 +46,7 @@ public class TheWindow extends javax.swing.JFrame {
     {
         Random r = new Random();
         String[] wordList = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
-        
         word = wordList[r.nextInt(5)];
-       
     }
  
     /**
@@ -1131,28 +1124,20 @@ public class TheWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backHighscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHighscoreButtonActionPerformed
-        // TODO add your handling code here:
-        
         menu.setVisible(true);
         highscores.setVisible(false);
         credits.setVisible(false);
-        hangmanGame.setVisible(false);
-        
+        hangmanGame.setVisible(false); 
     }//GEN-LAST:event_backHighscoreButtonActionPerformed
 
     private void highscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoreButtonActionPerformed
-        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(true);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
-        
-
-
     }//GEN-LAST:event_highscoreButtonActionPerformed
 
     private void creditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsButtonActionPerformed
-        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(true);
@@ -1160,14 +1145,12 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_creditsButtonActionPerformed
 
     private void backCreditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backCreditsButtonActionPerformed
-        // TODO add your handling code here:      
         menu.setVisible(true);
         highscores.setVisible(false);
         credits.setVisible(false);
     }//GEN-LAST:event_backCreditsButtonActionPerformed
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
-        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(false);
@@ -1185,8 +1168,6 @@ public class TheWindow extends javax.swing.JFrame {
         Timer timer = new Timer(delay, updateTime);
         timer.setInitialDelay(0);
         timer.start();
-
-        
     }//GEN-LAST:event_playButtonActionPerformed
 
     public boolean isGameOver()
@@ -1194,13 +1175,11 @@ public class TheWindow extends javax.swing.JFrame {
         boolean over = false;
         if(score < 40)
         {
-            over = true;
-            
+            over = true;  
         }
         else
             over = false;
         return over;
-        
     }
     
     public void hideMan()
@@ -1218,8 +1197,6 @@ public class TheWindow extends javax.swing.JFrame {
         theHangMan[3]=rightArm;
         theHangMan[4]=leftLeg;
         theHangMan[5]=rightLeg;
-        
-        
     }
     
     public void lines()
@@ -1241,7 +1218,6 @@ public class TheWindow extends javax.swing.JFrame {
         lines[5] = l6;
         lines[6] = l7;
         lines[7] = l8;
-        
     }
     public void showMan()
     {
@@ -1251,7 +1227,6 @@ public class TheWindow extends javax.swing.JFrame {
     
     public void playTheGame()
     {
-       
         setTextField();
         lines();
         hideMan();
@@ -1263,7 +1238,6 @@ public class TheWindow extends javax.swing.JFrame {
             jtf[i].setVisible(true);
             lines[i].setVisible(true);
         }
-       
     }
     
     public void toSkip()
@@ -1274,12 +1248,8 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.setVisible(false);
         endPage.setVisible(true);
     }
-    
 
-    
     private void aButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aButtonActionPerformed
-        // TODO add your handling code here:
-        
         char[] check = word.toCharArray();
         
         int letterCount = 0;
@@ -1302,20 +1272,14 @@ public class TheWindow extends javax.swing.JFrame {
             toSkip();
         }
         scoreTextField.setText(new Integer(score).toString());
-        
-        
-        
     }//GEN-LAST:event_aButtonActionPerformed
 
     private void scoreTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreTextFieldActionPerformed
         // TODO add your handling code here:
-         
-      
     }//GEN-LAST:event_scoreTextFieldActionPerformed
 
     private void bButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1332,7 +1296,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1340,8 +1303,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_bButtonActionPerformed
 
     private void cButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1358,7 +1320,6 @@ public class TheWindow extends javax.swing.JFrame {
            showMan();
         }
            //hangman part
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1366,8 +1327,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_cButtonActionPerformed
 
     private void dButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1384,7 +1344,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1392,8 +1351,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_dButtonActionPerformed
 
     private void eButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1410,7 +1368,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1418,8 +1375,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_eButtonActionPerformed
 
     private void fButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1436,7 +1392,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1444,8 +1399,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_fButtonActionPerformed
 
     private void gButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1462,7 +1416,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1470,8 +1423,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_gButtonActionPerformed
 
     private void hButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1488,7 +1440,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1496,8 +1447,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_hButtonActionPerformed
 
     private void iButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1514,7 +1464,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1522,8 +1471,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_iButtonActionPerformed
 
     private void jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1540,7 +1488,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1548,8 +1495,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonActionPerformed
 
     private void kButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1566,7 +1512,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1574,8 +1519,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_kButtonActionPerformed
 
     private void lButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1592,7 +1536,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1600,8 +1543,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_lButtonActionPerformed
 
     private void mButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1618,7 +1560,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1626,8 +1567,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_mButtonActionPerformed
 
     private void nButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1644,7 +1584,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1652,8 +1591,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_nButtonActionPerformed
 
     private void oButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1670,7 +1608,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1678,8 +1615,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_oButtonActionPerformed
 
     private void pButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1696,7 +1632,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1704,8 +1639,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_pButtonActionPerformed
 
     private void qButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1722,7 +1656,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1730,8 +1663,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_qButtonActionPerformed
 
     private void rButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1748,7 +1680,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1756,8 +1687,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_rButtonActionPerformed
 
     private void sButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1774,7 +1704,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1782,8 +1711,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_sButtonActionPerformed
 
     private void tButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1800,7 +1728,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1808,8 +1735,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_tButtonActionPerformed
 
     private void uButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1826,7 +1752,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1834,8 +1759,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_uButtonActionPerformed
 
     private void vButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1852,7 +1776,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1860,8 +1783,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_vButtonActionPerformed
 
     private void wButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1878,7 +1800,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1886,8 +1807,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_wButtonActionPerformed
 
     private void xButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1904,7 +1824,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1912,8 +1831,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_xButtonActionPerformed
 
     private void yButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1930,7 +1848,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1938,8 +1855,7 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_yButtonActionPerformed
 
     private void zButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zButtonActionPerformed
-        // TODO add your handling code here:
-         char[] check = word.toCharArray();
+        char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1956,7 +1872,6 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
-        
         if(isGameOver()){
             toSkip();
         }
@@ -1964,7 +1879,6 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_zButtonActionPerformed
 
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
-        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(false);
@@ -1979,8 +1893,6 @@ public class TheWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_dateTextFieldActionPerformed
 
     private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
-        // TODO add your handling code here:
-        
         // Not exactly how he wants it. Fix to bring back to menu
         dispose();
         TheWindow w = new TheWindow();
@@ -1989,7 +1901,6 @@ public class TheWindow extends javax.swing.JFrame {
 
     public void setTextField()
     {
-        
          jTextField1.setVisible(false);
          jTextField2.setVisible(false);
          jTextField3.setVisible(false);
@@ -2009,6 +1920,7 @@ public class TheWindow extends javax.swing.JFrame {
          jtf[6] = jTextField7;
          jtf[7] = jTextField8;
     }
+    
     /**
      * @param args the command line arguments
      */
