@@ -77,7 +77,8 @@ public class TheWindow extends javax.swing.JFrame {
         highscores = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backHighscoreButton = new javax.swing.JButton();
-        highscoreTextField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         credits = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         backCreditsButton = new javax.swing.JButton();
@@ -270,38 +271,38 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
-        highscoreTextField.setText("I'm the best ");
-        highscoreTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                highscoreTextFieldActionPerformed(evt);
-            }
-        });
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("ABC.....00000\nABC.....00000\nABC.....00000\nABC.....00000\nABC.....00000");
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout highscoresLayout = new javax.swing.GroupLayout(highscores);
         highscores.setLayout(highscoresLayout);
         highscoresLayout.setHorizontalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(highscoresLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(backHighscoreButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(highscoresLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(backHighscoreButton))
-                    .addGroup(highscoresLayout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(261, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(highscoresLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backHighscoreButton)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, highscoresLayout.createSequentialGroup()
+                .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, highscoresLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 8, Short.MAX_VALUE))
+                    .addGroup(highscoresLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(backHighscoreButton)))
                 .addGap(78, 78, 78))
         );
 
@@ -1977,10 +1978,6 @@ public class TheWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dateTextFieldActionPerformed
 
-    private void highscoreTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoreTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_highscoreTextFieldActionPerformed
-
     private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
         // TODO add your handling code here:
         
@@ -2069,7 +2066,6 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel hangmanGame;
     private javax.swing.JPanel head;
     private javax.swing.JButton highscoreButton;
-    private javax.swing.JTextField highscoreTextField;
     private javax.swing.JPanel highscores;
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
@@ -2087,6 +2083,8 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
