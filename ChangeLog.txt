@@ -16,3 +16,9 @@ OCT 6 12:04 - Devin
 -Updated logo and added in code
 -Fixed high score screen
 -Cleaned up code
+
+OCT 6 3:00 - Nick
+
+-Game replayable
+-User alerted on wrong guess
+-Game ends with correct score on successful guess
