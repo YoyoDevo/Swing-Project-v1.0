@@ -14,3 +14,4 @@ OCT 5 11:54 - Tuan
 OCT 6 12:04 - Devin
 
 -Updated logo and added in code
+-Fixed high score screen
