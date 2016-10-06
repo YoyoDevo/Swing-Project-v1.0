@@ -1,53 +1,50 @@
+/*
+ *File:  The Window
+ *Authors: Nick Curinga, Tuan Pham, Cesar Pedroza, Devin Wells
+ *Class: CS 245 - Programming Graphical User Interfaces 
+ *
+ *Assignment: Swing Project v1.0 
+ *Date Last Modified:10/6/2016
+ *
+ * Purpose: To create a GUI of a game of Hangman.  The program checks if the user has won the game, lost the game or skipped the game.
+ *
+ */
 package hangmanmain;
-import java.awt.*;
-import java.awt.image.*;
-import java.io.*;
-import javax.imageio.*;
-import javax.swing.ImageIcon;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
-/**
- *
- * @author Nick
- * @author Devin
- */
+
 public class TheWindow extends javax.swing.JFrame {
+
     private String word;
     private int score;
     private JTextField[] jtf;
     private JPanel[] lines;
     private JPanel[] theHangMan;
     private int z;
-    private BufferedImage logo;
+    private boolean over;
+    private int totalLetterCount;
     
     /**
      * Creates new form TheWindow
      */
     public TheWindow() {
-        try {
-            this.logo = ImageIO.read(new File("Logo.png"));
-        } catch (IOException e) { }
+        score = 100;
+        word ="";
        jtf = new JTextField[8];
        lines = new JPanel[8];
        theHangMan = new JPanel[6];
        z = 0;
+       over = false;
+       totalLetterCount = 0;
        initComponents();  
     }
 
-    public void randomWord()
-    {
-        Random r = new Random();
-        String[] wordList = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
-        word = wordList[r.nextInt(5)];
-    }
+    
  
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,12 +63,11 @@ public class TheWindow extends javax.swing.JFrame {
         playButton = new javax.swing.JButton();
         highscoreButton = new javax.swing.JButton();
         creditsButton = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        theLogo = new javax.swing.JLabel();
         highscores = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backHighscoreButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        highscoreTextField = new javax.swing.JTextField();
         credits = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         backCreditsButton = new javax.swing.JButton();
@@ -137,10 +133,12 @@ public class TheWindow extends javax.swing.JFrame {
         l6 = new javax.swing.JPanel();
         skipButton = new javax.swing.JButton();
         dateTextField = new javax.swing.JTextField();
+        theWrong = new javax.swing.JLabel();
         endPage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         finalScoreTextField = new javax.swing.JLabel();
         endButton = new javax.swing.JButton();
+        jTextField9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -218,33 +216,42 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanmain/Logo.png"))); // NOI18N
-        jLabel10.setText("jLabel10");
+        theLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanmain/Swing-Project-v1.0-master/images.jpg"))); // NOI18N
+        theLogo.setText("jLabel10");
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(theLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(creditsButton)
-                    .addComponent(highscoreButton)
-                    .addComponent(playButton))
-                .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                        .addComponent(creditsButton)
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                        .addComponent(highscoreButton)
+                        .addContainerGap())
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addComponent(playButton)
+                        .addContainerGap())))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+            .addGroup(menuLayout.createSequentialGroup()
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(playButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(highscoreButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(theLogo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(playButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(highscoreButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(creditsButton)
                 .addGap(67, 67, 67))
         );
@@ -264,38 +271,38 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("ABC.....00000\nABC.....00000\nABC.....00000\nABC.....00000\nABC.....00000");
-        jScrollPane1.setViewportView(jTextArea1);
+        highscoreTextField.setText("I'm the best ");
+        highscoreTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                highscoreTextFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout highscoresLayout = new javax.swing.GroupLayout(highscores);
         highscores.setLayout(highscoresLayout);
         highscoresLayout.setHorizontalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(highscoresLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(backHighscoreButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(194, Short.MAX_VALUE))
+                    .addGroup(highscoresLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(backHighscoreButton))
+                    .addGroup(highscoresLayout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, highscoresLayout.createSequentialGroup()
-                .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, highscoresLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 8, Short.MAX_VALUE))
-                    .addGroup(highscoresLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backHighscoreButton)))
+            .addGroup(highscoresLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backHighscoreButton)
                 .addGap(78, 78, 78))
         );
 
@@ -359,7 +366,7 @@ public class TheWindow extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addComponent(backCreditsButton)
                 .addGap(51, 51, 51))
         );
@@ -382,35 +389,35 @@ public class TheWindow extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField1.setBorder(null);
         hangmanGame.add(jTextField1);
-        jTextField1.setBounds(88, 210, 40, 36);
+        jTextField1.setBounds(100, 210, 40, 36);
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField2.setBorder(null);
         hangmanGame.add(jTextField2);
-        jTextField2.setBounds(140, 210, 40, 36);
+        jTextField2.setBounds(150, 210, 40, 36);
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField3.setBorder(null);
         hangmanGame.add(jTextField3);
-        jTextField3.setBounds(190, 210, 40, 36);
+        jTextField3.setBounds(200, 210, 40, 36);
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField4.setBorder(null);
         hangmanGame.add(jTextField4);
-        jTextField4.setBounds(240, 210, 40, 36);
+        jTextField4.setBounds(250, 210, 40, 36);
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField5.setBorder(null);
         hangmanGame.add(jTextField5);
-        jTextField5.setBounds(290, 210, 40, 36);
+        jTextField5.setBounds(300, 210, 40, 36);
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
@@ -423,6 +430,11 @@ public class TheWindow extends javax.swing.JFrame {
         jTextField7.setBackground(new java.awt.Color(204, 204, 204));
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField7.setBorder(null);
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
         hangmanGame.add(jTextField7);
         jTextField7.setBounds(400, 210, 40, 36);
 
@@ -437,6 +449,7 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.add(jLabel4);
         jLabel4.setBounds(12, 104, 53, 24);
 
+        scoreTextField.setEditable(false);
         scoreTextField.setText("100");
         scoreTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,314 +462,314 @@ public class TheWindow extends javax.swing.JFrame {
         aButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         aButton.setText("A");
         aButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        aButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        aButton.setPreferredSize(new java.awt.Dimension(25, 20));
         aButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(aButton);
-        aButton.setBounds(7, 264, 40, 32);
+        aButton.setBounds(80, 260, 40, 32);
 
         bButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         bButton.setText("B");
         bButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        bButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        bButton.setPreferredSize(new java.awt.Dimension(25, 20));
         bButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(bButton);
-        bButton.setBounds(54, 264, 40, 32);
+        bButton.setBounds(130, 260, 40, 32);
 
         cButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         cButton.setText("C");
         cButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        cButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        cButton.setPreferredSize(new java.awt.Dimension(25, 20));
         cButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(cButton);
-        cButton.setBounds(101, 264, 40, 32);
+        cButton.setBounds(180, 260, 40, 32);
 
         dButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         dButton.setText("D");
         dButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        dButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        dButton.setPreferredSize(new java.awt.Dimension(25, 20));
         dButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(dButton);
-        dButton.setBounds(148, 264, 40, 32);
+        dButton.setBounds(230, 260, 40, 32);
 
         eButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         eButton.setText("E");
         eButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        eButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        eButton.setPreferredSize(new java.awt.Dimension(25, 20));
         eButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(eButton);
-        eButton.setBounds(195, 264, 40, 32);
+        eButton.setBounds(280, 260, 40, 32);
 
         fButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         fButton.setText("F");
         fButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        fButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        fButton.setPreferredSize(new java.awt.Dimension(25, 20));
         fButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(fButton);
-        fButton.setBounds(242, 264, 40, 32);
+        fButton.setBounds(330, 260, 40, 32);
 
         gButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         gButton.setText("G");
         gButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        gButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        gButton.setPreferredSize(new java.awt.Dimension(25, 20));
         gButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(gButton);
-        gButton.setBounds(289, 264, 40, 32);
+        gButton.setBounds(380, 260, 40, 32);
 
         hButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         hButton.setText("H");
         hButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        hButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        hButton.setPreferredSize(new java.awt.Dimension(25, 20));
         hButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(hButton);
-        hButton.setBounds(336, 264, 40, 32);
+        hButton.setBounds(430, 260, 40, 32);
 
         iButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         iButton.setText("I");
         iButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        iButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        iButton.setPreferredSize(new java.awt.Dimension(25, 20));
         iButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(iButton);
-        iButton.setBounds(383, 264, 40, 32);
+        iButton.setBounds(480, 260, 40, 32);
 
         jButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton.setText("J");
         jButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        jButton.setPreferredSize(new java.awt.Dimension(25, 20));
         jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(jButton);
-        jButton.setBounds(430, 264, 40, 32);
+        jButton.setBounds(110, 300, 40, 32);
 
         kButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         kButton.setText("K");
         kButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        kButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        kButton.setPreferredSize(new java.awt.Dimension(25, 20));
         kButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(kButton);
-        kButton.setBounds(477, 264, 40, 32);
+        kButton.setBounds(160, 300, 40, 32);
 
         lButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lButton.setText("L");
         lButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        lButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        lButton.setPreferredSize(new java.awt.Dimension(25, 20));
         lButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(lButton);
-        lButton.setBounds(524, 264, 40, 32);
+        lButton.setBounds(210, 300, 40, 32);
 
         mButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         mButton.setText("M");
         mButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        mButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        mButton.setPreferredSize(new java.awt.Dimension(25, 20));
         mButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(mButton);
-        mButton.setBounds(571, 264, 40, 32);
+        mButton.setBounds(260, 300, 40, 32);
 
         nButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         nButton.setText("N");
         nButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        nButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        nButton.setPreferredSize(new java.awt.Dimension(25, 20));
         nButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(nButton);
-        nButton.setBounds(7, 303, 40, 32);
+        nButton.setBounds(310, 300, 40, 32);
 
         oButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         oButton.setText("O");
         oButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        oButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        oButton.setPreferredSize(new java.awt.Dimension(25, 20));
         oButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 oButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(oButton);
-        oButton.setBounds(54, 303, 40, 32);
+        oButton.setBounds(360, 300, 40, 32);
 
         pButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         pButton.setText("P");
         pButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        pButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        pButton.setPreferredSize(new java.awt.Dimension(25, 20));
         pButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(pButton);
-        pButton.setBounds(101, 303, 40, 32);
+        pButton.setBounds(410, 300, 40, 32);
 
         qButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         qButton.setText("Q");
         qButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        qButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        qButton.setPreferredSize(new java.awt.Dimension(25, 20));
         qButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 qButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(qButton);
-        qButton.setBounds(148, 303, 40, 32);
+        qButton.setBounds(460, 300, 40, 32);
 
         rButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         rButton.setText("R");
         rButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        rButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        rButton.setPreferredSize(new java.awt.Dimension(25, 20));
         rButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(rButton);
-        rButton.setBounds(195, 303, 40, 32);
+        rButton.setBounds(510, 300, 40, 32);
 
         sButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         sButton.setText("S");
         sButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        sButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        sButton.setPreferredSize(new java.awt.Dimension(25, 20));
         sButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(sButton);
-        sButton.setBounds(242, 303, 40, 32);
+        sButton.setBounds(130, 340, 40, 32);
 
         tButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         tButton.setText("T");
         tButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        tButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        tButton.setPreferredSize(new java.awt.Dimension(25, 20));
         tButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(tButton);
-        tButton.setBounds(289, 303, 40, 32);
+        tButton.setBounds(180, 340, 40, 32);
 
         uButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         uButton.setText("U");
         uButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        uButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        uButton.setPreferredSize(new java.awt.Dimension(25, 20));
         uButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(uButton);
-        uButton.setBounds(336, 303, 40, 32);
+        uButton.setBounds(230, 340, 40, 32);
 
         vButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         vButton.setText("V");
         vButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        vButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        vButton.setPreferredSize(new java.awt.Dimension(25, 20));
         vButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(vButton);
-        vButton.setBounds(383, 303, 40, 32);
+        vButton.setBounds(280, 340, 40, 32);
 
         wButton.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         wButton.setText("W");
         wButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        wButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        wButton.setPreferredSize(new java.awt.Dimension(25, 20));
         wButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(wButton);
-        wButton.setBounds(430, 303, 40, 32);
+        wButton.setBounds(330, 340, 40, 32);
 
         xButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         xButton.setText("X");
         xButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        xButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        xButton.setPreferredSize(new java.awt.Dimension(25, 20));
         xButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 xButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(xButton);
-        xButton.setBounds(477, 303, 40, 32);
+        xButton.setBounds(380, 340, 40, 32);
 
         yButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         yButton.setText("Y");
         yButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        yButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        yButton.setPreferredSize(new java.awt.Dimension(25, 20));
         yButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(yButton);
-        yButton.setBounds(524, 303, 40, 32);
+        yButton.setBounds(430, 340, 40, 32);
 
         zButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         zButton.setText("Z");
         zButton.setMaximumSize(new java.awt.Dimension(10, 10));
-        zButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        zButton.setPreferredSize(new java.awt.Dimension(25, 20));
         zButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zButtonActionPerformed(evt);
             }
         });
         hangmanGame.add(zButton);
-        zButton.setBounds(571, 303, 40, 32);
+        zButton.setBounds(480, 340, 40, 32);
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -932,7 +945,7 @@ public class TheWindow extends javax.swing.JFrame {
         );
 
         hangmanGame.add(l8);
-        l8.setBounds(450, 250, 40, 10);
+        l8.setBounds(440, 250, 40, 10);
 
         l1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1028,7 +1041,7 @@ public class TheWindow extends javax.swing.JFrame {
         );
 
         hangmanGame.add(l7);
-        l7.setBounds(400, 250, 40, 10);
+        l7.setBounds(390, 250, 40, 10);
 
         l6.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1044,7 +1057,7 @@ public class TheWindow extends javax.swing.JFrame {
         );
 
         hangmanGame.add(l6);
-        l6.setBounds(350, 250, 40, 10);
+        l6.setBounds(340, 250, 40, 10);
 
         skipButton.setText("Skip");
         skipButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1053,7 +1066,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 23);
+        skipButton.setBounds(500, 70, 80, 25);
 
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1062,6 +1075,11 @@ public class TheWindow extends javax.swing.JFrame {
         });
         hangmanGame.add(dateTextField);
         dateTextField.setBounds(420, 10, 170, 30);
+
+        theWrong.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        theWrong.setText("Incorrect Guess!");
+        hangmanGame.add(theWrong);
+        theWrong.setBounds(450, 126, 110, 30);
 
         mainPanel.add(hangmanGame, "card5");
 
@@ -1076,19 +1094,26 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
+        jTextField9.setEditable(false);
+
         javax.swing.GroupLayout endPageLayout = new javax.swing.GroupLayout(endPage);
         endPage.setLayout(endPageLayout);
         endPageLayout.setHorizontalGroup(
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endPageLayout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(endButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(endPageLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(274, Short.MAX_VALUE))
+                        .addGap(180, 180, 180)
+                        .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(endButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(endPageLayout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(endPageLayout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
         endPageLayout.setVerticalGroup(
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1097,7 +1122,9 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addComponent(endButton)
                 .addGap(56, 56, 56))
         );
@@ -1122,41 +1149,76 @@ public class TheWindow extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    // method: randomWord
+    // purpose: This method uses the random class to randomly select a word from the array wordList and save it to  the variable word.
+    public void randomWord()
+    {
+        Random r = new Random();
+        String[] wordList = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
+        
+        word = wordList[r.nextInt(5)];
+       
+    }
+     //method: backHighscoreButtonActtionPerformed
+     //purpose: Sets all jPanels visiblity to false,but menu, returning the user to the menu window.
     private void backHighscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHighscoreButtonActionPerformed
+        // TODO add your handling code here:
+        
         menu.setVisible(true);
         highscores.setVisible(false);
         credits.setVisible(false);
-        hangmanGame.setVisible(false); 
+        hangmanGame.setVisible(false);
+        
     }//GEN-LAST:event_backHighscoreButtonActionPerformed
-
+     //method: highscoreButtonActtionPerformed
+     //purpose: Sets all jPanels visiblity to false,but highscores, getting the user to the highscores window.
     private void highscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoreButtonActionPerformed
+        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(true);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
+        
+
+
     }//GEN-LAST:event_highscoreButtonActionPerformed
 
+    //method: creditsButtonActionPerformed
+    //purpose: Sets all jPanels visiblity to false,but credits, getting the user to the credits window.
     private void creditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsButtonActionPerformed
+        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(true);
         hangmanGame.setVisible(false);
     }//GEN-LAST:event_creditsButtonActionPerformed
 
+    //method: backCreditsButtonActionPerformed
+    //purpose: Sets all jPanels visiblity to false,but menu, returning the user to the menu window.
     private void backCreditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backCreditsButtonActionPerformed
+        // TODO add your handling code here:      
         menu.setVisible(true);
         highscores.setVisible(false);
         credits.setVisible(false);
     }//GEN-LAST:event_backCreditsButtonActionPerformed
 
+    //method:playButtionActionPerformed
+    //purpose: Sets all jPanels visiblity to false,but hangmanGame, getting the user to the menu window.
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
+        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(false);
         hangmanGame.setVisible(true);
         
-        int delay = 1000;
+        getDate();
+    }//GEN-LAST:event_playButtonActionPerformed
+
+    //method:getDate
+    //purpose: Shows the current date and time, updates every one second.
+    public void getDate()
+    {
+     int delay = 1000;
         ActionListener updateTime = new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 Date date = new Date();
@@ -1168,20 +1230,25 @@ public class TheWindow extends javax.swing.JFrame {
         Timer timer = new Timer(delay, updateTime);
         timer.setInitialDelay(0);
         timer.start();
-    }//GEN-LAST:event_playButtonActionPerformed
-
+           
+    }
+    //method: isGameOver
+    //purpose: Checks if score is equal to 40 or not and returns a boolean value.
     public boolean isGameOver()
     {
-        boolean over = false;
-        if(score < 40)
+        over = false;
+        if(score == 40)
         {
-            over = true;  
+            over = true;
+            
         }
         else
             over = false;
         return over;
+        
     }
-    
+     //method: hideMan
+    //purpose: Hides components of the hangman and stores in an array for later use.
     public void hideMan()
     {
         head.setVisible(false);
@@ -1197,7 +1264,11 @@ public class TheWindow extends javax.swing.JFrame {
         theHangMan[3]=rightArm;
         theHangMan[4]=leftLeg;
         theHangMan[5]=rightLeg;
+        
+        
     }
+     //method:lines
+    //purpose:Hides lines and stores in array for later use.
     
     public void lines()
     {
@@ -1218,28 +1289,54 @@ public class TheWindow extends javax.swing.JFrame {
         lines[5] = l6;
         lines[6] = l7;
         lines[7] = l8;
+        
     }
+    //method: win
+    //purpose: Hides all jPanels, but end page, and appends score value on endPage.
+    
+    public void win() 
+    {
+        menu.setVisible(false);
+        highscores.setVisible(false);
+        credits.setVisible(false);
+        hangmanGame.setVisible(false);
+        endPage.setVisible(true);
+        jTextField9.setText(new Integer(score).toString());
+        
+        
+    }
+    
+    //method: showMan
+    //purpose: shows hangman and guessed incorrect message.
     public void showMan()
     {
         theHangMan[z].setVisible(true);
+        theWrong.setVisible(true);
         z++;
     }
     
+    //method: playTheGame
+    //purpose: checks the word length and shows an appropriate amount of lines and textfields.
     public void playTheGame()
     {
+        theWrong.setVisible(false);
         setTextField();
         lines();
         hideMan();
         score = 100;
         randomWord();
-        System.out.print(word);
+        
         for(int i = 0;i < word.length(); i++)
         {
+            jtf[i].setText("");
             jtf[i].setVisible(true);
             lines[i].setVisible(true);
         }
+      
+       
     }
-    
+    //method: toSkip
+    //purpose: hides all jPanels,but endpage, and appends score.
     public void toSkip()
     {
         menu.setVisible(false);
@@ -1247,9 +1344,27 @@ public class TheWindow extends javax.swing.JFrame {
         credits.setVisible(false);
         hangmanGame.setVisible(false);
         endPage.setVisible(true);
+        
+        if(over == true)
+            jTextField9.setText(new Integer(score).toString());
+        if(over == false)
+            jTextField9.setText("0");
     }
+    
+    //method:aButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
 
+    
     private void aButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aButtonActionPerformed
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
         char[] check = word.toCharArray();
         
         int letterCount = 0;
@@ -1271,15 +1386,35 @@ public class TheWindow extends javax.swing.JFrame {
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
+        
+        
+        
     }//GEN-LAST:event_aButtonActionPerformed
 
     private void scoreTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreTextFieldActionPerformed
         // TODO add your handling code here:
+         
+      
     }//GEN-LAST:event_scoreTextFieldActionPerformed
-
+   //method:bButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void bButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1296,14 +1431,30 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_bButtonActionPerformed
-
+   //method:cButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void cButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1320,14 +1471,30 @@ public class TheWindow extends javax.swing.JFrame {
            showMan();
         }
            //hangman part
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_cButtonActionPerformed
-
+    //method:dButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman windod
     private void dButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1344,14 +1511,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_dButtonActionPerformed
 
+     //method:eButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void eButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1360,6 +1544,7 @@ public class TheWindow extends javax.swing.JFrame {
                 //set letter
                 jtf[i].setText("E");
                 letterCount++;
+                
             } 
         }
         eButton.setEnabled(false);
@@ -1371,11 +1556,26 @@ public class TheWindow extends javax.swing.JFrame {
         if(isGameOver()){
             toSkip();
         }
+        totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_eButtonActionPerformed
-
+    //method:fButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void fButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1392,14 +1592,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_fButtonActionPerformed
 
+     //method:gButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void gButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1416,14 +1633,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_gButtonActionPerformed
 
+     //method:hButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void hButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1440,14 +1674,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_hButtonActionPerformed
 
+     //method:iButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void iButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1464,14 +1715,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_iButtonActionPerformed
 
+     //method:jButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1488,14 +1756,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_jButtonActionPerformed
 
+     //method:kButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void kButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1512,14 +1797,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_kButtonActionPerformed
 
+      //method:lButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void lButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1536,14 +1838,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_lButtonActionPerformed
 
+     //method:mButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void mButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1560,14 +1879,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_mButtonActionPerformed
 
+     //method:nButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void nButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1584,14 +1920,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_nButtonActionPerformed
 
+     //method:oButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void oButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1608,14 +1961,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_oButtonActionPerformed
 
+     //method:pButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void pButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1632,14 +2002,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_pButtonActionPerformed
 
+     //method:qButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void qButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1656,14 +2043,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_qButtonActionPerformed
 
+     //method:rButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void rButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1680,14 +2084,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_rButtonActionPerformed
 
+     //method:sButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void sButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1704,14 +2125,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_sButtonActionPerformed
 
+     //method:tButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void tButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1728,14 +2166,30 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_tButtonActionPerformed
 
+     //method:uButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void uButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1752,14 +2206,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_uButtonActionPerformed
 
+     //method:vButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void vButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1776,14 +2247,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_vButtonActionPerformed
 
+     //method:wButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void wButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1800,14 +2288,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_wButtonActionPerformed
 
+     //method:xButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void xButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1824,14 +2329,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_xButtonActionPerformed
 
+     //method:yButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void yButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1848,14 +2370,31 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_yButtonActionPerformed
 
+     //method:zButtonActionPerformed
+    //purpose: Splits word into char array and checks for letter of button pressed
+    //if the letter is found it is appended to the screen and lettercount is incremented
+    //the letter becomes disabled
+    //if the letter count equals zero, 10 points are subtracted from the score and a hangman part is shown
+    //if game is lost you procceed to skip method
+    //The letter count is added to the totalLetterCount, and is compared to the word's letter count
+    //if true the win method is called 
+    //The score is appended on the hangman window
     private void zButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zButtonActionPerformed
-        char[] check = word.toCharArray();
+        // TODO add your handling code here:
+          theWrong.setVisible(false);
+         char[] check = word.toCharArray();
         
         int letterCount = 0;
         for(int i = 0; i < check.length;i++){
@@ -1872,35 +2411,114 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
            showMan();
         }
+        
         if(isGameOver()){
             toSkip();
         }
+         totalLetterCount+= letterCount;
+        if(totalLetterCount == check.length)
+         {
+            win();
+          }
         scoreTextField.setText(new Integer(score).toString());
     }//GEN-LAST:event_zButtonActionPerformed
 
+    //method: skipButtonActionPerformed
+    //purpose: Sets all jPanels visiblity to false, but the end page, and appends the score to the screen.
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
+        // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
         endPage.setVisible(true);
         score = 0;
-        finalScoreTextField.setText(Integer.toString(score));
+        jTextField9.setText(Integer.toString(score));
     }//GEN-LAST:event_skipButtonActionPerformed
 
     private void dateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dateTextFieldActionPerformed
 
-    private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
-        // Not exactly how he wants it. Fix to bring back to menu
-        dispose();
-        TheWindow w = new TheWindow();
-        w.setVisible(true);
-    }//GEN-LAST:event_endButtonActionPerformed
+    private void highscoreTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoreTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_highscoreTextFieldActionPerformed
 
+    //method: endButtonActionPerformed
+    //purpose: Hides all jPanels, but menu.
+    private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
+        // TODO add your handling code here:
+        
+        // Not exactly how he wants it. Fix to bring back to menu
+        // dispose();
+        // TheWindow w = new TheWindow();
+         // w.setVisible(true);
+        startUp.setVisible(false);
+        menu.setVisible(true);
+        highscores.setVisible(false);
+        credits.setVisible(false);
+        hangmanGame.setVisible(false);
+        endPage.setVisible(false);
+       
+        reInit();
+      
+        
+    }//GEN-LAST:event_endButtonActionPerformed
+    
+    //method: reInit
+    //purpose: Re-Intiallizes important variables to allow for replayablity
+    public void reInit()
+    {
+       score = 100;
+       word ="";
+       jtf = new JTextField[8];
+       lines = new JPanel[8];
+       theHangMan = new JPanel[6];
+       z = 0;
+       over = false;
+       totalLetterCount = 0;
+      
+       aButton.setEnabled(true);
+       bButton.setEnabled(true);
+       cButton.setEnabled(true);
+       dButton.setEnabled(true);
+       eButton.setEnabled(true);
+       fButton.setEnabled(true);
+       gButton.setEnabled(true);
+       hButton.setEnabled(true);
+       iButton.setEnabled(true);
+       jButton.setEnabled(true);
+       kButton.setEnabled(true);
+       lButton.setEnabled(true);
+       mButton.setEnabled(true);
+       nButton.setEnabled(true);
+       oButton.setEnabled(true);
+       pButton.setEnabled(true);
+       qButton.setEnabled(true);
+       rButton.setEnabled(true);
+       sButton.setEnabled(true);
+       tButton.setEnabled(true);
+       uButton.setEnabled(true);
+       vButton.setEnabled(true);
+       wButton.setEnabled(true);
+       xButton.setEnabled(true);
+       yButton.setEnabled(true);
+       zButton.setEnabled(true);
+       
+       scoreTextField.setText(new Integer(score).toString());
+       playTheGame();
+         
+        
+    }
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    //method:setTextField
+    //purpose: sets all guess text areas visiblity to false and stores in array for later use
     public void setTextField()
     {
+        
          jTextField1.setVisible(false);
          jTextField2.setVisible(false);
          jTextField3.setVisible(false);
@@ -1920,7 +2538,6 @@ public class TheWindow extends javax.swing.JFrame {
          jtf[6] = jTextField7;
          jtf[7] = jTextField8;
     }
-    
     /**
      * @param args the command line arguments
      */
@@ -1978,11 +2595,11 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel hangmanGame;
     private javax.swing.JPanel head;
     private javax.swing.JButton highscoreButton;
+    private javax.swing.JTextField highscoreTextField;
     private javax.swing.JPanel highscores;
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1995,8 +2612,6 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -2005,6 +2620,7 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton kButton;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
@@ -2035,6 +2651,8 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel startUp;
     private javax.swing.JButton tButton;
     private javax.swing.JLabel teamLabel;
+    private javax.swing.JLabel theLogo;
+    private javax.swing.JLabel theWrong;
     private javax.swing.JButton uButton;
     private javax.swing.JButton vButton;
     private javax.swing.JButton wButton;
