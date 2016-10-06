@@ -9,7 +9,7 @@
  * Purpose: To create a GUI of a game of Hangman.  The program checks if the user has won the game, lost the game or skipped the game.
  *
  */
-package hangmanmain;
+package SwingProjectv1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,11 +63,12 @@ public class TheWindow extends javax.swing.JFrame {
         playButton = new javax.swing.JButton();
         highscoreButton = new javax.swing.JButton();
         creditsButton = new javax.swing.JButton();
-        theLogo = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         highscores = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backHighscoreButton = new javax.swing.JButton();
-        highscoreTextField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         credits = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         backCreditsButton = new javax.swing.JButton();
@@ -216,43 +217,39 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
-        theLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanmain/Swing-Project-v1.0-master/images.jpg"))); // NOI18N
-        theLogo.setText("jLabel10");
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/Logo.png")));
+        jLabel11.setText("jLabel11");
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(theLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                         .addComponent(creditsButton)
                         .addGap(34, 34, 34))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                        .addComponent(highscoreButton)
-                        .addContainerGap())
                     .addGroup(menuLayout.createSequentialGroup()
-                        .addComponent(playButton)
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(playButton)
+                            .addComponent(highscoreButton))
                         .addContainerGap())))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(menuLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(theLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(playButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(highscoreButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(creditsButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(creditsButton)))
                 .addGap(67, 67, 67))
         );
 
@@ -271,12 +268,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
-        highscoreTextField.setText("I'm the best ");
-        highscoreTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                highscoreTextFieldActionPerformed(evt);
-            }
-        });
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("ABC ......00000\nABC ......00000\nABC ......00000\nABC ......00000\nABC ......00000");
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout highscoresLayout = new javax.swing.GroupLayout(highscores);
         highscores.setLayout(highscoresLayout);
@@ -289,10 +285,11 @@ public class TheWindow extends javax.swing.JFrame {
                         .addComponent(backHighscoreButton))
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(215, 215, 215)
-                        .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(261, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(highscoresLayout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,8 +297,8 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGap(110, 110, 110)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(backHighscoreButton)
                 .addGap(78, 78, 78))
         );
@@ -344,7 +341,7 @@ public class TheWindow extends javax.swing.JFrame {
                         .addComponent(backCreditsButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditsLayout.createSequentialGroup()
-                .addGap(1, 225, Short.MAX_VALUE)
+                .addGap(1, 227, Short.MAX_VALUE)
                 .addGroup(creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1066,7 +1063,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 25);
+        skipButton.setBounds(500, 70, 80, 23);
 
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2440,10 +2437,6 @@ public class TheWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dateTextFieldActionPerformed
 
-    private void highscoreTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoreTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_highscoreTextFieldActionPerformed
-
     //method: endButtonActionPerformed
     //purpose: Hides all jPanels, but menu.
     private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
@@ -2595,11 +2588,11 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel hangmanGame;
     private javax.swing.JPanel head;
     private javax.swing.JButton highscoreButton;
-    private javax.swing.JTextField highscoreTextField;
     private javax.swing.JPanel highscores;
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2612,6 +2605,8 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -2651,7 +2646,6 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel startUp;
     private javax.swing.JButton tButton;
     private javax.swing.JLabel teamLabel;
-    private javax.swing.JLabel theLogo;
     private javax.swing.JLabel theWrong;
     private javax.swing.JButton uButton;
     private javax.swing.JButton vButton;
