@@ -31,12 +31,15 @@ public class TheWindow extends javax.swing.JFrame {
     private JPanel[] lines;
     private JPanel[] theHangMan;
     private int z;
-    private BufferedImage logo = null;
+    private BufferedImage logo;
     
     /**
      * Creates new form TheWindow
      */
     public TheWindow() {
+        try {
+            this.logo = ImageIO.read(new File("Logo.png"));
+        } catch (IOException e) { }
        jtf = new JTextField[8];
        lines = new JPanel[8];
        theHangMan = new JPanel[6];
@@ -70,6 +73,7 @@ public class TheWindow extends javax.swing.JFrame {
         playButton = new javax.swing.JButton();
         highscoreButton = new javax.swing.JButton();
         creditsButton = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         highscores = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backHighscoreButton = new javax.swing.JButton();
@@ -220,12 +224,17 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanmain/Logo.png"))); // NOI18N
+        jLabel10.setText("jLabel10");
+
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
-                .addContainerGap(438, Short.MAX_VALUE)
+                .addGap(86, 86, 86)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(creditsButton)
                     .addComponent(highscoreButton)
@@ -235,8 +244,10 @@ public class TheWindow extends javax.swing.JFrame {
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addContainerGap(252, Short.MAX_VALUE)
-                .addComponent(playButton)
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(playButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(highscoreButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1089,9 +1100,9 @@ public class TheWindow extends javax.swing.JFrame {
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endPageLayout.createSequentialGroup()
                 .addGap(84, 84, 84)
-                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(endButton)
                 .addGap(56, 56, 56))
@@ -2063,6 +2074,7 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
