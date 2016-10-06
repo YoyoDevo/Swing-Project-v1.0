@@ -4,6 +4,17 @@
  * and open the template in the editor.
  */
 package hangmanmain;
+import java.awt.*;
+import java.awt.image.*;
+import java.io.*;
+import javax.imageio.*;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +31,7 @@ public class TheWindow extends javax.swing.JFrame {
     private JPanel[] lines;
     private JPanel[] theHangMan;
     private int z;
+    private BufferedImage logo = null;
     
     /**
      * Creates new form TheWindow
@@ -29,10 +41,9 @@ public class TheWindow extends javax.swing.JFrame {
        lines = new JPanel[8];
        theHangMan = new JPanel[6];
        z = 0;
-        initComponents();
-        
+       initComponents();  
     }
-    
+
     public void randomWord()
     {
         Random r = new Random();
@@ -41,8 +52,7 @@ public class TheWindow extends javax.swing.JFrame {
         word = wordList[r.nextInt(5)];
        
     }
-    
-    
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,17 +63,24 @@ public class TheWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
+        startUp = new javax.swing.JPanel();
+        projectLabel = new javax.swing.JLabel();
+        teamLabel = new javax.swing.JLabel();
         menu = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        playButton = new javax.swing.JButton();
+        highscoreButton = new javax.swing.JButton();
+        creditsButton = new javax.swing.JButton();
         highscores = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jTextField10 = new javax.swing.JTextField();
+        backHighscoreButton = new javax.swing.JButton();
+        highscoreTextField = new javax.swing.JTextField();
         credits = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        backCreditsButton = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         hangmanGame = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -75,33 +92,33 @@ public class TheWindow extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
+        scoreTextField = new javax.swing.JTextField();
+        aButton = new javax.swing.JButton();
+        bButton = new javax.swing.JButton();
+        cButton = new javax.swing.JButton();
+        dButton = new javax.swing.JButton();
+        eButton = new javax.swing.JButton();
+        fButton = new javax.swing.JButton();
+        gButton = new javax.swing.JButton();
+        hButton = new javax.swing.JButton();
+        iButton = new javax.swing.JButton();
+        jButton = new javax.swing.JButton();
+        kButton = new javax.swing.JButton();
+        lButton = new javax.swing.JButton();
+        mButton = new javax.swing.JButton();
+        nButton = new javax.swing.JButton();
+        oButton = new javax.swing.JButton();
+        pButton = new javax.swing.JButton();
+        qButton = new javax.swing.JButton();
+        rButton = new javax.swing.JButton();
+        sButton = new javax.swing.JButton();
+        tButton = new javax.swing.JButton();
+        uButton = new javax.swing.JButton();
+        vButton = new javax.swing.JButton();
+        wButton = new javax.swing.JButton();
+        xButton = new javax.swing.JButton();
+        yButton = new javax.swing.JButton();
+        zButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         head = new javax.swing.JPanel();
@@ -120,9 +137,12 @@ public class TheWindow extends javax.swing.JFrame {
         l2 = new javax.swing.JPanel();
         l7 = new javax.swing.JPanel();
         l6 = new javax.swing.JPanel();
-        jButton32 = new javax.swing.JButton();
+        skipButton = new javax.swing.JButton();
+        dateTextField = new javax.swing.JTextField();
         endPage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        finalScoreTextField = new javax.swing.JLabel();
+        endButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -131,27 +151,72 @@ public class TheWindow extends javax.swing.JFrame {
         mainPanel.setBackground(new java.awt.Color(0, 0, 0));
         mainPanel.setLayout(new java.awt.CardLayout());
 
+        startUp.setBackground(new java.awt.Color(0, 0, 0));
+
+        projectLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36)); // NOI18N
+        projectLabel.setForeground(new java.awt.Color(255, 255, 255));
+        projectLabel.setText("CS 245 Quarter Project");
+
+        teamLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        teamLabel.setForeground(new java.awt.Color(255, 255, 255));
+        teamLabel.setText("By: Team Stack Underflow");
+
+        javax.swing.GroupLayout startUpLayout = new javax.swing.GroupLayout(startUp);
+        startUp.setLayout(startUpLayout);
+        startUpLayout.setHorizontalGroup(
+            startUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(startUpLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(projectLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(startUpLayout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(teamLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        startUpLayout.setVerticalGroup(
+            startUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(startUpLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(projectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addComponent(teamLabel)
+                .addGap(121, 121, 121))
+        );
+
+        mainPanel.add(startUp, "card7");
+        ActionListener showMenu = new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                startUp.setVisible(false);
+                menu.setVisible(true);
+            }
+        };
+        Timer menuTimer = new Timer(0, showMenu);
+        menuTimer.setInitialDelay(3000);
+        menuTimer.start();
+        menuTimer.setRepeats(false);
+
         menu.setBackground(new java.awt.Color(0, 0, 0));
         menu.setPreferredSize(new java.awt.Dimension(600, 400));
 
-        jButton1.setText("Play");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        playButton.setText("Play");
+        playButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                playButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Highscores");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        highscoreButton.setText("Highscores");
+        highscoreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                highscoreButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Credits");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        creditsButton.setText("Credits");
+        creditsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                creditsButtonActionPerformed(evt);
             }
         });
 
@@ -159,23 +224,23 @@ public class TheWindow extends javax.swing.JFrame {
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addContainerGap(475, Short.MAX_VALUE)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addContainerGap(438, Short.MAX_VALUE)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(creditsButton)
+                    .addComponent(highscoreButton)
+                    .addComponent(playButton))
                 .addGap(77, 77, 77))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addContainerGap(270, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addContainerGap(252, Short.MAX_VALUE)
+                .addComponent(playButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(highscoreButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(creditsButton)
                 .addGap(67, 67, 67))
         );
 
@@ -187,14 +252,19 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 204, 0));
         jLabel1.setText("Highscores");
 
-        jButton4.setText("Back");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        backHighscoreButton.setText("Back");
+        backHighscoreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                backHighscoreButtonActionPerformed(evt);
             }
         });
 
-        jTextField10.setText("jTextField10");
+        highscoreTextField.setText("I'm the best ");
+        highscoreTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                highscoreTextFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout highscoresLayout = new javax.swing.GroupLayout(highscores);
         highscores.setLayout(highscoresLayout);
@@ -204,11 +274,11 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jButton4))
+                        .addComponent(backHighscoreButton))
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(215, 215, 215)
                         .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(261, Short.MAX_VALUE))
         );
@@ -218,9 +288,9 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGap(110, 110, 110)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(highscoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(backHighscoreButton)
                 .addGap(78, 78, 78))
         );
 
@@ -233,12 +303,20 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
         jLabel2.setText("Credits");
 
-        jButton5.setText("Back");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        backCreditsButton.setText("Back");
+        backCreditsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                backCreditsButtonActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("Nick Caringa       009556235");
+
+        jLabel7.setText("Cesar Pedroza   009977643");
+
+        jLabel8.setText("Tuan Pham         009222226");
+
+        jLabel9.setText("Devin Wells        009235655");
 
         javax.swing.GroupLayout creditsLayout = new javax.swing.GroupLayout(credits);
         credits.setLayout(creditsLayout);
@@ -250,18 +328,35 @@ public class TheWindow extends javax.swing.JFrame {
                         .addGap(244, 244, 244)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(creditsLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jButton5)))
-                .addContainerGap(306, Short.MAX_VALUE))
+                        .addGap(25, 25, 25)
+                        .addComponent(backCreditsButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditsLayout.createSequentialGroup()
+                .addGap(1, 225, Short.MAX_VALUE)
+                .addGroup(creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel8)))
+                .addGap(161, 161, 161))
         );
         creditsLayout.setVerticalGroup(
             creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(creditsLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(82, 82, 82))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(backCreditsButton)
+                .addGap(51, 51, 51))
         );
 
         mainPanel.add(credits, "card4");
@@ -337,326 +432,326 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.add(jLabel4);
         jLabel4.setBounds(12, 104, 53, 24);
 
-        jTextField9.setText("100");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        scoreTextField.setText("100");
+        scoreTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                scoreTextFieldActionPerformed(evt);
             }
         });
-        hangmanGame.add(jTextField9);
-        jTextField9.setBounds(12, 135, 34, 22);
+        hangmanGame.add(scoreTextField);
+        scoreTextField.setBounds(12, 135, 60, 30);
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton6.setText("A");
-        jButton6.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton6.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        aButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        aButton.setText("A");
+        aButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        aButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        aButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                aButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton6);
-        jButton6.setBounds(7, 264, 40, 32);
+        hangmanGame.add(aButton);
+        aButton.setBounds(7, 264, 40, 32);
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton7.setText("B");
-        jButton7.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton7.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        bButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        bButton.setText("B");
+        bButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        bButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        bButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                bButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton7);
-        jButton7.setBounds(54, 264, 40, 32);
+        hangmanGame.add(bButton);
+        bButton.setBounds(54, 264, 40, 32);
 
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton8.setText("C");
-        jButton8.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton8.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        cButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        cButton.setText("C");
+        cButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        cButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        cButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                cButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton8);
-        jButton8.setBounds(101, 264, 40, 32);
+        hangmanGame.add(cButton);
+        cButton.setBounds(101, 264, 40, 32);
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton9.setText("D");
-        jButton9.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton9.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        dButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        dButton.setText("D");
+        dButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        dButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        dButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                dButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton9);
-        jButton9.setBounds(148, 264, 40, 32);
+        hangmanGame.add(dButton);
+        dButton.setBounds(148, 264, 40, 32);
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton10.setText("E");
-        jButton10.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton10.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        eButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        eButton.setText("E");
+        eButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        eButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        eButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                eButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton10);
-        jButton10.setBounds(195, 264, 40, 32);
+        hangmanGame.add(eButton);
+        eButton.setBounds(195, 264, 40, 32);
 
-        jButton11.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton11.setText("F");
-        jButton11.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton11.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        fButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        fButton.setText("F");
+        fButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        fButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        fButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                fButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton11);
-        jButton11.setBounds(242, 264, 40, 32);
+        hangmanGame.add(fButton);
+        fButton.setBounds(242, 264, 40, 32);
 
-        jButton12.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton12.setText("G");
-        jButton12.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton12.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        gButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        gButton.setText("G");
+        gButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        gButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        gButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                gButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton12);
-        jButton12.setBounds(289, 264, 40, 32);
+        hangmanGame.add(gButton);
+        gButton.setBounds(289, 264, 40, 32);
 
-        jButton13.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton13.setText("H");
-        jButton13.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton13.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        hButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        hButton.setText("H");
+        hButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        hButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        hButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                hButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton13);
-        jButton13.setBounds(336, 264, 40, 32);
+        hangmanGame.add(hButton);
+        hButton.setBounds(336, 264, 40, 32);
 
-        jButton14.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton14.setText("I");
-        jButton14.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton14.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        iButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        iButton.setText("I");
+        iButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        iButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        iButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                iButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton14);
-        jButton14.setBounds(383, 264, 40, 32);
+        hangmanGame.add(iButton);
+        iButton.setBounds(383, 264, 40, 32);
 
-        jButton15.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton15.setText("J");
-        jButton15.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton15.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        jButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jButton.setText("J");
+        jButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        jButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                jButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton15);
-        jButton15.setBounds(430, 264, 40, 32);
+        hangmanGame.add(jButton);
+        jButton.setBounds(430, 264, 40, 32);
 
-        jButton16.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton16.setText("K");
-        jButton16.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton16.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        kButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        kButton.setText("K");
+        kButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        kButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        kButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                kButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton16);
-        jButton16.setBounds(477, 264, 40, 32);
+        hangmanGame.add(kButton);
+        kButton.setBounds(477, 264, 40, 32);
 
-        jButton17.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton17.setText("L");
-        jButton17.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton17.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        lButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lButton.setText("L");
+        lButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        lButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        lButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                lButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton17);
-        jButton17.setBounds(524, 264, 40, 32);
+        hangmanGame.add(lButton);
+        lButton.setBounds(524, 264, 40, 32);
 
-        jButton18.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton18.setText("M");
-        jButton18.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton18.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        mButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        mButton.setText("M");
+        mButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        mButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        mButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                mButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton18);
-        jButton18.setBounds(571, 264, 40, 32);
+        hangmanGame.add(mButton);
+        mButton.setBounds(571, 264, 40, 32);
 
-        jButton19.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton19.setText("N");
-        jButton19.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton19.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        nButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        nButton.setText("N");
+        nButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        nButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        nButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                nButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton19);
-        jButton19.setBounds(7, 303, 40, 32);
+        hangmanGame.add(nButton);
+        nButton.setBounds(7, 303, 40, 32);
 
-        jButton20.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton20.setText("O");
-        jButton20.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton20.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        oButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        oButton.setText("O");
+        oButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        oButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        oButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                oButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton20);
-        jButton20.setBounds(54, 303, 40, 32);
+        hangmanGame.add(oButton);
+        oButton.setBounds(54, 303, 40, 32);
 
-        jButton21.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton21.setText("P");
-        jButton21.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton21.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        pButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        pButton.setText("P");
+        pButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        pButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        pButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                pButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton21);
-        jButton21.setBounds(101, 303, 40, 32);
+        hangmanGame.add(pButton);
+        pButton.setBounds(101, 303, 40, 32);
 
-        jButton22.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton22.setText("Q");
-        jButton22.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton22.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        qButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        qButton.setText("Q");
+        qButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        qButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        qButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                qButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton22);
-        jButton22.setBounds(148, 303, 40, 32);
+        hangmanGame.add(qButton);
+        qButton.setBounds(148, 303, 40, 32);
 
-        jButton23.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton23.setText("R");
-        jButton23.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton23.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
+        rButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        rButton.setText("R");
+        rButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        rButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        rButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
+                rButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton23);
-        jButton23.setBounds(195, 303, 40, 32);
+        hangmanGame.add(rButton);
+        rButton.setBounds(195, 303, 40, 32);
 
-        jButton24.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton24.setText("S");
-        jButton24.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton24.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        sButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sButton.setText("S");
+        sButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        sButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        sButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                sButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton24);
-        jButton24.setBounds(242, 303, 40, 32);
+        hangmanGame.add(sButton);
+        sButton.setBounds(242, 303, 40, 32);
 
-        jButton25.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton25.setText("T");
-        jButton25.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton25.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        tButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        tButton.setText("T");
+        tButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        tButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        tButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                tButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton25);
-        jButton25.setBounds(289, 303, 40, 32);
+        hangmanGame.add(tButton);
+        tButton.setBounds(289, 303, 40, 32);
 
-        jButton26.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton26.setText("U");
-        jButton26.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton26.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
+        uButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        uButton.setText("U");
+        uButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        uButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        uButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
+                uButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton26);
-        jButton26.setBounds(336, 303, 40, 32);
+        hangmanGame.add(uButton);
+        uButton.setBounds(336, 303, 40, 32);
 
-        jButton27.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton27.setText("V");
-        jButton27.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton27.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        vButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        vButton.setText("V");
+        vButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        vButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        vButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                vButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton27);
-        jButton27.setBounds(383, 303, 40, 32);
+        hangmanGame.add(vButton);
+        vButton.setBounds(383, 303, 40, 32);
 
-        jButton28.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
-        jButton28.setText("W");
-        jButton28.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton28.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
+        wButton.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        wButton.setText("W");
+        wButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        wButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        wButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
+                wButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton28);
-        jButton28.setBounds(430, 303, 40, 32);
+        hangmanGame.add(wButton);
+        wButton.setBounds(430, 303, 40, 32);
 
-        jButton29.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton29.setText("X");
-        jButton29.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton29.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton29.addActionListener(new java.awt.event.ActionListener() {
+        xButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        xButton.setText("X");
+        xButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        xButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        xButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton29ActionPerformed(evt);
+                xButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton29);
-        jButton29.setBounds(477, 303, 40, 32);
+        hangmanGame.add(xButton);
+        xButton.setBounds(477, 303, 40, 32);
 
-        jButton30.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton30.setText("Y");
-        jButton30.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton30.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
+        yButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        yButton.setText("Y");
+        yButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        yButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        yButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
+                yButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton30);
-        jButton30.setBounds(524, 303, 40, 32);
+        hangmanGame.add(yButton);
+        yButton.setBounds(524, 303, 40, 32);
 
-        jButton31.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton31.setText("Z");
-        jButton31.setMaximumSize(new java.awt.Dimension(10, 10));
-        jButton31.setPreferredSize(new java.awt.Dimension(30, 20));
-        jButton31.addActionListener(new java.awt.event.ActionListener() {
+        zButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        zButton.setText("Z");
+        zButton.setMaximumSize(new java.awt.Dimension(10, 10));
+        zButton.setPreferredSize(new java.awt.Dimension(30, 20));
+        zButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton31ActionPerformed(evt);
+                zButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton31);
-        jButton31.setBounds(571, 303, 40, 32);
+        hangmanGame.add(zButton);
+        zButton.setBounds(571, 303, 40, 32);
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -792,7 +887,7 @@ public class TheWindow extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -946,14 +1041,22 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.add(l6);
         l6.setBounds(350, 250, 40, 10);
 
-        jButton32.setText("Skip");
-        jButton32.addActionListener(new java.awt.event.ActionListener() {
+        skipButton.setText("Skip");
+        skipButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton32ActionPerformed(evt);
+                skipButtonActionPerformed(evt);
             }
         });
-        hangmanGame.add(jButton32);
-        jButton32.setBounds(500, 70, 57, 25);
+        hangmanGame.add(skipButton);
+        skipButton.setBounds(500, 70, 80, 23);
+
+        dateTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateTextFieldActionPerformed(evt);
+            }
+        });
+        hangmanGame.add(dateTextField);
+        dateTextField.setBounds(420, 10, 170, 30);
 
         mainPanel.add(hangmanGame, "card5");
 
@@ -961,21 +1064,37 @@ public class TheWindow extends javax.swing.JFrame {
 
         jLabel5.setText("Score");
 
+        endButton.setText("End");
+        endButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout endPageLayout = new javax.swing.GroupLayout(endPage);
         endPage.setLayout(endPageLayout);
         endPageLayout.setHorizontalGroup(
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endPageLayout.createSequentialGroup()
-                .addGap(254, 254, 254)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addGap(180, 180, 180)
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(endButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(endPageLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
         endPageLayout.setVerticalGroup(
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endPageLayout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(281, Short.MAX_VALUE))
+                .addGap(84, 84, 84)
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addComponent(endButton)
+                .addGap(56, 56, 56))
         );
 
         mainPanel.add(endPage, "card6");
@@ -999,7 +1118,7 @@ public class TheWindow extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void backHighscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHighscoreButtonActionPerformed
         // TODO add your handling code here:
         
         menu.setVisible(true);
@@ -1007,9 +1126,9 @@ public class TheWindow extends javax.swing.JFrame {
         credits.setVisible(false);
         hangmanGame.setVisible(false);
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_backHighscoreButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void highscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoreButtonActionPerformed
         // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(true);
@@ -1018,36 +1137,50 @@ public class TheWindow extends javax.swing.JFrame {
         
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_highscoreButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void creditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsButtonActionPerformed
         // TODO add your handling code here:
-       
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(true);
         hangmanGame.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_creditsButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    private void backCreditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backCreditsButtonActionPerformed
+        // TODO add your handling code here:      
         menu.setVisible(true);
         highscores.setVisible(false);
         credits.setVisible(false);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_backCreditsButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(false);
         hangmanGame.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        int delay = 1000;
+        ActionListener updateTime = new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Date date = new Date();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy  hh:mm:ss");
+                String strDate = dateFormat.format(date);
+                dateTextField.setText(strDate);
+            }
+        };
+        Timer timer = new Timer(delay, updateTime);
+        timer.setInitialDelay(0);
+        timer.start();
+
+        
+    }//GEN-LAST:event_playButtonActionPerformed
 
     public boolean isGameOver()
     {
         boolean over = false;
-        if(score < 59)
+        if(score < 40)
         {
             over = true;
             
@@ -1100,7 +1233,6 @@ public class TheWindow extends javax.swing.JFrame {
     }
     public void showMan()
     {
-        
         theHangMan[z].setVisible(true);
         z++;
     }
@@ -1108,9 +1240,9 @@ public class TheWindow extends javax.swing.JFrame {
     public void playTheGame()
     {
        
-         setTextField();
-         lines();
-         hideMan();
+        setTextField();
+        lines();
+        hideMan();
         score = 100;
         randomWord();
         System.out.print(word);
@@ -1121,7 +1253,19 @@ public class TheWindow extends javax.swing.JFrame {
         }
        
     }
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    
+    public void toSkip()
+    {
+        menu.setVisible(false);
+        highscores.setVisible(false);
+        credits.setVisible(false);
+        hangmanGame.setVisible(false);
+        endPage.setVisible(true);
+    }
+    
+
+    
+    private void aButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aButtonActionPerformed
         // TODO add your handling code here:
         
         char[] check = word.toCharArray();
@@ -1135,6 +1279,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        aButton.setEnabled(false);
         if(letterCount == 0)
         {
            score -= 10;
@@ -1142,21 +1287,21 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
         }
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
+        scoreTextField.setText(new Integer(score).toString());
         
         
         
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_aButtonActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void scoreTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreTextFieldActionPerformed
         // TODO add your handling code here:
          
       
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_scoreTextFieldActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void bButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1169,6 +1314,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        bButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1176,12 +1322,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton7ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_bButtonActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void cButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1194,6 +1340,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        cButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            showMan();
@@ -1201,12 +1348,12 @@ public class TheWindow extends javax.swing.JFrame {
            //hangman part
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton8ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_cButtonActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void dButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1219,6 +1366,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        dButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1226,12 +1374,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton9ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_dButtonActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void eButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1244,6 +1392,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        eButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1251,12 +1400,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton10ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_eButtonActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void fButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1269,6 +1418,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        fButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1276,12 +1426,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton11ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_fButtonActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void gButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1294,6 +1444,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        gButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1301,12 +1452,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton12ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_gButtonActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void hButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1319,6 +1470,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        hButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1326,12 +1478,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton13ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_hButtonActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void iButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1344,6 +1496,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        iButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1351,12 +1504,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton14ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_iButtonActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1369,6 +1522,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        jButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1376,12 +1530,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton15ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_jButtonActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void kButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1394,6 +1548,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        kButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1401,12 +1556,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton16ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_kButtonActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void lButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1419,6 +1574,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        lButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1426,12 +1582,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton17ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_lButtonActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void mButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1444,6 +1600,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        mButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1451,12 +1608,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton18ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_mButtonActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void nButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1469,6 +1626,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        nButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1476,12 +1634,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton19ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_nButtonActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void oButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1494,6 +1652,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        oButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1501,12 +1660,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton20ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_oButtonActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void pButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1519,6 +1678,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        pButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1526,12 +1686,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton21ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_pButtonActionPerformed
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void qButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1544,6 +1704,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        qButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1551,12 +1712,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton22ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_qButtonActionPerformed
 
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+    private void rButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1569,6 +1730,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        rButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1576,12 +1738,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton23ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_rButtonActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void sButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1594,6 +1756,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        sButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1601,12 +1764,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton24ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_sButtonActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void tButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1619,6 +1782,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        tButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1626,12 +1790,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton25ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_tButtonActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+    private void uButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1644,6 +1808,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        uButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1651,12 +1816,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton26ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_uButtonActionPerformed
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+    private void vButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1669,6 +1834,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        vButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1676,12 +1842,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton27ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_vButtonActionPerformed
 
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+    private void wButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1694,6 +1860,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        wButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1701,12 +1868,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton28ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_wButtonActionPerformed
 
-    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+    private void xButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1719,6 +1886,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        xButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1726,12 +1894,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton29ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_xButtonActionPerformed
 
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+    private void yButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1744,6 +1912,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        yButton.setEnabled(false);
         if(letterCount == 0)
         {  score -= 10;
            //hangman part
@@ -1751,12 +1920,12 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton30ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_yButtonActionPerformed
 
-    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+    private void zButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zButtonActionPerformed
         // TODO add your handling code here:
          char[] check = word.toCharArray();
         
@@ -1769,6 +1938,7 @@ public class TheWindow extends javax.swing.JFrame {
                 letterCount++;
             } 
         }
+        zButton.setEnabled(false);
         if(letterCount == 0)
         { score -= 10;
            //hangman part
@@ -1776,19 +1946,38 @@ public class TheWindow extends javax.swing.JFrame {
         }
         
         if(isGameOver()){
-            //end game
+            toSkip();
         }
-        jTextField9.setText(new Integer(score).toString());
-    }//GEN-LAST:event_jButton31ActionPerformed
+        scoreTextField.setText(new Integer(score).toString());
+    }//GEN-LAST:event_zButtonActionPerformed
 
-    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+    private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
         // TODO add your handling code here:
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
         endPage.setVisible(true);
-    }//GEN-LAST:event_jButton32ActionPerformed
+        score = 0;
+        finalScoreTextField.setText(Integer.toString(score));
+    }//GEN-LAST:event_skipButtonActionPerformed
+
+    private void dateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateTextFieldActionPerformed
+
+    private void highscoreTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highscoreTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_highscoreTextFieldActionPerformed
+
+    private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
+        // TODO add your handling code here:
+        
+        // Not exactly how he wants it. Fix to bring back to menu
+        dispose();
+        TheWindow w = new TheWindow();
+        w.setVisible(true);
+    }//GEN-LAST:event_endButtonActionPerformed
 
     public void setTextField()
     {
@@ -1838,7 +2027,8 @@ public class TheWindow extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TheWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1848,55 +2038,44 @@ public class TheWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aButton;
+    private javax.swing.JButton bButton;
+    private javax.swing.JButton backCreditsButton;
+    private javax.swing.JButton backHighscoreButton;
     private javax.swing.JPanel body;
+    private javax.swing.JButton cButton;
     private javax.swing.JPanel credits;
+    private javax.swing.JButton creditsButton;
+    private javax.swing.JButton dButton;
+    private javax.swing.JTextField dateTextField;
+    private javax.swing.JButton eButton;
+    private javax.swing.JButton endButton;
     private javax.swing.JPanel endPage;
+    private javax.swing.JButton fButton;
+    private javax.swing.JLabel finalScoreTextField;
+    private javax.swing.JButton gButton;
+    private javax.swing.JButton hButton;
     private javax.swing.JPanel hangmanGame;
     private javax.swing.JPanel head;
+    private javax.swing.JButton highscoreButton;
+    private javax.swing.JTextField highscoreTextField;
     private javax.swing.JPanel highscores;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton iButton;
+    private javax.swing.JButton jButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -1904,7 +2083,7 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton kButton;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
     private javax.swing.JPanel l3;
@@ -1913,11 +2092,32 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel l6;
     private javax.swing.JPanel l7;
     private javax.swing.JPanel l8;
+    private javax.swing.JButton lButton;
     private javax.swing.JPanel leftArm;
     private javax.swing.JPanel leftLeg;
+    private javax.swing.JButton mButton;
     public javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menu;
+    private javax.swing.JButton nButton;
+    private javax.swing.JButton oButton;
+    private javax.swing.JButton pButton;
+    private javax.swing.JButton playButton;
+    private javax.swing.JLabel projectLabel;
+    private javax.swing.JButton qButton;
+    private javax.swing.JButton rButton;
     private javax.swing.JPanel rightArm;
     private javax.swing.JPanel rightLeg;
+    private javax.swing.JButton sButton;
+    private javax.swing.JTextField scoreTextField;
+    private javax.swing.JButton skipButton;
+    private javax.swing.JPanel startUp;
+    private javax.swing.JButton tButton;
+    private javax.swing.JLabel teamLabel;
+    private javax.swing.JButton uButton;
+    private javax.swing.JButton vButton;
+    private javax.swing.JButton wButton;
+    private javax.swing.JButton xButton;
+    private javax.swing.JButton yButton;
+    private javax.swing.JButton zButton;
     // End of variables declaration//GEN-END:variables
 }
