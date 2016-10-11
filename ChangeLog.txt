@@ -22,3 +22,9 @@ OCT 6 3:00 - Nick
 -Game replayable
 -User alerted on wrong guess
 -Game ends with correct score on successful guess
+
+OCT 10 11:17 - Tuan
+-Reads highscores from highscore.txt and displays it when highscore button is clicked
+-----TO DO----- after the ball game is finished, if new score is higher than lowest score, 
+make popup for username, add username and score to highscore.txt replacing lowest score
+---------------
