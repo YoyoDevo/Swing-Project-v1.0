@@ -11,11 +11,25 @@
  */
 package SwingProjectv1;
 
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class TheWindow extends javax.swing.JFrame {
@@ -68,7 +82,7 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         backHighscoreButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        highscoresTextBox = new javax.swing.JTextArea();
         credits = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         backCreditsButton = new javax.swing.JButton();
@@ -137,9 +151,8 @@ public class TheWindow extends javax.swing.JFrame {
         theWrong = new javax.swing.JLabel();
         endPage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        finalScoreTextField = new javax.swing.JLabel();
         endButton = new javax.swing.JButton();
-        jTextField9 = new javax.swing.JTextField();
+        finalScoreTextBox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -270,11 +283,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("ABC ......00000\nABC ......00000\nABC ......00000\nABC ......00000\nABC ......00000");
-        jScrollPane1.setViewportView(jTextArea1);
+        highscoresTextBox.setEditable(false);
+        highscoresTextBox.setColumns(20);
+        highscoresTextBox.setRows(5);
+        highscoresTextBox.setText("\n");
+        jScrollPane1.setViewportView(highscoresTextBox);
 
         javax.swing.GroupLayout highscoresLayout = new javax.swing.GroupLayout(highscores);
         highscores.setLayout(highscoresLayout);
@@ -289,18 +302,18 @@ public class TheWindow extends javax.swing.JFrame {
                         .addGap(215, 215, 215)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(highscoresLayout.createSequentialGroup()
-                        .addGap(206, 206, 206)
+                        .addGap(194, 194, 194)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(highscoresLayout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(backHighscoreButton)
                 .addGap(78, 78, 78))
         );
@@ -1065,7 +1078,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 25);
+        skipButton.setBounds(500, 70, 80, 23);
 
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1093,37 +1106,31 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
-        jTextField9.setEditable(false);
+        finalScoreTextBox.setEditable(false);
 
         javax.swing.GroupLayout endPageLayout = new javax.swing.GroupLayout(endPage);
         endPage.setLayout(endPageLayout);
         endPageLayout.setHorizontalGroup(
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endPageLayout.createSequentialGroup()
-                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(180, 180, 180)
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(endButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(endPageLayout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(endButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(endPageLayout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(endPageLayout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(275, Short.MAX_VALUE))
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
         endPageLayout.setVerticalGroup(
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(endPageLayout.createSequentialGroup()
                 .addGap(84, 84, 84)
-                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(finalScoreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(endButton)
                 .addGap(56, 56, 56))
         );
@@ -1177,6 +1184,24 @@ public class TheWindow extends javax.swing.JFrame {
         highscores.setVisible(true);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("highscore.txt"));
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            while (line!=null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+            String fullString = sb.toString();
+            highscoresTextBox.setText(fullString);
+            br.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
 
 
@@ -1300,9 +1325,27 @@ public class TheWindow extends javax.swing.JFrame {
         credits.setVisible(false);
         hangmanGame.setVisible(false);
         endPage.setVisible(true);
-        jTextField9.setText(new Integer(score).toString());
-        
-        
+        finalScoreTextBox.setText(new Integer(score).toString());
+        ///////////// TO DO /////////////////////
+        // After the Color Game, Ask user for username if score is higheer than the lowest score               
+//        try {         
+//            Path filePath = Paths.get("highscore.txt");
+//            Scanner scanner = new Scanner(filePath);
+//            List<Integer> integers = new ArrayList<>();
+//            while (scanner.hasNext()) {
+//                if (scanner.hasNextInt()) {
+//                    integers.add(scanner.nextInt());
+//                } else {
+//            scanner.next();
+//                }
+//            }
+//            /// Write to File 
+//            FileWriter writeFile = new FileWriter("highscore.txt");
+//            BufferedWriter writer = new BufferedWriter(writeFile);
+//            //writer.write();
+//        } catch (IOException e) {}
+//        
+//        
     }
     
     //method: showMan
@@ -1345,9 +1388,9 @@ public class TheWindow extends javax.swing.JFrame {
         endPage.setVisible(true);
         
         if(over == true)
-            jTextField9.setText(new Integer(score).toString());
+            finalScoreTextBox.setText(new Integer(score).toString());
         if(over == false)
-            jTextField9.setText("0");
+            finalScoreTextBox.setText("0");
     }
     
     //method:aButtonActionPerformed
@@ -2432,7 +2475,7 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.setVisible(false);
         endPage.setVisible(true);
         score = 0;
-        jTextField9.setText(Integer.toString(score));
+        finalScoreTextBox.setText(Integer.toString(score));
     }//GEN-LAST:event_skipButtonActionPerformed
 
     private void dateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateTextFieldActionPerformed
@@ -2584,13 +2627,14 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JButton endButton;
     private javax.swing.JPanel endPage;
     private javax.swing.JButton fButton;
-    private javax.swing.JLabel finalScoreTextField;
+    private javax.swing.JTextField finalScoreTextBox;
     private javax.swing.JButton gButton;
     private javax.swing.JButton hButton;
     private javax.swing.JPanel hangmanGame;
     private javax.swing.JPanel head;
     private javax.swing.JButton highscoreButton;
     private javax.swing.JPanel highscores;
+    private javax.swing.JTextArea highscoresTextBox;
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
     private javax.swing.JLabel jLabel1;
@@ -2608,7 +2652,6 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -2617,7 +2660,6 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton kButton;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
