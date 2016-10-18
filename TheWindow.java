@@ -156,10 +156,6 @@ public class TheWindow extends javax.swing.JFrame {
         skipButton = new javax.swing.JButton();
         dateTextField = new javax.swing.JTextField();
         theWrong = new javax.swing.JLabel();
-        endPage = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        endButton = new javax.swing.JButton();
-        finalScoreTextBox = new javax.swing.JTextField();
         colorGame = new javax.swing.JPanel();
         dateTextField1 = new javax.swing.JTextField();
         redButton = new javax.swing.JButton();
@@ -172,6 +168,10 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         colorScoreText = new javax.swing.JLabel();
         endButton2 = new javax.swing.JButton();
+        endPage = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        endButton = new javax.swing.JButton();
+        finalScoreTextBox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -1099,7 +1099,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 23);
+        skipButton.setBounds(500, 70, 80, 25);
 
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1116,47 +1116,11 @@ public class TheWindow extends javax.swing.JFrame {
 
         mainPanel.add(hangmanGame, "card5");
 
-        endPage.setPreferredSize(new java.awt.Dimension(600, 400));
-
-        jLabel5.setText("Score");
-
-        endButton.setText("End");
-        endButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                endButtonActionPerformed(evt);
+        colorGame.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                colorGameVetoableChange(evt);
             }
         });
-
-        finalScoreTextBox.setEditable(false);
-
-        javax.swing.GroupLayout endPageLayout = new javax.swing.GroupLayout(endPage);
-        endPage.setLayout(endPageLayout);
-        endPageLayout.setHorizontalGroup(
-            endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(endPageLayout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(endButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(endPageLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
-                .addContainerGap(258, Short.MAX_VALUE))
-        );
-        endPageLayout.setVerticalGroup(
-            endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(endPageLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(endButton)
-                .addGap(56, 56, 56))
-        );
-
-        mainPanel.add(endPage, "card6");
 
         dateTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1336,6 +1300,48 @@ public class TheWindow extends javax.swing.JFrame {
         );
 
         mainPanel.add(colorGameEnd, "card9");
+
+        endPage.setPreferredSize(new java.awt.Dimension(600, 400));
+
+        jLabel5.setText("Score");
+
+        endButton.setText("End");
+        endButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endButtonActionPerformed(evt);
+            }
+        });
+
+        finalScoreTextBox.setEditable(false);
+
+        javax.swing.GroupLayout endPageLayout = new javax.swing.GroupLayout(endPage);
+        endPage.setLayout(endPageLayout);
+        endPageLayout.setHorizontalGroup(
+            endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(endPageLayout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(endButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(endPageLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)))
+                .addContainerGap(257, Short.MAX_VALUE))
+        );
+        endPageLayout.setVerticalGroup(
+            endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(endPageLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(endButton)
+                .addGap(56, 56, 56))
+        );
+
+        mainPanel.add(endPage, "card6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1523,8 +1529,11 @@ public class TheWindow extends javax.swing.JFrame {
         highscores.setVisible(false);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
-        endPage.setVisible(true);
-        finalScoreTextBox.setText(new Integer(score).toString());
+        endPage.setVisible(false);
+        colorGame.setVisible(true);
+         colorGameEnd.setVisible(false);
+        colorScore = score;
+         startColor();   
         ///////////// TO DO /////////////////////
         // After the Color Game, Ask user for username if score is higheer than the lowest score               
 //        try {         
@@ -1584,12 +1593,14 @@ public class TheWindow extends javax.swing.JFrame {
         highscores.setVisible(false);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
-        endPage.setVisible(true);
-        
+        endPage.setVisible(false);
+        colorGame.setVisible(true);
+        colorGameEnd.setVisible(false);
+        startColor();
         if(over == true)
-            finalScoreTextBox.setText(new Integer(score).toString());
+            colorScore =  score;
         if(over == false)
-            finalScoreTextBox.setText("0");
+            colorScore = 0;
     }
     
     
@@ -2676,8 +2687,11 @@ public class TheWindow extends javax.swing.JFrame {
         highscores.setVisible(false);
         credits.setVisible(false);
         hangmanGame.setVisible(false);
-        endPage.setVisible(true);
+        endPage.setVisible(false);
+         colorGameEnd.setVisible(false);
+        colorGame.setVisible(true);
         score = 0;
+         startColor();   
         finalScoreTextBox.setText(Integer.toString(score));
     }//GEN-LAST:event_skipButtonActionPerformed
 
@@ -2700,6 +2714,7 @@ public class TheWindow extends javax.swing.JFrame {
         credits.setVisible(false);
         hangmanGame.setVisible(false);
         endPage.setVisible(false);
+         colorGameEnd.setVisible(false);
         colorGame.setVisible(true);
         
         startColor();     
@@ -2882,6 +2897,10 @@ public class TheWindow extends javax.swing.JFrame {
         reInit();
     }//GEN-LAST:event_endButton2ActionPerformed
 
+    private void colorGameVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_colorGameVetoableChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_colorGameVetoableChange
+
     //method:setTextField
     //purpose: sets all guess text areas visiblity to false and stores in array for later use
     public void setTextField()
@@ -2909,7 +2928,7 @@ public class TheWindow extends javax.swing.JFrame {
     
        
     public void startColor(){
-        colorScore = 0;
+       
         colorGame();
     }
     
