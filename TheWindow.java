@@ -3,10 +3,10 @@
  *Authors: Nick Curinga, Tuan Pham, Cesar Pedroza, Devin Wells
  *Class: CS 245 - Programming Graphical User Interfaces 
  *
- *Assignment: Swing Project v1.2 
+ *Assignment: Swing Project v1.1 
  *Date Last Modified:10/18/2016
  *
- * Purpose: To create a GUI of a games of Hangman, Color match, and Sudoku .  
+ * Purpose: To create a GUI of a games of Hangman and Color match.  
  *
  */
 package SwingProjectv1;
@@ -182,7 +182,6 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         endButton = new javax.swing.JButton();
         finalScoreTextBox = new javax.swing.JTextField();
-        sudokuGame = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -335,7 +334,7 @@ public class TheWindow extends javax.swing.JFrame {
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(215, 215, 215)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,42 +431,49 @@ public class TheWindow extends javax.swing.JFrame {
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField1.setBorder(null);
         hangmanGame.add(jTextField1);
         jTextField1.setBounds(100, 210, 40, 36);
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField2.setBorder(null);
         hangmanGame.add(jTextField2);
         jTextField2.setBounds(150, 210, 40, 36);
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField3.setBorder(null);
         hangmanGame.add(jTextField3);
         jTextField3.setBounds(200, 210, 40, 36);
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField4.setBorder(null);
         hangmanGame.add(jTextField4);
         jTextField4.setBounds(250, 210, 40, 36);
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField5.setBorder(null);
         hangmanGame.add(jTextField5);
         jTextField5.setBounds(300, 210, 40, 36);
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
         jTextField6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField6.setBorder(null);
         hangmanGame.add(jTextField6);
         jTextField6.setBounds(350, 210, 40, 36);
 
         jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(204, 204, 204));
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField7.setBorder(null);
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -479,6 +485,7 @@ public class TheWindow extends javax.swing.JFrame {
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(204, 204, 204));
         jTextField8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField8.setBorder(null);
         hangmanGame.add(jTextField8);
         jTextField8.setBounds(450, 210, 40, 36);
 
@@ -1103,7 +1110,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 25);
+        skipButton.setBounds(500, 70, 80, 23);
 
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1347,19 +1354,6 @@ public class TheWindow extends javax.swing.JFrame {
 
         mainPanel.add(endPage, "card6");
 
-        javax.swing.GroupLayout sudokuGameLayout = new javax.swing.GroupLayout(sudokuGame);
-        sudokuGame.setLayout(sudokuGameLayout);
-        sudokuGameLayout.setHorizontalGroup(
-            sudokuGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        sudokuGameLayout.setVerticalGroup(
-            sudokuGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-
-        mainPanel.add(sudokuGame, "card10");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1386,6 +1380,82 @@ public class TheWindow extends javax.swing.JFrame {
         word = wordList[r.nextInt(5)];
        
     }
+    
+    public void randPosition() {
+        Random r = new Random();
+        int[] array = {1, 2, 3, 4, 5};
+        int arraySize = 5;
+        for (int i = 0; i < array.length; i++) {
+            int randPos = r.nextInt(array.length);
+            int temp = array[i];
+            array[i] = array[randPos];
+            array[randPos] = temp;
+        }
+        for (int j = 0; j < array.length; j++) {
+            if (array[j] == 1) {
+                if(arraySize == 5)
+                    blueButton.setLocation(10,100);
+                else if(arraySize == 4)
+                    greenButton.setLocation(10,100);
+                else if(arraySize == 3)
+                    redButton.setLocation(10,100);
+                else if(arraySize == 2)
+                    purpleButton.setLocation(10,100);
+                else if(arraySize == 1)
+                    yellowButton.setLocation(10,100);
+            }
+            else if (array[j] == 2) {
+                if (arraySize ==5)
+                    blueButton.setLocation(100, 210);
+                else if (arraySize == 4) 
+                    greenButton.setLocation(100, 210);
+                else if(arraySize == 3)
+                    redButton.setLocation(100, 210);
+                else if(arraySize == 2)
+                    purpleButton.setLocation(100, 210);
+                else if(arraySize == 1)
+                    yellowButton.setLocation(100, 210);
+            }
+            else if (array[j] == 3) {
+                if(arraySize == 5)
+                    blueButton.setLocation(200,100);
+                else if(arraySize == 4)
+                    greenButton.setLocation(200,100);
+                else if(arraySize == 3)
+                    redButton.setLocation(200,100);
+                else if(arraySize == 2)
+                    purpleButton.setLocation(200,100);
+                else if(arraySize == 1)
+                    yellowButton.setLocation(200,100); 
+            }
+            else if (array[j] == 4) {
+                if(arraySize == 5)
+                    blueButton.setLocation(300,210);
+                else if(arraySize == 4)
+                    greenButton.setLocation(300,210);
+                else if(arraySize == 3)
+                    redButton.setLocation(300,210);
+                else if(arraySize == 2)
+                    purpleButton.setLocation(300,210);
+                else if(arraySize == 1)
+                    yellowButton.setLocation(300,210); 
+            }
+            else if (array[j] == 5) {
+                if(arraySize == 5)
+                    blueButton.setLocation(400,100);
+                else if(arraySize == 4)
+                    greenButton.setLocation(400,100);
+                else if(arraySize == 3)
+                    redButton.setLocation(400,100);
+                else if(arraySize == 2)
+                    purpleButton.setLocation(400,100);
+                else if(arraySize == 1)
+                    yellowButton.setLocation(400,100);
+            }
+            arraySize--;
+        }
+    } 
+        
      //method: backHighscoreButtonActtionPerformed
      //purpose: Sets all jPanels visiblity to false,but menu, returning the user to the menu window.
     private void backHighscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHighscoreButtonActionPerformed
@@ -2964,7 +3034,6 @@ public class TheWindow extends javax.swing.JFrame {
                 Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
-         
         colorGame();
     }//GEN-LAST:event_redButtonActionPerformed
 
@@ -3008,7 +3077,6 @@ public class TheWindow extends javax.swing.JFrame {
                 Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
-        
         colorGame();
     }//GEN-LAST:event_purpleButtonActionPerformed
 
@@ -3069,21 +3137,16 @@ public class TheWindow extends javax.swing.JFrame {
     //purpose: starts the color game by selecting random word/ color combo
     
     public void colorGame(){
-        
+            randPosition();
             Random r = new Random();
             int chosen = r.nextInt(5);
             int chosen2 = r.nextInt(5);
             Color[] color = new Color[]{Color.blue, Color.green, Color.red, Color.magenta, Color.yellow};        
             String[] wordList = {"yellow", "blue", "green", "red", "purple"};
-            
             Color picked = color[chosen2];
-            
             colorCorrect = picked;
             answer.setText(wordList[chosen]);
             answer.setForeground(picked); 
-            
-
-        
     }
     
     //method: toColorEnd
@@ -3223,7 +3286,6 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField scoreTextField;
     private javax.swing.JButton skipButton;
     private javax.swing.JPanel startUp;
-    private javax.swing.JPanel sudokuGame;
     private javax.swing.JButton tButton;
     private javax.swing.JLabel teamLabel;
     private javax.swing.JLabel theWrong;
