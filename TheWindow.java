@@ -3,10 +3,10 @@
  *Authors: Nick Curinga, Tuan Pham, Cesar Pedroza, Devin Wells
  *Class: CS 245 - Programming Graphical User Interfaces 
  *
- *Assignment: Swing Project v1.0 
- *Date Last Modified:10/6/2016
+ *Assignment: Swing Project v1.2 
+ *Date Last Modified:10/18/2016
  *
- * Purpose: To create a GUI of a game of Hangman.  The program checks if the user has won the game, lost the game or skipped the game.
+ * Purpose: To create a GUI of a games of Hangman, Color match, and Sudoku .  
  *
  */
 package SwingProjectv1;
@@ -22,10 +22,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
@@ -43,7 +45,11 @@ public class TheWindow extends javax.swing.JFrame {
     private int z;
     private boolean over;
     private int totalLetterCount;
+    private String[] names;
+    private String[] scores;
+    ArrayList<String> list;
     
+  
     
     private Color colorCorrect;
     private Color colorChoice;
@@ -62,6 +68,10 @@ public class TheWindow extends javax.swing.JFrame {
        z = 0;
        over = false;
        totalLetterCount = 0;
+      
+       names = new String[5];
+       scores = new String[5];
+       list = new ArrayList<String>(5);
        initComponents();  
     }
 
@@ -172,6 +182,7 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         endButton = new javax.swing.JButton();
         finalScoreTextBox = new javax.swing.JTextField();
+        sudokuGame = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -318,14 +329,13 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(backHighscoreButton))
+                        .addComponent(backHighscoreButton)
+                        .addGap(115, 115, 115)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(215, 215, 215)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(highscoresLayout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(240, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,9 +343,11 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGap(110, 110, 110)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backHighscoreButton)
+                .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(highscoresLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(backHighscoreButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
                 .addGap(78, 78, 78))
         );
 
@@ -420,49 +432,42 @@ public class TheWindow extends javax.swing.JFrame {
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField1.setBorder(null);
         hangmanGame.add(jTextField1);
         jTextField1.setBounds(100, 210, 40, 36);
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField2.setBorder(null);
         hangmanGame.add(jTextField2);
         jTextField2.setBounds(150, 210, 40, 36);
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField3.setBorder(null);
         hangmanGame.add(jTextField3);
         jTextField3.setBounds(200, 210, 40, 36);
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField4.setBorder(null);
         hangmanGame.add(jTextField4);
         jTextField4.setBounds(250, 210, 40, 36);
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField5.setBorder(null);
         hangmanGame.add(jTextField5);
         jTextField5.setBounds(300, 210, 40, 36);
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
         jTextField6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField6.setBorder(null);
         hangmanGame.add(jTextField6);
         jTextField6.setBounds(350, 210, 40, 36);
 
         jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(204, 204, 204));
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField7.setBorder(null);
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -474,7 +479,6 @@ public class TheWindow extends javax.swing.JFrame {
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(204, 204, 204));
         jTextField8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField8.setBorder(null);
         hangmanGame.add(jTextField8);
         jTextField8.setBounds(450, 210, 40, 36);
 
@@ -1343,6 +1347,19 @@ public class TheWindow extends javax.swing.JFrame {
 
         mainPanel.add(endPage, "card6");
 
+        javax.swing.GroupLayout sudokuGameLayout = new javax.swing.GroupLayout(sudokuGame);
+        sudokuGame.setLayout(sudokuGameLayout);
+        sudokuGameLayout.setHorizontalGroup(
+            sudokuGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        sudokuGameLayout.setVerticalGroup(
+            sudokuGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        mainPanel.add(sudokuGame, "card10");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1372,8 +1389,7 @@ public class TheWindow extends javax.swing.JFrame {
      //method: backHighscoreButtonActtionPerformed
      //purpose: Sets all jPanels visiblity to false,but menu, returning the user to the menu window.
     private void backHighscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHighscoreButtonActionPerformed
-        // TODO add your handling code here:
-        
+
         menu.setVisible(true);
         highscores.setVisible(false);
         credits.setVisible(false);
@@ -1406,11 +1422,94 @@ public class TheWindow extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-
-
     }//GEN-LAST:event_highscoreButtonActionPerformed
+     
+    //method: checkNewHighScore
+    //purpose: After the game ends, if the user scores a higher score than the lowest score,
+    //         a prompt will display asking for a username and will update the highscores txt file
+    //         with the new high score.     
+    private void checkNewHighScore() throws FileNotFoundException {             
+        try {         
+            Path filePath = Paths.get("highscore.txt");
+            Scanner inputFile = new Scanner(filePath);
+            String temp = "";
+            int index = 0;
+            while (inputFile.hasNextLine()) {
+                temp = (inputFile.nextLine());
+                int i = 0;
+                //System.out.println(temp);
+                for (char c : temp.toCharArray()) {
+                    if (c == '.') {
+                        if (index > 4) {
+                            index = 4;
+                        }
+                        names[index] = temp.substring(0, i);
+                        scores[index] = temp.substring(i + 4, temp.length());
+                        list.add(names[index] + "...." + scores[index]);
+                        System.out.println(names[index] + "...." + scores[index]);
+                        index++;
+                        break;
+                    }
+                    i++;
+                }
+            }
+        } catch (IOException e) {}
+        
+        sortArrays();
+        int smallest = Integer.parseInt(scores[4]);
+        for (String i : scores) {
+            if (Integer.parseInt(i) <= smallest) {
+                smallest = Integer.parseInt(i);
+            }
+        }
+        if (colorScore > smallest) {
+            String name = JOptionPane.showInputDialog(null, "Enter The Name You Want To Display In HighScores", "NEW HIGH SCORE", JOptionPane.QUESTION_MESSAGE);
+            PrintWriter oStream = new PrintWriter("highscore.txt");
+            //FileClearer f = new FileClearer(fileName);
+            oStream = new PrintWriter("highscore.txt");
+            scores[4] = colorScore + "";
+            names[4] = name;
+            sortArrays();
+            list.clear();
+            for (int i = 0; i < scores.length; i++) {
+                list.add(names[i] + "...." + scores[i]);
+            }
+            for (Object j : list) {
+                oStream.println(j.toString());
+                oStream.flush();
+                System.out.println(j.toString());
+            }
+            oStream.close();
+        }
+    }
+    
+    //method: sort Arrays
+    //purpose: Sorts the array to make it easier to find the lowest score
+    public void sortArrays() {
+        int largest = Integer.parseInt(scores[0]), index = 0, tempNum = 0;
+        String temp = "";
 
+        for (int i = 0; i < names.length; i++) {
+            index = i;
+            largest = Integer.parseInt(scores[i]);
+            for (int j = i; j < names.length; j++) {
+                if (Integer.parseInt(scores[j]) > largest) {
+                    largest = Integer.parseInt(scores[j]);
+                    index = j;
+                    //System.out.println("Largest : " + largest + "index = " + index);
+                }
+            }
+            //System.out.println("swapping");
+            temp = names[i];
+            names[i] = names[index];
+            names[index] = temp;
+            tempNum = Integer.parseInt(scores[i]);
+            scores[i] = scores[index];
+            scores[index] = tempNum + "";
+
+        }
+    }
+    
     //method: creditsButtonActionPerformed
     //purpose: Sets all jPanels visiblity to false,but credits, getting the user to the credits window.
     private void creditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsButtonActionPerformed
@@ -1531,29 +1630,9 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.setVisible(false);
         endPage.setVisible(false);
         colorGame.setVisible(true);
-         colorGameEnd.setVisible(false);
+        colorGameEnd.setVisible(false);
         colorScore = score;
-         startColor();   
-        ///////////// TO DO /////////////////////
-        // After the Color Game, Ask user for username if score is higheer than the lowest score               
-//        try {         
-//            Path filePath = Paths.get("highscore.txt");
-//            Scanner scanner = new Scanner(filePath);
-//            List<Integer> integers = new ArrayList<>();
-//            while (scanner.hasNext()) {
-//                if (scanner.hasNextInt()) {
-//                    integers.add(scanner.nextInt());
-//                } else {
-//            scanner.next();
-//                }
-//            }
-//            /// Write to File 
-//            FileWriter writeFile = new FileWriter("highscore.txt");
-//            BufferedWriter writer = new BufferedWriter(writeFile);
-//            //writer.write();
-//        } catch (IOException e) {}
-//        
-//        
+        startColor();        
     }
     
     //method: showMan
@@ -2691,7 +2770,8 @@ public class TheWindow extends javax.swing.JFrame {
          colorGameEnd.setVisible(false);
         colorGame.setVisible(true);
         score = 0;
-         startColor();   
+        
+        startColor();   
         finalScoreTextBox.setText(Integer.toString(score));
     }//GEN-LAST:event_skipButtonActionPerformed
 
@@ -2774,44 +2854,64 @@ public class TheWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dateTextField1ActionPerformed
 
+    
+    //method: blueButtonActionPerformed
+    //purpose: allow correct color to be matched with color of text and end game
     private void blueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blueButtonActionPerformed
+        
         colorChoice = Color.blue;
         colorPlays += 1;
-        
+       
         if (colorChoice.getRGB() == colorCorrect.getRGB()){
             colorScore += 100;  
+          
         }
+      
         
         if (colorPlays == 5){
-            toColorEnd();
+            try {
+                toColorEnd();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } 
         colorGame();
     }//GEN-LAST:event_blueButtonActionPerformed
 
     private void yellowButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_yellowButtonMouseEntered
         yellowButton.setBackground(Color.orange);
+        
     }//GEN-LAST:event_yellowButtonMouseEntered
 
     private void yellowButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_yellowButtonMouseExited
         yellowButton.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_yellowButtonMouseExited
 
+    
+     //method: yellowButtonActionPerformed
+    //purpose: allow correct color to be matched with color of text and end game
     private void yellowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yellowButtonActionPerformed
         colorChoice = Color.yellow;
         colorPlays += 1;
-        
+      
         if (colorChoice.getRGB() == colorCorrect.getRGB()){
             colorScore += 100;  
+           
         }
-        
+       
         if (colorPlays == 5){
-            toColorEnd();
+            try {
+                toColorEnd();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } 
         colorGame();
     }//GEN-LAST:event_yellowButtonActionPerformed
 
     private void redButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseEntered
         redButton.setBackground(Color.orange);
+      
     }//GEN-LAST:event_redButtonMouseEntered
 
     private void redButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseExited
@@ -2820,6 +2920,7 @@ public class TheWindow extends javax.swing.JFrame {
 
     private void blueButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blueButtonMouseEntered
         blueButton.setBackground(Color.orange);
+         
     }//GEN-LAST:event_blueButtonMouseEntered
 
     private void blueButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blueButtonMouseExited
@@ -2828,6 +2929,7 @@ public class TheWindow extends javax.swing.JFrame {
 
     private void greenButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_greenButtonMouseEntered
         greenButton.setBackground(Color.orange);
+        
     }//GEN-LAST:event_greenButtonMouseEntered
 
     private void greenButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_greenButtonMouseExited
@@ -2836,51 +2938,77 @@ public class TheWindow extends javax.swing.JFrame {
 
     private void purpleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purpleButtonMouseEntered
        purpleButton.setBackground(Color.orange);
+       
     }//GEN-LAST:event_purpleButtonMouseEntered
 
     private void purpleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purpleButtonMouseExited
        purpleButton.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_purpleButtonMouseExited
 
+    //method: redButtonActionPerformed
+    //purpose: allow correct color to be matched with color of text and end game
     private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
         colorChoice = Color.red;
         colorPlays += 1;
-        
+       
         if (colorChoice.getRGB() == colorCorrect.getRGB()){
             colorScore += 100;  
+            
         }
         
+        
         if (colorPlays == 5){
-            toColorEnd();
+            try {
+                toColorEnd();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } 
+         
         colorGame();
     }//GEN-LAST:event_redButtonActionPerformed
 
+     //method: greenButtonActionPerformed
+    //purpose: allow correct color to be matched with color of text and end game
     private void greenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greenButtonActionPerformed
         colorChoice = Color.green;
         colorPlays += 1;
-        
+       
         if (colorChoice.getRGB() == colorCorrect.getRGB()){
             colorScore += 100;  
+           
         }
-        
+     
         if (colorPlays == 5){
-            toColorEnd();
+            try {
+                toColorEnd();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } 
         colorGame();
     }//GEN-LAST:event_greenButtonActionPerformed
 
+     //method: purpleButtonActionPerformed
+    //purpose: allow correct color to be matched with color of text and end game
     private void purpleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purpleButtonActionPerformed
         colorChoice = Color.magenta;
         colorPlays += 1;
         
+        
         if (colorChoice.getRGB() == colorCorrect.getRGB()){
-            colorScore += 100;  
+            colorScore += 100; 
+            
         }
         
         if (colorPlays == 5){
-            toColorEnd();
+            try {
+                toColorEnd();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } 
+        
         colorGame();
     }//GEN-LAST:event_purpleButtonActionPerformed
 
@@ -2926,13 +3054,22 @@ public class TheWindow extends javax.swing.JFrame {
          jtf[7] = jTextField8;
     }
     
+    
+    //method: startColor
+    //purpose: starts the colorGame
        
     public void startColor(){
        
         colorGame();
+        
     }
     
+   
+    //method: colorGame
+    //purpose: starts the color game by selecting random word/ color combo
+    
     public void colorGame(){
+        
             Random r = new Random();
             int chosen = r.nextInt(5);
             int chosen2 = r.nextInt(5);
@@ -2944,11 +3081,14 @@ public class TheWindow extends javax.swing.JFrame {
             colorCorrect = picked;
             answer.setText(wordList[chosen]);
             answer.setForeground(picked); 
+            
 
         
     }
     
-    public void toColorEnd(){
+    //method: toColorEnd
+    //purpose: hides all jpanels and shows colorGameEnd and checks if there is a new highscore
+    public void toColorEnd() throws FileNotFoundException{
         menu.setVisible(false);
         highscores.setVisible(false);
         credits.setVisible(false);
@@ -2958,6 +3098,7 @@ public class TheWindow extends javax.swing.JFrame {
         colorGameEnd.setVisible(true);
         
         colorScoreText.setText(new Integer(colorScore).toString());
+        checkNewHighScore();
     }
     /**
      * @param args the command line arguments
@@ -3082,6 +3223,7 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField scoreTextField;
     private javax.swing.JButton skipButton;
     private javax.swing.JPanel startUp;
+    private javax.swing.JPanel sudokuGame;
     private javax.swing.JButton tButton;
     private javax.swing.JLabel teamLabel;
     private javax.swing.JLabel theWrong;
