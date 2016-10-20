@@ -1381,7 +1381,7 @@ public class TheWindow extends javax.swing.JFrame {
        
     }
     
-    public void randPosition() {
+    public void randPosition() {          
         Random r = new Random();
         int[] array = {1, 2, 3, 4, 5};
         int arraySize = 5;
@@ -1390,6 +1390,8 @@ public class TheWindow extends javax.swing.JFrame {
             int temp = array[i];
             array[i] = array[randPos];
             array[randPos] = temp;
+            for (int e : array) System.out.print(e + " ");
+            System.out.println("");
         }
         for (int j = 0; j < array.length; j++) {
             if (array[j] == 1) {
@@ -1507,7 +1509,6 @@ public class TheWindow extends javax.swing.JFrame {
             while (inputFile.hasNextLine()) {
                 temp = (inputFile.nextLine());
                 int i = 0;
-                //System.out.println(temp);
                 for (char c : temp.toCharArray()) {
                     if (c == '.') {
                         if (index > 4) {
@@ -1516,7 +1517,6 @@ public class TheWindow extends javax.swing.JFrame {
                         names[index] = temp.substring(0, i);
                         scores[index] = temp.substring(i + 4, temp.length());
                         list.add(names[index] + "...." + scores[index]);
-                        System.out.println(names[index] + "...." + scores[index]);
                         index++;
                         break;
                     }
@@ -2936,15 +2936,6 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
           
         }
-      
-        
-        if (colorPlays == 5){
-            try {
-                toColorEnd();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } 
         colorGame();
     }//GEN-LAST:event_blueButtonActionPerformed
 
@@ -2968,14 +2959,6 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
            
         }
-       
-        if (colorPlays == 5){
-            try {
-                toColorEnd();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } 
         colorGame();
     }//GEN-LAST:event_yellowButtonActionPerformed
 
@@ -3025,15 +3008,6 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
             
         }
-        
-        
-        if (colorPlays == 5){
-            try {
-                toColorEnd();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } 
         colorGame();
     }//GEN-LAST:event_redButtonActionPerformed
 
@@ -3047,14 +3021,6 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
            
         }
-     
-        if (colorPlays == 5){
-            try {
-                toColorEnd();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } 
         colorGame();
     }//GEN-LAST:event_greenButtonActionPerformed
 
@@ -3068,14 +3034,6 @@ public class TheWindow extends javax.swing.JFrame {
         if (colorChoice.getRGB() == colorCorrect.getRGB()){
             colorScore += 100; 
             
-        }
-        
-        if (colorPlays == 5){
-            try {
-                toColorEnd();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
-            }
         } 
         colorGame();
     }//GEN-LAST:event_purpleButtonActionPerformed
@@ -3121,8 +3079,7 @@ public class TheWindow extends javax.swing.JFrame {
          jtf[6] = jTextField7;
          jtf[7] = jTextField8;
     }
-    
-    
+
     //method: startColor
     //purpose: starts the colorGame
        
@@ -3130,13 +3087,19 @@ public class TheWindow extends javax.swing.JFrame {
        
         colorGame();
         
-    }
+    } 
     
-   
     //method: colorGame
     //purpose: starts the color game by selecting random word/ color combo
     
     public void colorGame(){
+        if (colorPlays == 5){
+            try {
+                toColorEnd();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
             randPosition();
             Random r = new Random();
             int chosen = r.nextInt(5);
