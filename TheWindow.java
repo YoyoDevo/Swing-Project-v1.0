@@ -3,10 +3,10 @@
  *Authors: Nick Curinga, Tuan Pham, Cesar Pedroza, Devin Wells
  *Class: CS 245 - Programming Graphical User Interfaces 
  *
- *Assignment: Swing Project v1.1 
+ *Assignment: Swing Project v1.2 
  *Date Last Modified:10/18/2016
  *
- * Purpose: To create a GUI of a games of Hangman and Color match.  
+ * Purpose: To create a GUI of a games of Hangman, Color match, and Sudoku .  
  *
  */
 package SwingProjectv1;
@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -56,6 +57,12 @@ public class TheWindow extends javax.swing.JFrame {
     private int colorScore;
     private int colorPlays;
     
+    
+    private int sudokuScore;
+    private JTextField[] grid;
+    private boolean[] shouldSubPoints;
+
+    private int theFinalScore;
     /**
      * Creates new form TheWindow
      */
@@ -72,6 +79,11 @@ public class TheWindow extends javax.swing.JFrame {
        names = new String[5];
        scores = new String[5];
        list = new ArrayList<String>(5);
+       
+       sudokuScore = 540;
+       grid = new JTextField[81];
+       shouldSubPoints = new boolean[81];
+       theFinalScore = 0;
        initComponents();  
     }
 
@@ -86,6 +98,11 @@ public class TheWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        choice1 = new java.awt.Choice();
         mainPanel = new javax.swing.JPanel();
         startUp = new javax.swing.JPanel();
         projectLabel = new javax.swing.JLabel();
@@ -182,6 +199,101 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         endButton = new javax.swing.JButton();
         finalScoreTextBox = new javax.swing.JTextField();
+        sudokuGame = new javax.swing.JPanel();
+
+        gridSpace1 = new javax.swing.JTextField();
+        gridSpace2 = new javax.swing.JTextField();
+        gridSpace3 = new javax.swing.JTextField();
+        gridSpace4 = new javax.swing.JTextField();
+        gridSpace5 = new javax.swing.JTextField();
+        gridSpace6 = new javax.swing.JTextField();
+        gridSpace7 = new javax.swing.JTextField();
+        gridSpace8 = new javax.swing.JTextField();
+        gridSpace9 = new javax.swing.JTextField();
+        gridSpace10 = new javax.swing.JTextField();
+        gridSpace11 = new javax.swing.JTextField();
+        gridSpace12 = new javax.swing.JTextField();
+        gridSpace13 = new javax.swing.JTextField();
+        gridSpace14 = new javax.swing.JTextField();
+        gridSpace15 = new javax.swing.JTextField();
+        gridSpace16 = new javax.swing.JTextField();
+        gridSpace17 = new javax.swing.JTextField();
+        gridSpace18 = new javax.swing.JTextField();
+        gridSpace19 = new javax.swing.JTextField();
+        gridSpace20 = new javax.swing.JTextField();
+        gridSpace21 = new javax.swing.JTextField();
+        gridSpace22 = new javax.swing.JTextField();
+        gridSpace23 = new javax.swing.JTextField();
+        gridSpace24 = new javax.swing.JTextField();
+        gridSpace25 = new javax.swing.JTextField();
+        gridSpace26 = new javax.swing.JTextField();
+        gridSpace27 = new javax.swing.JTextField();
+        gridSpace28 = new javax.swing.JTextField();
+        gridSpace29 = new javax.swing.JTextField();
+        gridSpace30 = new javax.swing.JTextField();
+        gridSpace31 = new javax.swing.JTextField();
+        gridSpace32 = new javax.swing.JTextField();
+        gridSpace33 = new javax.swing.JTextField();
+        gridSpace34 = new javax.swing.JTextField();
+        gridSpace35 = new javax.swing.JTextField();
+        gridSpace36 = new javax.swing.JTextField();
+        gridSpace37 = new javax.swing.JTextField();
+        gridSpace38 = new javax.swing.JTextField();
+        gridSpace39 = new javax.swing.JTextField();
+        gridSpace40 = new javax.swing.JTextField();
+        gridSpace41 = new javax.swing.JTextField();
+        gridSpace42 = new javax.swing.JTextField();
+        gridSpace43 = new javax.swing.JTextField();
+        gridSpace44 = new javax.swing.JTextField();
+        gridSpace45 = new javax.swing.JTextField();
+        gridSpace46 = new javax.swing.JTextField();
+        gridSpace47 = new javax.swing.JTextField();
+        gridSpace48 = new javax.swing.JTextField();
+        gridSpace49 = new javax.swing.JTextField();
+        gridSpace50 = new javax.swing.JTextField();
+        gridSpace51 = new javax.swing.JTextField();
+        gridSpace52 = new javax.swing.JTextField();
+        gridSpace53 = new javax.swing.JTextField();
+        gridSpace54 = new javax.swing.JTextField();
+        gridSpace55 = new javax.swing.JTextField();
+        gridSpace56 = new javax.swing.JTextField();
+        gridSpace57 = new javax.swing.JTextField();
+        gridSpace58 = new javax.swing.JTextField();
+        gridSpace59 = new javax.swing.JTextField();
+        gridSpace60 = new javax.swing.JTextField();
+        gridSpace61 = new javax.swing.JTextField();
+        gridSpace62 = new javax.swing.JTextField();
+        gridSpace63 = new javax.swing.JTextField();
+        gridSpace64 = new javax.swing.JTextField();
+        gridSpace65 = new javax.swing.JTextField();
+        gridSpace66 = new javax.swing.JTextField();
+        gridSpace67 = new javax.swing.JTextField();
+        gridSpace68 = new javax.swing.JTextField();
+        gridSpace69 = new javax.swing.JTextField();
+        gridSpace70 = new javax.swing.JTextField();
+        gridSpace71 = new javax.swing.JTextField();
+        gridSpace72 = new javax.swing.JTextField();
+        gridSpace73 = new javax.swing.JTextField();
+        gridSpace74 = new javax.swing.JTextField();
+        gridSpace75 = new javax.swing.JTextField();
+        gridSpace76 = new javax.swing.JTextField();
+        gridSpace77 = new javax.swing.JTextField();
+        gridSpace78 = new javax.swing.JTextField();
+        gridSpace79 = new javax.swing.JTextField();
+        gridSpace80 = new javax.swing.JTextField();
+        gridSpace81 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        sudoTryAgain = new javax.swing.JLabel();
+        sudoIncorrect = new javax.swing.JLabel();
+        sudoErrorMessage = new javax.swing.JLabel();
+        sudokuEnd = new javax.swing.JPanel();
+        jTextField9 = new javax.swing.JTextField();
+        finalScore = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -334,7 +446,7 @@ public class TheWindow extends javax.swing.JFrame {
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(215, 215, 215)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1110,7 +1222,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 23);
+        skipButton.setBounds(500, 70, 80, 25);
 
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1354,6 +1466,1007 @@ public class TheWindow extends javax.swing.JFrame {
 
         mainPanel.add(endPage, "card6");
 
+        initSudoGrid();
+        sudokuGame.setLayout(null);
+
+        gridSpace1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace1.setText("8");
+        gridSpace1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace1.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace1ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace1);
+        gridSpace1.setBounds(130, 80, 30, 30);
+
+        gridSpace2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace2.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace2ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace2);
+        gridSpace2.setBounds(160, 80, 30, 30);
+
+        gridSpace3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace3.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace3ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace3);
+        gridSpace3.setBounds(190, 80, 30, 30);
+
+        gridSpace4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace4.setText("4");
+        gridSpace4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace4.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace4ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace4);
+        gridSpace4.setBounds(220, 80, 30, 30);
+
+        gridSpace5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace5.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace5ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace5);
+        gridSpace5.setBounds(250, 80, 30, 30);
+
+        gridSpace6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace6.setText("6");
+        gridSpace6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace6.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace6ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace6);
+        gridSpace6.setBounds(280, 80, 30, 30);
+
+        gridSpace7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace7.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace7ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace7);
+        gridSpace7.setBounds(310, 80, 30, 30);
+
+        gridSpace8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace8.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace8ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace8);
+        gridSpace8.setBounds(340, 80, 30, 30);
+
+        gridSpace9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace9.setText("7");
+        gridSpace9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace9.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace9ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace9);
+        gridSpace9.setBounds(370, 80, 30, 30);
+
+        gridSpace10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace10.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace10ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace10);
+        gridSpace10.setBounds(130, 110, 30, 30);
+
+        gridSpace11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace11.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace11ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace11);
+        gridSpace11.setBounds(160, 110, 30, 30);
+
+        gridSpace12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace12.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace12ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace12);
+        gridSpace12.setBounds(190, 110, 30, 30);
+
+        gridSpace13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace13.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace13ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace13);
+        gridSpace13.setBounds(220, 110, 30, 30);
+
+        gridSpace14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace14.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace14ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace14);
+        gridSpace14.setBounds(250, 110, 30, 30);
+
+        gridSpace15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace15.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace15ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace15);
+        gridSpace15.setBounds(280, 110, 30, 30);
+
+        gridSpace16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace16.setText("4");
+        gridSpace16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace16.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace16ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace16);
+        gridSpace16.setBounds(310, 110, 30, 30);
+
+        gridSpace17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace17.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace17ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace17);
+        gridSpace17.setBounds(340, 110, 30, 30);
+
+        gridSpace18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace18.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace18ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace18);
+        gridSpace18.setBounds(370, 110, 30, 30);
+
+        gridSpace19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace19.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace19ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace19);
+        gridSpace19.setBounds(130, 140, 30, 30);
+
+        gridSpace20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace20.setText("1");
+        gridSpace20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace20.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace20ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace20);
+        gridSpace20.setBounds(160, 140, 30, 30);
+
+        gridSpace21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace21.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace21ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace21);
+        gridSpace21.setBounds(190, 140, 30, 30);
+
+        gridSpace22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace22.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace22ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace22);
+        gridSpace22.setBounds(220, 140, 30, 30);
+
+        gridSpace23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace23.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace23ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace23);
+        gridSpace23.setBounds(250, 140, 30, 30);
+
+        gridSpace24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace24.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace24ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace24);
+        gridSpace24.setBounds(280, 140, 30, 30);
+
+        gridSpace25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace25.setText("6");
+        gridSpace25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace25.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace25ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace25);
+        gridSpace25.setBounds(310, 140, 30, 30);
+
+        gridSpace26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace26.setText("5");
+        gridSpace26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace26.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace26ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace26);
+        gridSpace26.setBounds(340, 140, 30, 30);
+
+        gridSpace27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace27.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace27ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace27);
+        gridSpace27.setBounds(370, 140, 30, 30);
+
+        gridSpace28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace28.setText("5");
+        gridSpace28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace28.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace28ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace28);
+        gridSpace28.setBounds(130, 170, 30, 30);
+
+        gridSpace29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace29.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace29ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace29);
+        gridSpace29.setBounds(160, 170, 30, 30);
+
+        gridSpace30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace30.setText("9");
+        gridSpace30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace30.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace30ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace30);
+        gridSpace30.setBounds(190, 170, 30, 30);
+
+        gridSpace31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace31.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace31ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace31);
+        gridSpace31.setBounds(220, 170, 30, 30);
+
+        gridSpace32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace32.setText("3");
+        gridSpace32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace32.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace32ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace32);
+        gridSpace32.setBounds(250, 170, 30, 30);
+
+        gridSpace33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace33.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace33ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace33);
+        gridSpace33.setBounds(280, 170, 30, 30);
+
+        gridSpace34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace34.setText("7");
+        gridSpace34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace34.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace34ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace34);
+        gridSpace34.setBounds(310, 170, 30, 30);
+
+        gridSpace35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace35.setText("8");
+        gridSpace35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace35.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace35ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace35);
+        gridSpace35.setBounds(340, 170, 30, 30);
+
+        gridSpace36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace36.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace36ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace36);
+        gridSpace36.setBounds(370, 170, 30, 30);
+
+        gridSpace37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace37.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace37ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace37);
+        gridSpace37.setBounds(130, 200, 30, 30);
+
+        gridSpace38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace38.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace38ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace38);
+        gridSpace38.setBounds(160, 200, 30, 30);
+
+        gridSpace39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace39.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace39ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace39);
+        gridSpace39.setBounds(190, 200, 30, 30);
+
+        gridSpace40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace40.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace40ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace40);
+        gridSpace40.setBounds(220, 200, 30, 30);
+
+        gridSpace41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace41.setText("7");
+        gridSpace41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace41.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace41ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace41);
+        gridSpace41.setBounds(250, 200, 30, 30);
+
+        gridSpace42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace42.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace42ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace42);
+        gridSpace42.setBounds(280, 200, 30, 30);
+
+        gridSpace43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace43.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace43ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace43);
+        gridSpace43.setBounds(310, 200, 30, 30);
+
+        gridSpace44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace44.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace44ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace44);
+        gridSpace44.setBounds(340, 200, 30, 30);
+
+        gridSpace45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace45.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace45ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace45);
+        gridSpace45.setBounds(370, 200, 30, 30);
+
+        gridSpace46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace46.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace46.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace46ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace46);
+        gridSpace46.setBounds(130, 230, 30, 30);
+
+        gridSpace47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace47.setText("4");
+        gridSpace47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace47.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace47ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace47);
+        gridSpace47.setBounds(160, 230, 30, 30);
+
+        gridSpace48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace48.setText("8");
+        gridSpace48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace48.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace48ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace48);
+        gridSpace48.setBounds(190, 230, 30, 30);
+
+        gridSpace49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace49.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace49ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace49);
+        gridSpace49.setBounds(220, 230, 30, 30);
+
+        gridSpace50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace50.setText("2");
+        gridSpace50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace50.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace50ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace50);
+        gridSpace50.setBounds(250, 230, 30, 30);
+
+        gridSpace51.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace51.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace51ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace51);
+        gridSpace51.setBounds(280, 230, 30, 30);
+
+        gridSpace52.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace52.setText("1");
+        gridSpace52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace52.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace52ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace52);
+        gridSpace52.setBounds(310, 230, 30, 30);
+
+        gridSpace53.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace53.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace53.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace53ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace53);
+        gridSpace53.setBounds(340, 230, 30, 30);
+
+        gridSpace54.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace54.setText("3");
+        gridSpace54.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace54.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace54ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace54);
+        gridSpace54.setBounds(370, 230, 30, 30);
+
+        gridSpace55.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace55.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace55.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace55ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace55);
+        gridSpace55.setBounds(130, 260, 30, 30);
+
+        gridSpace56.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace56.setText("5");
+        gridSpace56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace56.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace56ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace56);
+        gridSpace56.setBounds(160, 260, 30, 30);
+
+        gridSpace57.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace57.setText("2");
+        gridSpace57.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace57.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace57ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace57);
+        gridSpace57.setBounds(190, 260, 30, 30);
+
+        gridSpace58.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace58.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace58.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace58ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace58);
+        gridSpace58.setBounds(220, 260, 30, 30);
+
+        gridSpace59.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace59.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace59.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace59ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace59);
+        gridSpace59.setBounds(250, 260, 30, 30);
+
+        gridSpace60.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace60.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace60.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace60ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace60);
+        gridSpace60.setBounds(280, 260, 30, 30);
+
+        gridSpace61.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace61.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace61.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace61ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace61);
+        gridSpace61.setBounds(310, 260, 30, 30);
+
+        gridSpace62.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace62.setText("9");
+        gridSpace62.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace62.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace62ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace62);
+        gridSpace62.setBounds(340, 260, 30, 30);
+
+        gridSpace63.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace63.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace63.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace63.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace63ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace63);
+        gridSpace63.setBounds(370, 260, 30, 30);
+
+        gridSpace64.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace64.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace64.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace64.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace64ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace64);
+        gridSpace64.setBounds(130, 290, 30, 30);
+
+        gridSpace65.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace65.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace65.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace65.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace65ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace65);
+        gridSpace65.setBounds(160, 290, 30, 30);
+
+        gridSpace66.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace66.setText("1");
+        gridSpace66.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace66.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace66.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace66ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace66);
+        gridSpace66.setBounds(190, 290, 30, 30);
+
+        gridSpace67.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace67.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace67.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace67.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace67ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace67);
+        gridSpace67.setBounds(220, 290, 30, 30);
+
+        gridSpace68.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace68.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace68.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace68.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace68ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace68);
+        gridSpace68.setBounds(250, 290, 30, 30);
+
+        gridSpace69.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace69.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace69.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace69.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace69ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace69);
+        gridSpace69.setBounds(280, 290, 30, 30);
+
+        gridSpace70.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace70.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace70.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace70.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace70ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace70);
+        gridSpace70.setBounds(310, 290, 30, 30);
+
+        gridSpace71.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace71.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace71.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace71.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace71ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace71);
+        gridSpace71.setBounds(340, 290, 30, 30);
+
+        gridSpace72.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace72.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace72.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace72.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace72ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace72);
+        gridSpace72.setBounds(370, 290, 30, 30);
+
+        gridSpace73.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace73.setText("3");
+        gridSpace73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace73.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace73.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace73ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace73);
+        gridSpace73.setBounds(130, 320, 30, 30);
+
+        gridSpace74.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace74.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace74.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace74.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace74ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace74);
+        gridSpace74.setBounds(160, 320, 30, 30);
+
+        gridSpace75.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace75.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace75.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace75.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace75ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace75);
+        gridSpace75.setBounds(190, 320, 30, 30);
+
+        gridSpace76.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace76.setText("9");
+        gridSpace76.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace76.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace76.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace76ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace76);
+        gridSpace76.setBounds(220, 320, 30, 30);
+
+        gridSpace77.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace77.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace77.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace77.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace77ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace77);
+        gridSpace77.setBounds(250, 320, 30, 30);
+
+        gridSpace78.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace78.setText("2");
+        gridSpace78.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace78.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace78.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace78ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace78);
+        gridSpace78.setBounds(280, 320, 30, 30);
+
+        gridSpace79.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace79.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace79.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace79.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace79ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace79);
+        gridSpace79.setBounds(310, 320, 30, 30);
+
+        gridSpace80.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace80.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace80.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace80.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace80ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace80);
+        gridSpace80.setBounds(340, 320, 30, 30);
+
+        gridSpace81.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridSpace81.setText("5");
+        gridSpace81.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace81.setPreferredSize(new java.awt.Dimension(30, 30));
+        gridSpace81.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gridSpace81ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(gridSpace81);
+        gridSpace81.setBounds(370, 320, 30, 30);
+
+        jButton1.setText("Submit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(jButton1);
+        jButton1.setBounds(30, 300, 73, 25);
+
+        jButton2.setText("Quit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        sudokuGame.add(jButton2);
+        jButton2.setBounds(430, 300, 55, 25);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel12.setText("Sudoku");
+        sudokuGame.add(jLabel12);
+        jLabel12.setBounds(40, 20, 90, 30);
+
+        sudoTryAgain.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        sudoTryAgain.setText("Please try again.");
+        sudokuGame.add(sudoTryAgain);
+        sudoTryAgain.setBounds(450, 190, 120, 50);
+
+        sudoIncorrect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        sudoIncorrect.setText("Incorrect.");
+        sudokuGame.add(sudoIncorrect);
+        sudoIncorrect.setBounds(450, 180, 80, 16);
+
+        sudoErrorMessage.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        sudoErrorMessage.setText("Please Enter Value from 1-9");
+        sudokuGame.add(sudoErrorMessage);
+        sudoErrorMessage.setBounds(170, 30, 200, 40);
+
+        mainPanel.add(sudokuGame, "card10");
+
+        jTextField9.setText("Score");
+
+        jButton3.setText("End");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout sudokuEndLayout = new javax.swing.GroupLayout(sudokuEnd);
+        sudokuEnd.setLayout(sudokuEndLayout);
+        sudokuEndLayout.setHorizontalGroup(
+            sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sudokuEndLayout.createSequentialGroup()
+                .addGroup(sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sudokuEndLayout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(finalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(sudokuEndLayout.createSequentialGroup()
+                        .addGap(237, 237, 237)
+                        .addComponent(jButton3)))
+                .addContainerGap(250, Short.MAX_VALUE))
+        );
+        sudokuEndLayout.setVerticalGroup(
+            sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sudokuEndLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addGroup(sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(finalScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(105, 105, 105)
+                .addComponent(jButton3)
+                .addContainerGap(120, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(sudokuEnd, "card9");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1380,84 +2493,6 @@ public class TheWindow extends javax.swing.JFrame {
         word = wordList[r.nextInt(5)];
        
     }
-    
-    public void randPosition() {          
-        Random r = new Random();
-        int[] array = {1, 2, 3, 4, 5};
-        int arraySize = 5;
-        for (int i = 0; i < array.length; i++) {
-            int randPos = r.nextInt(array.length);
-            int temp = array[i];
-            array[i] = array[randPos];
-            array[randPos] = temp;
-            for (int e : array) System.out.print(e + " ");
-            System.out.println("");
-        }
-        for (int j = 0; j < array.length; j++) {
-            if (array[j] == 1) {
-                if(arraySize == 5)
-                    blueButton.setLocation(10,100);
-                else if(arraySize == 4)
-                    greenButton.setLocation(10,100);
-                else if(arraySize == 3)
-                    redButton.setLocation(10,100);
-                else if(arraySize == 2)
-                    purpleButton.setLocation(10,100);
-                else if(arraySize == 1)
-                    yellowButton.setLocation(10,100);
-            }
-            else if (array[j] == 2) {
-                if (arraySize ==5)
-                    blueButton.setLocation(100, 210);
-                else if (arraySize == 4) 
-                    greenButton.setLocation(100, 210);
-                else if(arraySize == 3)
-                    redButton.setLocation(100, 210);
-                else if(arraySize == 2)
-                    purpleButton.setLocation(100, 210);
-                else if(arraySize == 1)
-                    yellowButton.setLocation(100, 210);
-            }
-            else if (array[j] == 3) {
-                if(arraySize == 5)
-                    blueButton.setLocation(200,100);
-                else if(arraySize == 4)
-                    greenButton.setLocation(200,100);
-                else if(arraySize == 3)
-                    redButton.setLocation(200,100);
-                else if(arraySize == 2)
-                    purpleButton.setLocation(200,100);
-                else if(arraySize == 1)
-                    yellowButton.setLocation(200,100); 
-            }
-            else if (array[j] == 4) {
-                if(arraySize == 5)
-                    blueButton.setLocation(300,210);
-                else if(arraySize == 4)
-                    greenButton.setLocation(300,210);
-                else if(arraySize == 3)
-                    redButton.setLocation(300,210);
-                else if(arraySize == 2)
-                    purpleButton.setLocation(300,210);
-                else if(arraySize == 1)
-                    yellowButton.setLocation(300,210); 
-            }
-            else if (array[j] == 5) {
-                if(arraySize == 5)
-                    blueButton.setLocation(400,100);
-                else if(arraySize == 4)
-                    greenButton.setLocation(400,100);
-                else if(arraySize == 3)
-                    redButton.setLocation(400,100);
-                else if(arraySize == 2)
-                    purpleButton.setLocation(400,100);
-                else if(arraySize == 1)
-                    yellowButton.setLocation(400,100);
-            }
-            arraySize--;
-        }
-    } 
-        
      //method: backHighscoreButtonActtionPerformed
      //purpose: Sets all jPanels visiblity to false,but menu, returning the user to the menu window.
     private void backHighscoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHighscoreButtonActionPerformed
@@ -1509,6 +2544,7 @@ public class TheWindow extends javax.swing.JFrame {
             while (inputFile.hasNextLine()) {
                 temp = (inputFile.nextLine());
                 int i = 0;
+                //System.out.println(temp);
                 for (char c : temp.toCharArray()) {
                     if (c == '.') {
                         if (index > 4) {
@@ -1517,6 +2553,7 @@ public class TheWindow extends javax.swing.JFrame {
                         names[index] = temp.substring(0, i);
                         scores[index] = temp.substring(i + 4, temp.length());
                         list.add(names[index] + "...." + scores[index]);
+                        System.out.println(names[index] + "...." + scores[index]);
                         index++;
                         break;
                     }
@@ -1747,9 +2784,9 @@ public class TheWindow extends javax.swing.JFrame {
         colorGameEnd.setVisible(false);
         startColor();
         if(over == true)
-            colorScore =  score;
+            theFinalScore +=  score;
         if(over == false)
-            colorScore = 0;
+          theFinalScore +=  0;
     }
     
     
@@ -2059,6 +3096,7 @@ public class TheWindow extends javax.swing.JFrame {
     //The letter count is added to the totalLetterCount, and is compared to the word's letter count
     //if true the win method is called 
     //The score is appended on the hangman window
+    
     private void hButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hButtonActionPerformed
         // TODO add your handling code here:
           theWrong.setVisible(false);
@@ -2913,7 +3951,10 @@ public class TheWindow extends javax.swing.JFrame {
        yButton.setEnabled(true);
        zButton.setEnabled(true);
        
-       scoreTextField.setText(new Integer(score).toString());
+       sudokuScore = 540;
+       initSudoGrid();
+       theFinalScore = 0;
+       //scoreTextField.setText(new Integer(score).toString());
        playTheGame();   
     }
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
@@ -2936,6 +3977,11 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
           
         }
+      
+        
+        if (colorPlays == 5){
+              toSudoku();
+        } 
         colorGame();
     }//GEN-LAST:event_blueButtonActionPerformed
 
@@ -2959,6 +4005,10 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
            
         }
+       
+        if (colorPlays == 5){
+            toSudoku();
+        } 
         colorGame();
     }//GEN-LAST:event_yellowButtonActionPerformed
 
@@ -3008,6 +4058,12 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
             
         }
+        
+        
+        if (colorPlays == 5){
+              toSudoku();
+        } 
+         
         colorGame();
     }//GEN-LAST:event_redButtonActionPerformed
 
@@ -3021,6 +4077,10 @@ public class TheWindow extends javax.swing.JFrame {
             colorScore += 100;  
            
         }
+     
+        if (colorPlays == 5){
+             toSudoku();
+        } 
         colorGame();
     }//GEN-LAST:event_greenButtonActionPerformed
 
@@ -3034,7 +4094,12 @@ public class TheWindow extends javax.swing.JFrame {
         if (colorChoice.getRGB() == colorCorrect.getRGB()){
             colorScore += 100; 
             
+        }
+        
+        if (colorPlays == 5){
+              toSudoku();
         } 
+        
         colorGame();
     }//GEN-LAST:event_purpleButtonActionPerformed
 
@@ -3054,6 +4119,363 @@ public class TheWindow extends javax.swing.JFrame {
     private void colorGameVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_colorGameVetoableChange
         // TODO add your handling code here:
     }//GEN-LAST:event_colorGameVetoableChange
+
+    private void gridSpace9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace9ActionPerformed
+
+    private void gridSpace1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace1ActionPerformed
+        // TODO add your handling code here:
+    
+    }//GEN-LAST:event_gridSpace1ActionPerformed
+
+    private void gridSpace2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace2ActionPerformed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_gridSpace2ActionPerformed
+
+    private void gridSpace3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace3ActionPerformed
+
+    private void gridSpace4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace4ActionPerformed
+
+    private void gridSpace5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace5ActionPerformed
+
+    private void gridSpace6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace6ActionPerformed
+
+    private void gridSpace7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace7ActionPerformed
+
+    private void gridSpace8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace8ActionPerformed
+
+    private void gridSpace18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace18ActionPerformed
+
+    private void gridSpace10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace10ActionPerformed
+
+    private void gridSpace11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace11ActionPerformed
+
+    private void gridSpace12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace12ActionPerformed
+
+    private void gridSpace13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace13ActionPerformed
+
+    private void gridSpace14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace14ActionPerformed
+
+    private void gridSpace15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace15ActionPerformed
+
+    private void gridSpace16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace16ActionPerformed
+
+    private void gridSpace17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace17ActionPerformed
+
+    private void gridSpace27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace27ActionPerformed
+
+    private void gridSpace19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace19ActionPerformed
+
+    private void gridSpace20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace20ActionPerformed
+
+    private void gridSpace21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace21ActionPerformed
+
+    private void gridSpace22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace22ActionPerformed
+
+    private void gridSpace23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace23ActionPerformed
+
+    private void gridSpace24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace24ActionPerformed
+
+    private void gridSpace25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace25ActionPerformed
+
+    private void gridSpace26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace26ActionPerformed
+
+    private void gridSpace36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace36ActionPerformed
+
+    private void gridSpace28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace28ActionPerformed
+
+    private void gridSpace29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace29ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace29ActionPerformed
+
+    private void gridSpace30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace30ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace30ActionPerformed
+
+    private void gridSpace31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace31ActionPerformed
+
+    private void gridSpace32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace32ActionPerformed
+
+    private void gridSpace33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace33ActionPerformed
+
+    private void gridSpace34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace34ActionPerformed
+
+    private void gridSpace35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace35ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace35ActionPerformed
+
+    private void gridSpace45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace45ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace45ActionPerformed
+
+    private void gridSpace37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace37ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace37ActionPerformed
+
+    private void gridSpace38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace38ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace38ActionPerformed
+
+    private void gridSpace39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace39ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace39ActionPerformed
+
+    private void gridSpace40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace40ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace40ActionPerformed
+
+    private void gridSpace41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace41ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace41ActionPerformed
+
+    private void gridSpace42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace42ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace42ActionPerformed
+
+    private void gridSpace43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace43ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace43ActionPerformed
+
+    private void gridSpace44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace44ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace44ActionPerformed
+
+    private void gridSpace54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace54ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace54ActionPerformed
+
+    private void gridSpace46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace46ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace46ActionPerformed
+
+    private void gridSpace47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace47ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace47ActionPerformed
+
+    private void gridSpace48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace48ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace48ActionPerformed
+
+    private void gridSpace49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace49ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace49ActionPerformed
+
+    private void gridSpace50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace50ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace50ActionPerformed
+
+    private void gridSpace51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace51ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace51ActionPerformed
+
+    private void gridSpace52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace52ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace52ActionPerformed
+
+    private void gridSpace53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace53ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace53ActionPerformed
+
+    private void gridSpace63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace63ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace63ActionPerformed
+
+    private void gridSpace55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace55ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace55ActionPerformed
+
+    private void gridSpace56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace56ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace56ActionPerformed
+
+    private void gridSpace57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace57ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace57ActionPerformed
+
+    private void gridSpace58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace58ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace58ActionPerformed
+
+    private void gridSpace59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace59ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace59ActionPerformed
+
+    private void gridSpace60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace60ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace60ActionPerformed
+
+    private void gridSpace61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace61ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace61ActionPerformed
+
+    private void gridSpace62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace62ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace62ActionPerformed
+
+    private void gridSpace72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace72ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace72ActionPerformed
+
+    private void gridSpace64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace64ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace64ActionPerformed
+
+    private void gridSpace65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace65ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace65ActionPerformed
+
+    private void gridSpace66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace66ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace66ActionPerformed
+
+    private void gridSpace67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace67ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace67ActionPerformed
+
+    private void gridSpace68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace68ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace68ActionPerformed
+
+    private void gridSpace69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace69ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace69ActionPerformed
+
+    private void gridSpace70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace70ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace70ActionPerformed
+
+    private void gridSpace71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace71ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace71ActionPerformed
+
+    private void gridSpace81ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace81ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace81ActionPerformed
+
+    private void gridSpace73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace73ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace73ActionPerformed
+
+    private void gridSpace74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace74ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace74ActionPerformed
+
+    private void gridSpace75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace75ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace75ActionPerformed
+
+    private void gridSpace76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace76ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace76ActionPerformed
+
+    private void gridSpace77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace77ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace77ActionPerformed
+
+    private void gridSpace78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace78ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace78ActionPerformed
+
+    private void gridSpace79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace79ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace79ActionPerformed
+
+    private void gridSpace80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace80ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gridSpace80ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    
+        submitSudoku();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+         theFinalScore += 0;
+            endSudoku();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        menu.setVisible(true);
+        highscores.setVisible(false);
+        credits.setVisible(false);
+        hangmanGame.setVisible(false);
+        endPage.setVisible(false);
+        colorGame.setVisible(false);
+        colorGameEnd.setVisible(false);
+        sudokuGame.setVisible(false); 
+        sudokuEnd.setVisible(false);
+        
+        
+        reInit();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     //method:setTextField
     //purpose: sets all guess text areas visiblity to false and stores in array for later use
@@ -3079,7 +4501,28 @@ public class TheWindow extends javax.swing.JFrame {
          jtf[6] = jTextField7;
          jtf[7] = jTextField8;
     }
-
+    
+    public void checkValue()
+    {
+        int check = 0;
+      for(int i = 0; i < grid.length; i++)
+      {
+          if(grid[i].getText().equals(""))
+          {
+              check = 0;
+          }
+          else
+          {
+              check = Integer.parseInt(grid[i].getText());
+          }
+          
+          if(check < 1 || check > 9 )
+          {
+              sudoErrorMessage.setVisible(true);
+          }
+      }
+    }
+    
     //method: startColor
     //purpose: starts the colorGame
        
@@ -3087,29 +4530,28 @@ public class TheWindow extends javax.swing.JFrame {
        
         colorGame();
         
-    } 
+    }
     
+   
     //method: colorGame
     //purpose: starts the color game by selecting random word/ color combo
     
     public void colorGame(){
-        if (colorPlays == 5){
-            try {
-                toColorEnd();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-            randPosition();
+        
             Random r = new Random();
             int chosen = r.nextInt(5);
             int chosen2 = r.nextInt(5);
             Color[] color = new Color[]{Color.blue, Color.green, Color.red, Color.magenta, Color.yellow};        
             String[] wordList = {"yellow", "blue", "green", "red", "purple"};
+            
             Color picked = color[chosen2];
+            
             colorCorrect = picked;
             answer.setText(wordList[chosen]);
             answer.setForeground(picked); 
+            
+
+        
     }
     
     //method: toColorEnd
@@ -3125,6 +4567,225 @@ public class TheWindow extends javax.swing.JFrame {
         
         colorScoreText.setText(new Integer(colorScore).toString());
         checkNewHighScore();
+    }
+    
+    
+    public void toSudoku(){
+        menu.setVisible(false);
+        highscores.setVisible(false);
+        credits.setVisible(false);
+        hangmanGame.setVisible(false);
+        endPage.setVisible(false);
+        colorGame.setVisible(false);
+        colorGameEnd.setVisible(false);
+        sudokuGame.setVisible(true);  
+        
+        theFinalScore += colorScore;
+     
+        
+    }
+    
+    public void initSudoGrid()
+    {
+     
+         sudoIncorrect.setVisible(false);
+         sudoTryAgain.setVisible(false);
+         sudoErrorMessage.setVisible(false);
+        
+        grid[0]= gridSpace1;
+        grid[1]= gridSpace2;
+        grid[2]= gridSpace3;
+        grid[3]= gridSpace4;
+        grid[4]= gridSpace5; 
+        grid[5]= gridSpace6;
+        grid[6]= gridSpace7;
+        grid[7]= gridSpace8;
+        grid[8]= gridSpace9;
+        grid[9]= gridSpace10;
+        
+        grid[10]= gridSpace11;
+        grid[11]= gridSpace12;
+        grid[12]= gridSpace13;
+        grid[13]= gridSpace14;
+        grid[14]= gridSpace15; 
+        grid[15]= gridSpace16;
+        grid[16]= gridSpace17;
+        grid[17]= gridSpace18;
+        grid[18]= gridSpace19;
+        grid[19]= gridSpace20;
+        
+        grid[20]= gridSpace21;
+        grid[21]= gridSpace22;
+        grid[22]= gridSpace23;
+        grid[23]= gridSpace24;
+        grid[24]= gridSpace25; 
+        grid[25]= gridSpace26;
+        grid[26]= gridSpace27;
+        grid[27]= gridSpace28;
+        grid[28]= gridSpace29;
+        grid[29]= gridSpace30;
+        
+        grid[30]= gridSpace31;
+        grid[31]= gridSpace32;
+        grid[32]= gridSpace33;
+        grid[33]= gridSpace34;
+        grid[34]= gridSpace35; 
+        grid[35]= gridSpace36;
+        grid[36]= gridSpace37;
+        grid[37]= gridSpace38;
+        grid[38]= gridSpace39;
+        grid[39]= gridSpace40;
+        
+        grid[40]= gridSpace41;
+        grid[41]= gridSpace42;
+        grid[42]= gridSpace43;
+        grid[43]= gridSpace44;
+        grid[44]= gridSpace45; 
+        grid[45]= gridSpace46;
+        grid[46]= gridSpace47;
+        grid[47]= gridSpace48;
+        grid[48]= gridSpace49;
+        grid[49]= gridSpace50;
+        
+        grid[50]= gridSpace51;
+        grid[51]= gridSpace52;
+        grid[52]= gridSpace53;
+        grid[53]= gridSpace54;
+        grid[54]= gridSpace55; 
+        grid[55]= gridSpace56;
+        grid[56]= gridSpace57;
+        grid[57]= gridSpace58;
+        grid[58]= gridSpace59;
+        grid[59]= gridSpace60;
+        
+        grid[60]= gridSpace61;
+        grid[61]= gridSpace62;
+        grid[62]= gridSpace63;
+        grid[63]= gridSpace64;
+        grid[64]= gridSpace65; 
+        grid[65]= gridSpace66;
+        grid[66]= gridSpace67;
+        grid[67]= gridSpace68;
+        grid[68]= gridSpace69;
+        grid[69]= gridSpace70;
+        
+        grid[70]= gridSpace71;
+        grid[71]= gridSpace72;
+        grid[72]= gridSpace73;
+        grid[73]= gridSpace74;
+        grid[74]= gridSpace75; 
+        grid[75]= gridSpace76;
+        grid[76]= gridSpace77;
+        grid[77]= gridSpace78;
+        grid[78]= gridSpace79;
+        grid[79]= gridSpace80;
+        
+        grid[80]= gridSpace81;
+        
+    
+      for(int i = 0; i < shouldSubPoints.length; i++)
+      {
+          shouldSubPoints[i] = true;
+      }
+     
+      for(int i = 0; i < grid.length; i++)
+      {
+          grid[i].setText("");
+      }
+     
+      grid[0].setText("8");
+      grid[3].setText("4");
+      grid[5].setText("6");
+      grid[8].setText("7");
+      grid[15].setText("4");
+      grid[19].setText("1");
+      grid[24].setText("6");
+      grid[25].setText("5");
+      grid[27].setText("5");
+      grid[29].setText("9");
+      grid[31].setText("3");
+      grid[33].setText("7");
+      grid[34].setText("8");
+      grid[40].setText("7");
+      grid[46].setText("4");
+      grid[47].setText("8");
+      grid[49].setText("2");
+      grid[51].setText("1");
+      grid[53].setText("3");
+      grid[55].setText("5");
+      grid[56].setText("2");
+      grid[61].setText("9");
+      grid[65].setText("1");
+      grid[72].setText("3");
+      grid[75].setText("9");
+      grid[77].setText("2");
+      grid[80].setText("5");      
+    }
+    
+    public String[] sudokuValues()
+    {
+        String[] checkSudo = {"8","3","5","4","1","6","9","2","7"
+        ,"2","9","6","8","5","7","4","3","1","4","1","7","2","9","3","6","5","8"
+        ,"5","6","9","1","3","4","7","8","2","1","2","3","6","7","8","5","4","9",
+        "7","4","8","5","2","9","1","6","3","6","5","2","7","8","1","3","9","4",
+        "9","8","1","3","4","5","2","7","6","3","7","4","9","6","2","8","1","5"};
+        
+        return checkSudo;
+    }
+    
+    
+    
+    public void submitSudoku()
+    {
+        
+        String[] checkSudo = sudokuValues();
+        
+       
+        for(int i = 0; i < grid.length ; i++)
+        {
+         
+            if( (grid[i].getText().equals(checkSudo[i]))  ) 
+            {
+             
+              shouldSubPoints[i] = false;
+            
+           
+            }
+            else
+            {
+                if(shouldSubPoints[i])
+                {
+                     sudoIncorrect.setVisible(true);
+                     sudoTryAgain.setVisible(true);
+                     sudokuScore -= 10; 
+                     shouldSubPoints[i] = false;
+                }
+            }
+        }
+        if(sudokuScore == 540)
+        {
+            theFinalScore += sudokuScore;
+            endSudoku();
+        }
+         
+      
+    }
+    
+    
+    public void endSudoku()
+    {
+        startUp.setVisible(false);
+        menu.setVisible(false);
+        highscores.setVisible(false);
+        credits.setVisible(false);
+        hangmanGame.setVisible(false);
+        endPage.setVisible(false);
+         colorGameEnd.setVisible(false);
+        colorGame.setVisible(false);
+        sudokuGame.setVisible(false);
+        sudokuEnd.setVisible(true);
+        finalScore.setText(new Integer(theFinalScore).toString());
+        
     }
     /**
      * @param args the command line arguments
@@ -3170,7 +4831,11 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JButton backHighscoreButton;
     private javax.swing.JButton blueButton;
     private javax.swing.JPanel body;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton cButton;
+    private java.awt.Choice choice1;
     private javax.swing.JPanel colorGame;
     private javax.swing.JPanel colorGameEnd;
     private javax.swing.JLabel colorScoreText;
@@ -3184,9 +4849,91 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JButton endButton2;
     private javax.swing.JPanel endPage;
     private javax.swing.JButton fButton;
+    private javax.swing.JTextField finalScore;
     private javax.swing.JTextField finalScoreTextBox;
     private javax.swing.JButton gButton;
     private javax.swing.JButton greenButton;
+    private javax.swing.JTextField gridSpace1;
+    private javax.swing.JTextField gridSpace10;
+    private javax.swing.JTextField gridSpace11;
+    private javax.swing.JTextField gridSpace12;
+    private javax.swing.JTextField gridSpace13;
+    private javax.swing.JTextField gridSpace14;
+    private javax.swing.JTextField gridSpace15;
+    private javax.swing.JTextField gridSpace16;
+    private javax.swing.JTextField gridSpace17;
+    private javax.swing.JTextField gridSpace18;
+    private javax.swing.JTextField gridSpace19;
+    private javax.swing.JTextField gridSpace2;
+    private javax.swing.JTextField gridSpace20;
+    private javax.swing.JTextField gridSpace21;
+    private javax.swing.JTextField gridSpace22;
+    private javax.swing.JTextField gridSpace23;
+    private javax.swing.JTextField gridSpace24;
+    private javax.swing.JTextField gridSpace25;
+    private javax.swing.JTextField gridSpace26;
+    private javax.swing.JTextField gridSpace27;
+    private javax.swing.JTextField gridSpace28;
+    private javax.swing.JTextField gridSpace29;
+    private javax.swing.JTextField gridSpace3;
+    private javax.swing.JTextField gridSpace30;
+    private javax.swing.JTextField gridSpace31;
+    private javax.swing.JTextField gridSpace32;
+    private javax.swing.JTextField gridSpace33;
+    private javax.swing.JTextField gridSpace34;
+    private javax.swing.JTextField gridSpace35;
+    private javax.swing.JTextField gridSpace36;
+    private javax.swing.JTextField gridSpace37;
+    private javax.swing.JTextField gridSpace38;
+    private javax.swing.JTextField gridSpace39;
+    private javax.swing.JTextField gridSpace4;
+    private javax.swing.JTextField gridSpace40;
+    private javax.swing.JTextField gridSpace41;
+    private javax.swing.JTextField gridSpace42;
+    private javax.swing.JTextField gridSpace43;
+    private javax.swing.JTextField gridSpace44;
+    private javax.swing.JTextField gridSpace45;
+    private javax.swing.JTextField gridSpace46;
+    private javax.swing.JTextField gridSpace47;
+    private javax.swing.JTextField gridSpace48;
+    private javax.swing.JTextField gridSpace49;
+    private javax.swing.JTextField gridSpace5;
+    private javax.swing.JTextField gridSpace50;
+    private javax.swing.JTextField gridSpace51;
+    private javax.swing.JTextField gridSpace52;
+    private javax.swing.JTextField gridSpace53;
+    private javax.swing.JTextField gridSpace54;
+    private javax.swing.JTextField gridSpace55;
+    private javax.swing.JTextField gridSpace56;
+    private javax.swing.JTextField gridSpace57;
+    private javax.swing.JTextField gridSpace58;
+    private javax.swing.JTextField gridSpace59;
+    private javax.swing.JTextField gridSpace6;
+    private javax.swing.JTextField gridSpace60;
+    private javax.swing.JTextField gridSpace61;
+    private javax.swing.JTextField gridSpace62;
+    private javax.swing.JTextField gridSpace63;
+    private javax.swing.JTextField gridSpace64;
+    private javax.swing.JTextField gridSpace65;
+    private javax.swing.JTextField gridSpace66;
+    private javax.swing.JTextField gridSpace67;
+    private javax.swing.JTextField gridSpace68;
+    private javax.swing.JTextField gridSpace69;
+    private javax.swing.JTextField gridSpace7;
+    private javax.swing.JTextField gridSpace70;
+    private javax.swing.JTextField gridSpace71;
+    private javax.swing.JTextField gridSpace72;
+    private javax.swing.JTextField gridSpace73;
+    private javax.swing.JTextField gridSpace74;
+    private javax.swing.JTextField gridSpace75;
+    private javax.swing.JTextField gridSpace76;
+    private javax.swing.JTextField gridSpace77;
+    private javax.swing.JTextField gridSpace78;
+    private javax.swing.JTextField gridSpace79;
+    private javax.swing.JTextField gridSpace8;
+    private javax.swing.JTextField gridSpace80;
+    private javax.swing.JTextField gridSpace81;
+    private javax.swing.JTextField gridSpace9;
     private javax.swing.JButton hButton;
     private javax.swing.JPanel hangmanGame;
     private javax.swing.JPanel head;
@@ -3195,9 +4942,14 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextArea highscoresTextBox;
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -3219,6 +4971,7 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton kButton;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
@@ -3249,6 +5002,11 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField scoreTextField;
     private javax.swing.JButton skipButton;
     private javax.swing.JPanel startUp;
+    private javax.swing.JLabel sudoErrorMessage;
+    private javax.swing.JLabel sudoIncorrect;
+    private javax.swing.JLabel sudoTryAgain;
+    private javax.swing.JPanel sudokuEnd;
+    private javax.swing.JPanel sudokuGame;
     private javax.swing.JButton tButton;
     private javax.swing.JLabel teamLabel;
     private javax.swing.JLabel theWrong;
