@@ -49,15 +49,12 @@ public class TheWindow extends javax.swing.JFrame {
     private String[] names;
     private String[] scores;
     ArrayList<String> list;
-    
   
-    
     private Color colorCorrect;
     private Color colorChoice;
     private int colorScore;
     private int colorPlays;
-    
-    
+        
     private int sudokuScore;
     private JTextField[] grid;
     private boolean[] shouldSubPoints;
@@ -87,8 +84,6 @@ public class TheWindow extends javax.swing.JFrame {
        initComponents();  
     }
 
-    
- 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -282,16 +277,17 @@ public class TheWindow extends javax.swing.JFrame {
         gridSpace79 = new javax.swing.JTextField();
         gridSpace80 = new javax.swing.JTextField();
         gridSpace81 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        submitSudoku = new javax.swing.JButton();
+        quitSudoku = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         sudoTryAgain = new javax.swing.JLabel();
         sudoIncorrect = new javax.swing.JLabel();
         sudoErrorMessage = new javax.swing.JLabel();
+        sDateTextField = new javax.swing.JTextField();
         sudokuEnd = new javax.swing.JPanel();
-        jTextField9 = new javax.swing.JTextField();
         finalScore = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        endSudoku = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -1222,7 +1218,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 25);
+        skipButton.setBounds(500, 70, 80, 23);
 
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2387,23 +2383,23 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace81);
         gridSpace81.setBounds(370, 320, 30, 30);
 
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        submitSudoku.setText("Submit");
+        submitSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                submitSudokuActionPerformed(evt);
             }
         });
-        sudokuGame.add(jButton1);
-        jButton1.setBounds(30, 300, 73, 25);
+        sudokuGame.add(submitSudoku);
+        submitSudoku.setBounds(20, 300, 80, 23);
 
-        jButton2.setText("Quit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        quitSudoku.setText("Quit");
+        quitSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                quitSudokuActionPerformed(evt);
             }
         });
-        sudokuGame.add(jButton2);
-        jButton2.setBounds(430, 300, 55, 25);
+        sudokuGame.add(quitSudoku);
+        quitSudoku.setBounds(430, 300, 53, 23);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 102, 255));
@@ -2425,17 +2421,19 @@ public class TheWindow extends javax.swing.JFrame {
         sudoErrorMessage.setText("Please Enter Value from 1-9");
         sudokuGame.add(sudoErrorMessage);
         sudoErrorMessage.setBounds(170, 30, 200, 40);
+        sudokuGame.add(sDateTextField);
+        sDateTextField.setBounds(420, 10, 160, 30);
 
         mainPanel.add(sudokuGame, "card10");
 
-        jTextField9.setText("Score");
-
-        jButton3.setText("End");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        endSudoku.setText("End");
+        endSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                endSudokuActionPerformed(evt);
             }
         });
+
+        jLabel13.setText("Score");
 
         javax.swing.GroupLayout sudokuEndLayout = new javax.swing.GroupLayout(sudokuEnd);
         sudokuEnd.setLayout(sudokuEndLayout);
@@ -2444,25 +2442,25 @@ public class TheWindow extends javax.swing.JFrame {
             .addGroup(sudokuEndLayout.createSequentialGroup()
                 .addGroup(sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sudokuEndLayout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
                         .addComponent(finalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sudokuEndLayout.createSequentialGroup()
                         .addGap(237, 237, 237)
-                        .addComponent(jButton3)))
-                .addContainerGap(250, Short.MAX_VALUE))
+                        .addComponent(endSudoku)))
+                .addContainerGap(256, Short.MAX_VALUE))
         );
         sudokuEndLayout.setVerticalGroup(
             sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sudokuEndLayout.createSequentialGroup()
                 .addGap(128, 128, 128)
                 .addGroup(sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(finalScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(finalScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(105, 105, 105)
-                .addComponent(jButton3)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addComponent(endSudoku)
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         mainPanel.add(sudokuEnd, "card9");
@@ -2569,12 +2567,12 @@ public class TheWindow extends javax.swing.JFrame {
                 smallest = Integer.parseInt(i);
             }
         }
-        if (colorScore > smallest) {
+        if (theFinalScore > smallest) {
             String name = JOptionPane.showInputDialog(null, "Enter The Name You Want To Display In HighScores", "NEW HIGH SCORE", JOptionPane.QUESTION_MESSAGE);
             PrintWriter oStream = new PrintWriter("highscore.txt");
             //FileClearer f = new FileClearer(fileName);
             oStream = new PrintWriter("highscore.txt");
-            scores[4] = colorScore + "";
+            scores[4] = theFinalScore + "";
             names[4] = name;
             sortArrays();
             list.clear();
@@ -2613,7 +2611,6 @@ public class TheWindow extends javax.swing.JFrame {
             tempNum = Integer.parseInt(scores[i]);
             scores[i] = scores[index];
             scores[index] = tempNum + "";
-
         }
     }
     
@@ -2660,6 +2657,8 @@ public class TheWindow extends javax.swing.JFrame {
                 String strDate = dateFormat.format(date);
                 dateTextField.setText(strDate);
                 dateTextField1.setText(strDate);
+                sDateTextField.setText(strDate);
+                
             }
         };
         Timer timer = new Timer(delay, updateTime);
@@ -4446,21 +4445,26 @@ public class TheWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_gridSpace80ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void submitSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitSudokuActionPerformed
         // TODO add your handling code here:
     
         submitSudoku();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_submitSudokuActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void quitSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitSudokuActionPerformed
         // TODO add your handling code here:
         
          theFinalScore += 0;
+            try {
+                checkNewHighScore();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
             endSudoku();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_quitSudokuActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void endSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endSudokuActionPerformed
         // TODO add your handling code here:
         
         menu.setVisible(true);
@@ -4472,10 +4476,8 @@ public class TheWindow extends javax.swing.JFrame {
         colorGameEnd.setVisible(false);
         sudokuGame.setVisible(false); 
         sudokuEnd.setVisible(false);
-        
-        
         reInit();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_endSudokuActionPerformed
 
     //method:setTextField
     //purpose: sets all guess text areas visiblity to false and stores in array for later use
@@ -4502,6 +4504,9 @@ public class TheWindow extends javax.swing.JFrame {
          jtf[7] = jTextField8;
     }
     
+    //method: checkValue
+    //purpose: Checks whether or not a user inputs a 1-9 input 
+    // for sudoku game
     public void checkValue()
     {
         int check = 0;
@@ -4524,18 +4529,13 @@ public class TheWindow extends javax.swing.JFrame {
     }
     
     //method: startColor
-    //purpose: starts the colorGame
-       
+    //purpose: starts the colorGame  
     public void startColor(){
-       
         colorGame();
-        
     }
     
-   
     //method: colorGame
-    //purpose: starts the color game by selecting random word/ color combo
-    
+    //purpose: starts the color game by selecting random word/ color combo   
     public void colorGame(){
         
             Random r = new Random();
@@ -4548,10 +4548,7 @@ public class TheWindow extends javax.swing.JFrame {
             
             colorCorrect = picked;
             answer.setText(wordList[chosen]);
-            answer.setForeground(picked); 
-            
-
-        
+            answer.setForeground(picked);   
     }
     
     //method: toColorEnd
@@ -4566,10 +4563,11 @@ public class TheWindow extends javax.swing.JFrame {
         colorGameEnd.setVisible(true);
         
         colorScoreText.setText(new Integer(colorScore).toString());
-        checkNewHighScore();
+        //checkNewHighScore();
     }
     
-    
+    //method: toSudoku
+    //purpose: Starts the Sudoku Game
     public void toSudoku(){
         menu.setVisible(false);
         highscores.setVisible(false);
@@ -4580,14 +4578,13 @@ public class TheWindow extends javax.swing.JFrame {
         colorGameEnd.setVisible(false);
         sudokuGame.setVisible(true);  
         
-        theFinalScore += colorScore;
-     
-        
+        theFinalScore += colorScore;   
     }
     
+    //method: initSudoGrid
+    //purpose: Creates the sudoku grid for the game
     public void initSudoGrid()
     {
-     
          sudoIncorrect.setVisible(false);
          sudoTryAgain.setVisible(false);
          sudoErrorMessage.setVisible(false);
@@ -4722,6 +4719,8 @@ public class TheWindow extends javax.swing.JFrame {
       grid[80].setText("5");      
     }
     
+    //method: sudokuValues
+    //purpose: All of the predetermined values in sudoku
     public String[] sudokuValues()
     {
         String[] checkSudo = {"8","3","5","4","1","6","9","2","7"
@@ -4731,25 +4730,19 @@ public class TheWindow extends javax.swing.JFrame {
         "9","8","1","3","4","5","2","7","6","3","7","4","9","6","2","8","1","5"};
         
         return checkSudo;
-    }
-    
-    
-    
+    }    
+   
+    //method: submitSudoku
+    //purpose: Checks if the user inputs are correct for the sudoku game
+    // if there is an error, 10 points are marked off
     public void submitSudoku()
-    {
-        
+    {        
         String[] checkSudo = sudokuValues();
-        
-       
         for(int i = 0; i < grid.length ; i++)
-        {
-         
+        { 
             if( (grid[i].getText().equals(checkSudo[i]))  ) 
             {
-             
               shouldSubPoints[i] = false;
-            
-           
             }
             else
             {
@@ -4762,16 +4755,25 @@ public class TheWindow extends javax.swing.JFrame {
                 }
             }
         }
-        if(sudokuScore == 540)
-        {
+        boolean done = true;
+        for (int j = 0; j < grid.length; j++) {
+            if ((!grid[j].getText().equals(checkSudo[j]))) {
+                done = false;
+            }            
+        }
+        if (done == true) {
             theFinalScore += sudokuScore;
+                try {
+                    checkNewHighScore();
+                } catch (FileNotFoundException ex) {
+                   Logger.getLogger(TheWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
             endSudoku();
         }
-         
-      
     }
     
-    
+    //method: endSudoku
+    //purpose: Brings the end screen for sudoku
     public void endSudoku()
     {
         startUp.setVisible(false);
@@ -4784,8 +4786,7 @@ public class TheWindow extends javax.swing.JFrame {
         colorGame.setVisible(false);
         sudokuGame.setVisible(false);
         sudokuEnd.setVisible(true);
-        finalScore.setText(new Integer(theFinalScore).toString());
-        
+        finalScore.setText(new Integer(theFinalScore).toString());   
     }
     /**
      * @param args the command line arguments
@@ -4848,6 +4849,7 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JButton endButton;
     private javax.swing.JButton endButton2;
     private javax.swing.JPanel endPage;
+    private javax.swing.JButton endSudoku;
     private javax.swing.JButton fButton;
     private javax.swing.JTextField finalScore;
     private javax.swing.JTextField finalScoreTextBox;
@@ -4942,14 +4944,12 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextArea highscoresTextBox;
     private javax.swing.JButton iButton;
     private javax.swing.JButton jButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -4971,7 +4971,6 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton kButton;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
@@ -4994,14 +4993,17 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JLabel projectLabel;
     private javax.swing.JButton purpleButton;
     private javax.swing.JButton qButton;
+    private javax.swing.JButton quitSudoku;
     private javax.swing.JButton rButton;
     private javax.swing.JButton redButton;
     private javax.swing.JPanel rightArm;
     private javax.swing.JPanel rightLeg;
     private javax.swing.JButton sButton;
+    private javax.swing.JTextField sDateTextField;
     private javax.swing.JTextField scoreTextField;
     private javax.swing.JButton skipButton;
     private javax.swing.JPanel startUp;
+    private javax.swing.JButton submitSudoku;
     private javax.swing.JLabel sudoErrorMessage;
     private javax.swing.JLabel sudoIncorrect;
     private javax.swing.JLabel sudoTryAgain;
