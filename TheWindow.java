@@ -2551,7 +2551,7 @@ public class TheWindow extends javax.swing.JFrame {
                         names[index] = temp.substring(0, i);
                         scores[index] = temp.substring(i + 4, temp.length());
                         list.add(names[index] + "...." + scores[index]);
-                        System.out.println(names[index] + "...." + scores[index]);
+                        //System.out.println(names[index] + "...." + scores[index]);
                         index++;
                         break;
                     }
@@ -2658,13 +2658,11 @@ public class TheWindow extends javax.swing.JFrame {
                 dateTextField.setText(strDate);
                 dateTextField1.setText(strDate);
                 sDateTextField.setText(strDate);
-                
             }
         };
         Timer timer = new Timer(delay, updateTime);
         timer.setInitialDelay(0);
-        timer.start();
-           
+        timer.start();  
     }
     //method: isGameOver
     //purpose: Checks if score is equal to 40 or not and returns a boolean value.
