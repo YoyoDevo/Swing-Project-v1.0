@@ -1522,6 +1522,7 @@ public class TheWindow extends javax.swing.JFrame {
         initSudoGrid();
         sudokuGame.setLayout(null);
 
+        gridSpace1.setEditable(false);
         gridSpace1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace1.setText("8");
         gridSpace1.setBorder(null);
@@ -1556,6 +1557,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace3);
         gridSpace3.setBounds(200, 85, 10, 20);
 
+        gridSpace4.setEditable(false);
         gridSpace4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace4.setText("4");
         gridSpace4.setBorder(null);
@@ -1579,6 +1581,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace5);
         gridSpace5.setBounds(260, 85, 10, 20);
 
+        gridSpace6.setEditable(false);
         gridSpace6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace6.setText("6");
         gridSpace6.setBorder(null);
@@ -1613,6 +1616,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace8);
         gridSpace8.setBounds(350, 85, 10, 20);
 
+        gridSpace9.setEditable(false);
         gridSpace9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace9.setText("7");
         gridSpace9.setBorder(null);
@@ -1691,6 +1695,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace15);
         gridSpace15.setBounds(290, 115, 10, 20);
 
+        gridSpace16.setEditable(false);
         gridSpace16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace16.setText("4");
         gridSpace16.setBorder(null);
@@ -1736,6 +1741,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace19);
         gridSpace19.setBounds(140, 145, 10, 20);
 
+        gridSpace20.setEditable(false);
         gridSpace20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace20.setText("1");
         gridSpace20.setBorder(null);
@@ -1792,6 +1798,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace24);
         gridSpace24.setBounds(290, 145, 10, 20);
 
+        gridSpace25.setEditable(false);
         gridSpace25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace25.setText("6");
         gridSpace25.setBorder(null);
@@ -1804,6 +1811,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace25);
         gridSpace25.setBounds(320, 145, 10, 20);
 
+        gridSpace26.setEditable(false);
         gridSpace26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace26.setText("5");
         gridSpace26.setBorder(null);
@@ -1827,6 +1835,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace27);
         gridSpace27.setBounds(380, 145, 10, 20);
 
+        gridSpace28.setEditable(false);
         gridSpace28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace28.setText("5");
         gridSpace28.setBorder(null);
@@ -1850,6 +1859,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace29);
         gridSpace29.setBounds(170, 175, 10, 20);
 
+        gridSpace30.setEditable(false);
         gridSpace30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace30.setText("9");
         gridSpace30.setBorder(null);
@@ -1873,6 +1883,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace31);
         gridSpace31.setBounds(230, 175, 10, 20);
 
+        gridSpace32.setEditable(false);
         gridSpace32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace32.setText("3");
         gridSpace32.setBorder(null);
@@ -1896,6 +1907,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace33);
         gridSpace33.setBounds(290, 175, 10, 20);
 
+        gridSpace34.setEditable(false);
         gridSpace34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace34.setText("7");
         gridSpace34.setBorder(null);
@@ -1908,6 +1920,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace34);
         gridSpace34.setBounds(320, 175, 10, 20);
 
+        gridSpace35.setEditable(false);
         gridSpace35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace35.setText("8");
         gridSpace35.setBorder(null);
@@ -1975,6 +1988,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace40);
         gridSpace40.setBounds(230, 205, 10, 20);
 
+        gridSpace41.setEditable(false);
         gridSpace41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace41.setText("7");
         gridSpace41.setBorder(null);
@@ -2042,6 +2056,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace46);
         gridSpace46.setBounds(140, 235, 10, 20);
 
+        gridSpace47.setEditable(false);
         gridSpace47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace47.setText("4");
         gridSpace47.setBorder(null);
@@ -2054,6 +2069,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace47);
         gridSpace47.setBounds(170, 235, 10, 20);
 
+        gridSpace48.setEditable(false);
         gridSpace48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace48.setText("8");
         gridSpace48.setBorder(null);
@@ -2077,6 +2093,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace49);
         gridSpace49.setBounds(230, 235, 10, 20);
 
+        gridSpace50.setEditable(false);
         gridSpace50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace50.setText("2");
         gridSpace50.setBorder(null);
@@ -2100,6 +2117,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace51);
         gridSpace51.setBounds(290, 235, 10, 20);
 
+        gridSpace52.setEditable(false);
         gridSpace52.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace52.setText("1");
         gridSpace52.setBorder(null);
@@ -2123,6 +2141,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace53);
         gridSpace53.setBounds(350, 235, 10, 20);
 
+        gridSpace54.setEditable(false);
         gridSpace54.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace54.setText("3");
         gridSpace54.setBorder(null);
@@ -2146,6 +2165,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace55);
         gridSpace55.setBounds(140, 265, 10, 20);
 
+        gridSpace56.setEditable(false);
         gridSpace56.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace56.setText("5");
         gridSpace56.setBorder(null);
@@ -2158,6 +2178,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace56);
         gridSpace56.setBounds(170, 265, 10, 20);
 
+        gridSpace57.setEditable(false);
         gridSpace57.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace57.setText("2");
         gridSpace57.setBorder(null);
@@ -2214,6 +2235,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace61);
         gridSpace61.setBounds(320, 265, 10, 20);
 
+        gridSpace62.setEditable(false);
         gridSpace62.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace62.setText("9");
         gridSpace62.setBorder(null);
@@ -2259,6 +2281,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace65);
         gridSpace65.setBounds(170, 295, 10, 20);
 
+        gridSpace66.setEditable(false);
         gridSpace66.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace66.setText("1");
         gridSpace66.setBorder(null);
@@ -2337,6 +2360,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace72);
         gridSpace72.setBounds(380, 295, 10, 20);
 
+        gridSpace73.setEditable(false);
         gridSpace73.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace73.setText("3");
         gridSpace73.setBorder(null);
@@ -2371,6 +2395,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace75);
         gridSpace75.setBounds(200, 325, 10, 20);
 
+        gridSpace76.setEditable(false);
         gridSpace76.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace76.setText("9");
         gridSpace76.setBorder(null);
@@ -2394,6 +2419,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace77);
         gridSpace77.setBounds(260, 325, 10, 20);
 
+        gridSpace78.setEditable(false);
         gridSpace78.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace78.setText("2");
         gridSpace78.setBorder(null);
@@ -2428,6 +2454,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace80);
         gridSpace80.setBounds(350, 325, 10, 20);
 
+        gridSpace81.setEditable(false);
         gridSpace81.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace81.setText("5");
         gridSpace81.setBorder(null);
