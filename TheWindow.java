@@ -1,14 +1,15 @@
-/*
+/****************************************************************
  *File:  The Window
  *Authors: Nick Curinga, Tuan Pham, Cesar Pedroza, Devin Wells
  *Class: CS 245 - Programming Graphical User Interfaces 
  *
  *Assignment: Swing Project v1.2 
- *Date Last Modified:10/18/2016
+ *Date Last Modified:10/25/2016
  *
  * Purpose: To create a GUI of a games of Hangman, Color match, and Sudoku .  
  *
- */
+ ****************************************************************/
+
 package SwingProjectv1;
 
 import java.awt.Color;
@@ -4105,7 +4106,8 @@ public class TheWindow extends javax.swing.JFrame {
         
         colorGame();
     }//GEN-LAST:event_purpleButtonActionPerformed
-
+    //method: endButton2ActionPerformed
+    //purpose: Show menu
     private void endButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButton2ActionPerformed
         startUp.setVisible(false);
         menu.setVisible(true);
@@ -4456,6 +4458,8 @@ public class TheWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_submitSudokuActionPerformed
 
+    //method: quitSudokuActionPerformed
+    //purpose: Quits Sudoku game and checkes if high score needs to be entered
     private void quitSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitSudokuActionPerformed
         // TODO add your handling code here:
         
@@ -4467,7 +4471,8 @@ public class TheWindow extends javax.swing.JFrame {
             }
             endSudoku();
     }//GEN-LAST:event_quitSudokuActionPerformed
-
+    //method: endSudoku
+    //purpose: Goes back to main menu
     private void endSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endSudokuActionPerformed
         // TODO add your handling code here:
         
