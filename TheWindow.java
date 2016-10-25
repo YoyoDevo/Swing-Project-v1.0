@@ -4629,45 +4629,45 @@ public class TheWindow extends javax.swing.JFrame {
     //method: randCircles
     //purpose: randomize position of circles
     public void randCircles() {
+        colorGame.setLayout(null);
         Random rand = new Random();
         int chosen = rand.nextInt(5);
         System.out.println(chosen);
         if (chosen == 1 || chosen == 0) {
-            blueButton.setLocation(10, 100);
-            greenButton.setLocation(100, 210);
-            redButton.setLocation(200, 100);
-            purpleButton.setLocation(300, 210);
-            yellowButton.setLocation(400, 100);
+            blueButton.setLocation(30, 110);
+            greenButton.setLocation(120, 220);
+            redButton.setLocation(220, 110);
+            purpleButton.setLocation(320, 220);
+            yellowButton.setLocation(420, 110);
         }
         else if (chosen == 2) {
-            greenButton.setLocation(10, 100);
-            blueButton.setLocation(100, 210);
-            purpleButton.setLocation(200, 100);
-            redButton.setLocation(300, 210);
-            yellowButton.setLocation(400, 100);
+            greenButton.setLocation(30, 110);
+            blueButton.setLocation(120, 220);
+            purpleButton.setLocation(220, 110);
+            redButton.setLocation(320, 220);
+            yellowButton.setLocation(420, 110);
         }
         else if (chosen == 3) {
-            yellowButton.setLocation(10, 100);
-            purpleButton.setLocation(100, 210);
-            blueButton.setLocation(200, 100);
-            greenButton.setLocation(300, 210);
-            redButton.setLocation(400, 100);
+            yellowButton.setLocation(30, 110);
+            purpleButton.setLocation(120, 220);
+            blueButton.setLocation(220, 110);
+            greenButton.setLocation(320, 220);
+            redButton.setLocation(420, 110);
         }
         else if (chosen == 4) {
-            redButton.setLocation(10, 100);
-            greenButton.setLocation(100, 210);
-            blueButton.setLocation(200, 100);
-            yellowButton.setLocation(300, 210);
-            purpleButton.setLocation(400, 100);
+            redButton.setLocation(30, 110);
+            greenButton.setLocation(120, 220);
+            blueButton.setLocation(220, 110);
+            yellowButton.setLocation(320, 220);
+            purpleButton.setLocation(420, 110);
         }
         else if (chosen == 5) {
-            purpleButton.setLocation(10, 100);
-            redButton.setLocation(100, 210);
-            greenButton.setLocation(200, 100);
-            yellowButton.setLocation(300, 210);
-            blueButton.setLocation(400, 100);
+            purpleButton.setLocation(30, 110);
+            redButton.setLocation(120, 220);
+            greenButton.setLocation(220, 110);
+            yellowButton.setLocation(320, 220);
+            blueButton.setLocation(420, 110);
         }
-        colorGame.repaint();
     }
     //method: startColor
     //purpose: starts the colorGame  
