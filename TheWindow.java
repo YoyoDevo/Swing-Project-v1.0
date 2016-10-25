@@ -4079,15 +4079,6 @@ public class TheWindow extends javax.swing.JFrame {
         colorGame();
     }//GEN-LAST:event_yellowButtonActionPerformed
 
-    private void redButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseEntered
-        redButton.setBackground(Color.orange);
-      
-    }//GEN-LAST:event_redButtonMouseEntered
-
-    private void redButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseExited
-        redButton.setBackground(UIManager.getColor("control"));
-    }//GEN-LAST:event_redButtonMouseExited
-
     private void blueButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blueButtonMouseEntered
         blueButton.setBackground(Color.orange);
          
@@ -4114,25 +4105,6 @@ public class TheWindow extends javax.swing.JFrame {
     private void purpleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purpleButtonMouseExited
        purpleButton.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_purpleButtonMouseExited
-
-    //method: redButtonActionPerformed
-    //purpose: allow correct color to be matched with color of text and end game
-    private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
-        colorChoice = Color.red;
-        colorPlays += 1;
-       
-        if (colorChoice.getRGB() == colorCorrect.getRGB()){
-            colorScore += 100;  
-            
-        }
-        
-        
-        if (colorPlays == 5){
-              toSudoku();
-        } 
-         
-        colorGame();
-    }//GEN-LAST:event_redButtonActionPerformed
 
      //method: greenButtonActionPerformed
     //purpose: allow correct color to be matched with color of text and end game
@@ -4551,6 +4523,33 @@ public class TheWindow extends javax.swing.JFrame {
         reInit();
     }//GEN-LAST:event_endSudokuActionPerformed
 
+    //method: redButtonActionPerformed
+    //purpose: allow correct color to be matched with color of text and end game
+    private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
+        colorChoice = Color.red;
+        colorPlays += 1;
+
+        if (colorChoice.getRGB() == colorCorrect.getRGB()){
+            colorScore += 100;
+
+        }
+
+        if (colorPlays == 5){
+            toSudoku();
+        }
+
+        colorGame();
+    }//GEN-LAST:event_redButtonActionPerformed
+
+    private void redButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseExited
+        redButton.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_redButtonMouseExited
+
+    private void redButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseEntered
+        redButton.setBackground(Color.orange);
+
+    }//GEN-LAST:event_redButtonMouseEntered
+
     //method:setTextField
     //purpose: sets all guess text areas visiblity to false and stores in array for later use
     public void setTextField()
@@ -4600,6 +4599,49 @@ public class TheWindow extends javax.swing.JFrame {
       }
     }
     
+    //method: randCircles
+    //purpose: randomize position of circles
+    public void randCircles() {
+        Random rand = new Random();
+        int chosen = rand.nextInt(5);
+        System.out.println(chosen);
+        if (chosen == 1 || chosen == 0) {
+            blueButton.setLocation(10, 100);
+            greenButton.setLocation(100, 210);
+            redButton.setLocation(200, 100);
+            purpleButton.setLocation(300, 210);
+            yellowButton.setLocation(400, 100);
+        }
+        else if (chosen == 2) {
+            greenButton.setLocation(10, 100);
+            blueButton.setLocation(100, 210);
+            purpleButton.setLocation(200, 100);
+            redButton.setLocation(300, 210);
+            yellowButton.setLocation(400, 100);
+        }
+        else if (chosen == 3) {
+            yellowButton.setLocation(10, 100);
+            purpleButton.setLocation(100, 210);
+            blueButton.setLocation(200, 100);
+            greenButton.setLocation(300, 210);
+            redButton.setLocation(400, 100);
+        }
+        else if (chosen == 4) {
+            redButton.setLocation(10, 100);
+            greenButton.setLocation(100, 210);
+            blueButton.setLocation(200, 100);
+            yellowButton.setLocation(300, 210);
+            purpleButton.setLocation(400, 100);
+        }
+        else if (chosen == 5) {
+            purpleButton.setLocation(10, 100);
+            redButton.setLocation(100, 210);
+            greenButton.setLocation(200, 100);
+            yellowButton.setLocation(300, 210);
+            blueButton.setLocation(400, 100);
+        }
+        colorGame.repaint();
+    }
     //method: startColor
     //purpose: starts the colorGame  
     public void startColor(){
@@ -4609,7 +4651,7 @@ public class TheWindow extends javax.swing.JFrame {
     //method: colorGame
     //purpose: starts the color game by selecting random word/ color combo   
     public void colorGame(){
-        
+            randCircles();
             Random r = new Random();
             int chosen = r.nextInt(5);
             int chosen2 = r.nextInt(5);
