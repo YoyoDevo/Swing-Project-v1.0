@@ -351,6 +351,7 @@ public class TheWindow extends javax.swing.JFrame {
         menu.setPreferredSize(new java.awt.Dimension(600, 400));
 
         playButton.setText("Play");
+        playButton.setToolTipText("Click to start playing");
         playButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playButtonActionPerformed(evt);
@@ -358,6 +359,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         highscoreButton.setText("Highscores");
+        highscoreButton.setToolTipText("See highscores");
         highscoreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 highscoreButtonActionPerformed(evt);
@@ -365,6 +367,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         creditsButton.setText("Credits");
+        creditsButton.setToolTipText("See who made this thing");
         creditsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 creditsButtonActionPerformed(evt);
@@ -373,6 +376,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/images.jpg"))); // NOI18N
         jLabel11.setText("jLabel11");
+        jLabel11.setToolTipText("This is our logo");
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -416,8 +420,10 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 204, 0));
         jLabel1.setText("Highscores");
+        jLabel1.setToolTipText("this is a title");
 
         backHighscoreButton.setText("Back");
+        backHighscoreButton.setToolTipText("Click to go back to menu");
         backHighscoreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backHighscoreButtonActionPerformed(evt);
@@ -428,6 +434,7 @@ public class TheWindow extends javax.swing.JFrame {
         highscoresTextBox.setColumns(20);
         highscoresTextBox.setRows(5);
         highscoresTextBox.setText("\n");
+        highscoresTextBox.setToolTipText("List of recorded highscores");
         jScrollPane1.setViewportView(highscoresTextBox);
 
         javax.swing.GroupLayout highscoresLayout = new javax.swing.GroupLayout(highscores);
@@ -468,8 +475,10 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
         jLabel2.setText("Credits");
+        jLabel2.setToolTipText("this is a title");
 
         backCreditsButton.setText("Back");
+        backCreditsButton.setToolTipText("Click to go back to menu");
         backCreditsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backCreditsButtonActionPerformed(evt);
@@ -535,6 +544,7 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 0, 255));
         jLabel3.setText("Hangman");
+        jLabel3.setToolTipText("Title");
         hangmanGame.add(jLabel3);
         jLabel3.setBounds(12, 13, 127, 29);
 
@@ -605,6 +615,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         scoreTextField.setEditable(false);
         scoreTextField.setText("100");
+        scoreTextField.setToolTipText("You current score");
         scoreTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scoreTextFieldActionPerformed(evt);
@@ -615,6 +626,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         aButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         aButton.setText("A");
+        aButton.setToolTipText("Guess A");
         aButton.setMaximumSize(new java.awt.Dimension(10, 10));
         aButton.setPreferredSize(new java.awt.Dimension(25, 20));
         aButton.addActionListener(new java.awt.event.ActionListener() {
@@ -627,6 +639,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         bButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         bButton.setText("B");
+        bButton.setToolTipText("Guess B");
         bButton.setMaximumSize(new java.awt.Dimension(10, 10));
         bButton.setPreferredSize(new java.awt.Dimension(25, 20));
         bButton.addActionListener(new java.awt.event.ActionListener() {
@@ -639,6 +652,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         cButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         cButton.setText("C");
+        cButton.setToolTipText("Guess C");
         cButton.setMaximumSize(new java.awt.Dimension(10, 10));
         cButton.setPreferredSize(new java.awt.Dimension(25, 20));
         cButton.addActionListener(new java.awt.event.ActionListener() {
@@ -651,6 +665,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         dButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         dButton.setText("D");
+        dButton.setToolTipText("Guess D");
         dButton.setMaximumSize(new java.awt.Dimension(10, 10));
         dButton.setPreferredSize(new java.awt.Dimension(25, 20));
         dButton.addActionListener(new java.awt.event.ActionListener() {
@@ -663,6 +678,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         eButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         eButton.setText("E");
+        eButton.setToolTipText("Guess E");
         eButton.setMaximumSize(new java.awt.Dimension(10, 10));
         eButton.setPreferredSize(new java.awt.Dimension(25, 20));
         eButton.addActionListener(new java.awt.event.ActionListener() {
@@ -675,6 +691,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         fButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         fButton.setText("F");
+        fButton.setToolTipText("Guess f");
         fButton.setMaximumSize(new java.awt.Dimension(10, 10));
         fButton.setPreferredSize(new java.awt.Dimension(25, 20));
         fButton.addActionListener(new java.awt.event.ActionListener() {
@@ -687,6 +704,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         gButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         gButton.setText("G");
+        gButton.setToolTipText("Guess G");
         gButton.setMaximumSize(new java.awt.Dimension(10, 10));
         gButton.setPreferredSize(new java.awt.Dimension(25, 20));
         gButton.addActionListener(new java.awt.event.ActionListener() {
@@ -699,6 +717,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         hButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         hButton.setText("H");
+        hButton.setToolTipText("Guess H");
         hButton.setMaximumSize(new java.awt.Dimension(10, 10));
         hButton.setPreferredSize(new java.awt.Dimension(25, 20));
         hButton.addActionListener(new java.awt.event.ActionListener() {
@@ -711,6 +730,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         iButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         iButton.setText("I");
+        iButton.setToolTipText("Guess I");
         iButton.setMaximumSize(new java.awt.Dimension(10, 10));
         iButton.setPreferredSize(new java.awt.Dimension(25, 20));
         iButton.addActionListener(new java.awt.event.ActionListener() {
@@ -723,6 +743,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         jButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton.setText("J");
+        jButton.setToolTipText("Guess J");
         jButton.setMaximumSize(new java.awt.Dimension(10, 10));
         jButton.setPreferredSize(new java.awt.Dimension(25, 20));
         jButton.addActionListener(new java.awt.event.ActionListener() {
@@ -735,6 +756,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         kButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         kButton.setText("K");
+        kButton.setToolTipText("Guess K");
         kButton.setMaximumSize(new java.awt.Dimension(10, 10));
         kButton.setPreferredSize(new java.awt.Dimension(25, 20));
         kButton.addActionListener(new java.awt.event.ActionListener() {
@@ -747,6 +769,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         lButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lButton.setText("L");
+        lButton.setToolTipText("Guess L");
         lButton.setMaximumSize(new java.awt.Dimension(10, 10));
         lButton.setPreferredSize(new java.awt.Dimension(25, 20));
         lButton.addActionListener(new java.awt.event.ActionListener() {
@@ -759,6 +782,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         mButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         mButton.setText("M");
+        mButton.setToolTipText("Guess M");
         mButton.setMaximumSize(new java.awt.Dimension(10, 10));
         mButton.setPreferredSize(new java.awt.Dimension(25, 20));
         mButton.addActionListener(new java.awt.event.ActionListener() {
@@ -771,6 +795,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         nButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         nButton.setText("N");
+        nButton.setToolTipText("Guess N");
         nButton.setMaximumSize(new java.awt.Dimension(10, 10));
         nButton.setPreferredSize(new java.awt.Dimension(25, 20));
         nButton.addActionListener(new java.awt.event.ActionListener() {
@@ -783,6 +808,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         oButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         oButton.setText("O");
+        oButton.setToolTipText("Guess O");
         oButton.setMaximumSize(new java.awt.Dimension(10, 10));
         oButton.setPreferredSize(new java.awt.Dimension(25, 20));
         oButton.addActionListener(new java.awt.event.ActionListener() {
@@ -795,6 +821,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         pButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         pButton.setText("P");
+        pButton.setToolTipText("Guess P");
         pButton.setMaximumSize(new java.awt.Dimension(10, 10));
         pButton.setPreferredSize(new java.awt.Dimension(25, 20));
         pButton.addActionListener(new java.awt.event.ActionListener() {
@@ -807,6 +834,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         qButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         qButton.setText("Q");
+        qButton.setToolTipText("Guess Q");
         qButton.setMaximumSize(new java.awt.Dimension(10, 10));
         qButton.setPreferredSize(new java.awt.Dimension(25, 20));
         qButton.addActionListener(new java.awt.event.ActionListener() {
@@ -819,6 +847,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         rButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         rButton.setText("R");
+        rButton.setToolTipText("Guess  R");
         rButton.setMaximumSize(new java.awt.Dimension(10, 10));
         rButton.setPreferredSize(new java.awt.Dimension(25, 20));
         rButton.addActionListener(new java.awt.event.ActionListener() {
@@ -831,6 +860,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         sButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         sButton.setText("S");
+        sButton.setToolTipText("Guess S");
         sButton.setMaximumSize(new java.awt.Dimension(10, 10));
         sButton.setPreferredSize(new java.awt.Dimension(25, 20));
         sButton.addActionListener(new java.awt.event.ActionListener() {
@@ -843,6 +873,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         tButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         tButton.setText("T");
+        tButton.setToolTipText("Guess T");
         tButton.setMaximumSize(new java.awt.Dimension(10, 10));
         tButton.setPreferredSize(new java.awt.Dimension(25, 20));
         tButton.addActionListener(new java.awt.event.ActionListener() {
@@ -855,6 +886,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         uButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         uButton.setText("U");
+        uButton.setToolTipText("Guess U");
         uButton.setMaximumSize(new java.awt.Dimension(10, 10));
         uButton.setPreferredSize(new java.awt.Dimension(25, 20));
         uButton.addActionListener(new java.awt.event.ActionListener() {
@@ -867,6 +899,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         vButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         vButton.setText("V");
+        vButton.setToolTipText("Guess V");
         vButton.setMaximumSize(new java.awt.Dimension(10, 10));
         vButton.setPreferredSize(new java.awt.Dimension(25, 20));
         vButton.addActionListener(new java.awt.event.ActionListener() {
@@ -879,6 +912,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         wButton.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         wButton.setText("W");
+        wButton.setToolTipText("Guess W");
         wButton.setMaximumSize(new java.awt.Dimension(10, 10));
         wButton.setPreferredSize(new java.awt.Dimension(25, 20));
         wButton.addActionListener(new java.awt.event.ActionListener() {
@@ -891,6 +925,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         xButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         xButton.setText("X");
+        xButton.setToolTipText("Guess X");
         xButton.setMaximumSize(new java.awt.Dimension(10, 10));
         xButton.setPreferredSize(new java.awt.Dimension(25, 20));
         xButton.addActionListener(new java.awt.event.ActionListener() {
@@ -903,6 +938,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         yButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         yButton.setText("Y");
+        yButton.setToolTipText("Guess Y");
         yButton.setMaximumSize(new java.awt.Dimension(10, 10));
         yButton.setPreferredSize(new java.awt.Dimension(25, 20));
         yButton.addActionListener(new java.awt.event.ActionListener() {
@@ -915,6 +951,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         zButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         zButton.setText("Z");
+        zButton.setToolTipText("Guess Z");
         zButton.setMaximumSize(new java.awt.Dimension(10, 10));
         zButton.setPreferredSize(new java.awt.Dimension(25, 20));
         zButton.addActionListener(new java.awt.event.ActionListener() {
@@ -926,6 +963,7 @@ public class TheWindow extends javax.swing.JFrame {
         zButton.setBounds(480, 340, 40, 32);
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setToolTipText("pole");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1054,6 +1092,7 @@ public class TheWindow extends javax.swing.JFrame {
         rightLeg.setBounds(350, 130, 40, 9);
 
         jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel8.setToolTipText("rope");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1070,6 +1109,7 @@ public class TheWindow extends javax.swing.JFrame {
         jPanel8.setBounds(350, 20, 8, 40);
 
         jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setToolTipText("ground");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1214,6 +1254,7 @@ public class TheWindow extends javax.swing.JFrame {
         l6.setBounds(340, 250, 40, 10);
 
         skipButton.setText("Skip");
+        skipButton.setToolTipText("Click to skip to next game");
         skipButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 skipButtonActionPerformed(evt);
@@ -1222,6 +1263,7 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.add(skipButton);
         skipButton.setBounds(500, 70, 80, 23);
 
+        dateTextField.setToolTipText("Current Date and Time");
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateTextFieldActionPerformed(evt);
@@ -1243,6 +1285,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
 
+        dateTextField1.setToolTipText("Current date and time");
         dateTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateTextField1ActionPerformed(evt);
@@ -1250,6 +1293,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         redButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/redcircle.png"))); // NOI18N
+        redButton.setToolTipText("Red Button");
         redButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 redButtonMouseEntered(evt);
@@ -1265,6 +1309,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         greenButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/greencircle.png"))); // NOI18N
+        greenButton.setToolTipText("Green Button");
         greenButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 greenButtonMouseEntered(evt);
@@ -1280,6 +1325,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         purpleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/purplecircle.png"))); // NOI18N
+        purpleButton.setToolTipText("Purple Button");
         purpleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 purpleButtonMouseEntered(evt);
@@ -1295,6 +1341,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         blueButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/bluecircle.png"))); // NOI18N
+        blueButton.setToolTipText("Blue Button");
         blueButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 blueButtonMouseEntered(evt);
@@ -1310,6 +1357,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         yellowButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/yellowcircle.png"))); // NOI18N
+        yellowButton.setToolTipText("Yellow Button");
         yellowButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 yellowButtonMouseEntered(evt);
@@ -1326,6 +1374,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         answer.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         answer.setText("jLabel10");
+        answer.setToolTipText("What is the text color?");
 
         javax.swing.GroupLayout colorGameLayout = new javax.swing.GroupLayout(colorGame);
         colorGame.setLayout(colorGameLayout);
@@ -1336,12 +1385,7 @@ public class TheWindow extends javax.swing.JFrame {
                 .addComponent(dateTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
                 .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(purpleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
+                    .addGroup(colorGameLayout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addComponent(yellowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19)
@@ -1350,9 +1394,16 @@ public class TheWindow extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(answer, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
-                        .addGap(56, 56, 56)
+                        .addGap(56, 56, 56))
+                    .addGroup(colorGameLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
                         .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17)))
+                        .addGap(17, 17, 17))
+                    .addComponent(purpleButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65))
         );
         colorGameLayout.setVerticalGroup(
@@ -1385,8 +1436,10 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel10.setText("Your Score is: ");
 
         colorScoreText.setText("jLabel12");
+        colorScoreText.setToolTipText("This is your score");
 
         endButton2.setText("end");
+        endButton2.setToolTipText("Click to go to next game");
         endButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 endButton2ActionPerformed(evt);
@@ -1427,6 +1480,7 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel5.setText("Score");
 
         endButton.setText("End");
+        endButton.setToolTipText("Click to go to menu screen");
         endButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 endButtonActionPerformed(evt);
@@ -1434,6 +1488,7 @@ public class TheWindow extends javax.swing.JFrame {
         });
 
         finalScoreTextBox.setEditable(false);
+        finalScoreTextBox.setToolTipText("This is you score. Good job!");
 
         javax.swing.GroupLayout endPageLayout = new javax.swing.GroupLayout(endPage);
         endPage.setLayout(endPageLayout);
@@ -2391,6 +2446,7 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel15.setBounds(130, 80, 270, 270);
 
         submitSudoku.setText("Submit");
+        submitSudoku.setToolTipText("Click to submit you answers");
         submitSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitSudokuActionPerformed(evt);
@@ -2400,6 +2456,7 @@ public class TheWindow extends javax.swing.JFrame {
         submitSudoku.setBounds(20, 300, 80, 23);
 
         quitSudoku.setText("Quit");
+        quitSudoku.setToolTipText("Click to go to menu screen");
         quitSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quitSudokuActionPerformed(evt);
@@ -2411,6 +2468,7 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 102, 255));
         jLabel12.setText("Sudoku");
+        jLabel12.setToolTipText("Title of Game");
         sudokuGame.add(jLabel12);
         jLabel12.setBounds(40, 20, 90, 30);
 
@@ -2428,12 +2486,17 @@ public class TheWindow extends javax.swing.JFrame {
         sudoErrorMessage.setText("Please Enter Value from 1-9");
         sudokuGame.add(sudoErrorMessage);
         sudoErrorMessage.setBounds(170, 30, 200, 40);
+
+        sDateTextField.setToolTipText("Current date and time");
         sudokuGame.add(sDateTextField);
         sDateTextField.setBounds(420, 10, 160, 30);
 
         mainPanel.add(sudokuGame, "card10");
 
+        finalScore.setToolTipText("You Final Score. Good job?");
+
         endSudoku.setText("End");
+        endSudoku.setToolTipText("Click to go to main menu");
         endSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 endSudokuActionPerformed(evt);
@@ -3758,6 +3821,7 @@ public class TheWindow extends javax.swing.JFrame {
     //The score is appended on the hangman window
     private void xButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xButtonActionPerformed
         // TODO add your handling code here:
+        f1Clicked();
          theWrong.setVisible(false);
          char[] check = word.toCharArray();
         
@@ -4797,9 +4861,18 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuEnd.setVisible(true);
         finalScore.setText(new Integer(theFinalScore).toString());   
     }
-    /**
-     * @param args the command line arguments
-     */
+    
+    
+    public void f1Clicked(){
+        JOptionPane.showMessageDialog(null, "     Nick Curinga 009556235\n     Tuan Pham 009222226\n     Cesar Pedroza 009977643\n     Devin Wells009235655" +
+                                        "\n\n     Quarter Project, Fall 2016");    
+    }
+    
+    public void escClicked(){
+        System.out(0);
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

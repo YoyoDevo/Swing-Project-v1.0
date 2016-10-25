@@ -216,6 +216,7 @@
             <Component class="javax.swing.JButton" name="playButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Play"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to start playing"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playButtonActionPerformed"/>
@@ -224,6 +225,7 @@
             <Component class="javax.swing.JButton" name="highscoreButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Highscores"/>
+                <Property name="toolTipText" type="java.lang.String" value="See highscores"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="highscoreButtonActionPerformed"/>
@@ -232,6 +234,7 @@
             <Component class="javax.swing.JButton" name="creditsButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Credits"/>
+                <Property name="toolTipText" type="java.lang.String" value="See who made this thing"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="creditsButtonActionPerformed"/>
@@ -243,6 +246,7 @@
                   <Image iconType="3" name="/SwingProjectv1/images.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel11"/>
+                <Property name="toolTipText" type="java.lang.String" value="This is our logo"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -307,11 +311,13 @@
                   <Color blue="0" green="cc" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Highscores"/>
+                <Property name="toolTipText" type="java.lang.String" value="this is a title"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="backHighscoreButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Back"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to go back to menu"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backHighscoreButtonActionPerformed"/>
@@ -330,6 +336,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="&#xa;"/>
+                    <Property name="toolTipText" type="java.lang.String" value="List of recorded highscores"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -411,11 +418,13 @@
                   <Color blue="33" green="0" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Credits"/>
+                <Property name="toolTipText" type="java.lang.String" value="this is a title"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="backCreditsButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Back"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to go back to menu"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backCreditsButtonActionPerformed"/>
@@ -474,6 +483,7 @@
                   <Color blue="ff" green="0" red="33" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hangman"/>
+                <Property name="toolTipText" type="java.lang.String" value="Title"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -650,6 +660,7 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="100"/>
+                <Property name="toolTipText" type="java.lang.String" value="You current score"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="scoreTextFieldActionPerformed"/>
@@ -666,6 +677,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="A"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess A"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -688,6 +700,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="B"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess B"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -710,6 +723,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="C"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess C"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -732,6 +746,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="D"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess D"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -754,6 +769,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="E"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess E"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -776,6 +792,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="F"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess f"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -798,6 +815,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="G"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess G"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -820,6 +838,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="H"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess H"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -842,6 +861,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="I"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess I"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -864,6 +884,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="J"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess J"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -886,6 +907,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="K"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess K"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -908,6 +930,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="L"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess L"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -930,6 +953,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="M"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess M"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -952,6 +976,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="N"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess N"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -974,6 +999,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="O"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess O"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -996,6 +1022,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="P"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess P"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1018,6 +1045,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Q"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess Q"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1040,6 +1068,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess  R"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1062,6 +1091,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="S"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess S"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1084,6 +1114,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="T"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess T"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1106,6 +1137,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="U"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess U"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1128,6 +1160,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="V"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess V"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1150,6 +1183,7 @@
                   <Font name="Tahoma" size="9" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="W"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess W"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1172,6 +1206,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess X"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1194,6 +1229,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Y"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess Y"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1216,6 +1252,7 @@
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Z"/>
+                <Property name="toolTipText" type="java.lang.String" value="Guess Z"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[10, 10]"/>
                 </Property>
@@ -1237,6 +1274,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="pole"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1437,6 +1475,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="rope"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1462,6 +1501,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="ground"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1685,6 +1725,7 @@
             <Component class="javax.swing.JButton" name="skipButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Skip"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to skip to next game"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="skipButtonActionPerformed"/>
@@ -1696,6 +1737,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="dateTextField">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Current Date and Time"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dateTextFieldActionPerformed"/>
               </Events>
@@ -1739,13 +1783,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="redButton" min="-2" pref="96" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="purpleButton" min="-2" pref="96" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                               <Component id="yellowButton" min="-2" pref="96" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
@@ -1757,9 +1795,19 @@
                                   <Component id="answer" alignment="1" pref="147" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="redButton" min="-2" pref="105" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="greenButton" min="-2" pref="96" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="purpleButton" alignment="1" min="-2" pref="96" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="65" pref="65" max="-2" attributes="0"/>
                   </Group>
@@ -1800,6 +1848,9 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="dateTextField1">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Current date and time"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dateTextField1ActionPerformed"/>
               </Events>
@@ -1809,6 +1860,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/SwingProjectv1/redcircle.png"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Red Button"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="redButtonMouseEntered"/>
@@ -1821,6 +1873,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/SwingProjectv1/greencircle.png"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Green Button"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="greenButtonMouseEntered"/>
@@ -1833,6 +1886,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/SwingProjectv1/purplecircle.png"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Purple Button"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="purpleButtonMouseEntered"/>
@@ -1845,6 +1899,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/SwingProjectv1/bluecircle.png"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Blue Button"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="blueButtonMouseEntered"/>
@@ -1857,6 +1912,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/SwingProjectv1/yellowcircle.png"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Yellow Button"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="yellowButtonMouseEntered"/>
@@ -1870,6 +1926,7 @@
                   <Font name="Tahoma" size="36" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel10"/>
+                <Property name="toolTipText" type="java.lang.String" value="What is the text color?"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1922,11 +1979,13 @@
             <Component class="javax.swing.JLabel" name="colorScoreText">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel12"/>
+                <Property name="toolTipText" type="java.lang.String" value="This is your score"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="endButton2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="end"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to go to next game"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endButton2ActionPerformed"/>
@@ -1988,6 +2047,7 @@
             <Component class="javax.swing.JButton" name="endButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="End"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to go to menu screen"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endButtonActionPerformed"/>
@@ -1996,6 +2056,7 @@
             <Component class="javax.swing.JTextField" name="finalScoreTextBox">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="toolTipText" type="java.lang.String" value="This is you score. Good job!"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -3759,6 +3820,7 @@
             <Component class="javax.swing.JButton" name="submitSudoku">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Submit"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to submit you answers"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitSudokuActionPerformed"/>
@@ -3772,6 +3834,7 @@
             <Component class="javax.swing.JButton" name="quitSudoku">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Quit"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to go to menu screen"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quitSudokuActionPerformed"/>
@@ -3791,6 +3854,7 @@
                   <Color blue="ff" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sudoku"/>
+                <Property name="toolTipText" type="java.lang.String" value="Title of Game"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3838,6 +3902,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="sDateTextField">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Current date and time"/>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="420" y="10" width="160" height="30"/>
@@ -3890,10 +3957,14 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="finalScore">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="You Final Score. Good job?"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="endSudoku">
               <Properties>
                 <Property name="text" type="java.lang.String" value="End"/>
+                <Property name="toolTipText" type="java.lang.String" value="Click to go to main menu"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endSudokuActionPerformed"/>
