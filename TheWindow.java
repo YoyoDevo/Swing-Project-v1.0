@@ -3821,7 +3821,6 @@ public class TheWindow extends javax.swing.JFrame {
     //The score is appended on the hangman window
     private void xButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xButtonActionPerformed
         // TODO add your handling code here:
-        f1Clicked();
          theWrong.setVisible(false);
          char[] check = word.toCharArray();
         
