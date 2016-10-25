@@ -111,9 +111,8 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="keyBindBtn2" min="-2" pref="0" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="keyBindBtn1" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -122,11 +121,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="projectLabel" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                       <Component id="teamLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="keyBindBtn2" min="-2" pref="0" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      <Component id="keyBindBtn1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -154,12 +152,9 @@
                 <Property name="text" type="java.lang.String" value="By: Team Stack Underflow"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="keyBindBtn2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton3"/>
-              </Properties>
+            <Component class="javax.swing.JButton" name="keyBindBtn1">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn2.setOpaque(false);&#xa;keyBindBtn2.setContentAreaFilled(false);&#xa;keyBindBtn2.setBorderPainted(false);&#xa;&#xa;AbstractAction f1 = new AbstractAction() {&#xa;    @Override&#xa;    public void actionPerformed(ActionEvent e) {&#xa;       f1Clicked();    &#xa;    }&#xa;};&#xa;&#xa;AbstractAction esc = new AbstractAction() {&#xa;    @Override&#xa;    public void actionPerformed(ActionEvent e) {&#xa;       escClicked();    &#xa;    }&#xa;};&#xa;&#xa;&#xa;keyBindBtn2.addActionListener(f1);&#xa;keyBindBtn2.addActionListener(esc);&#xa;&#xa;keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn2.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn2.getActionMap().put(&quot;esc&quot;, esc);"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="AbstractAction f1 = new AbstractAction() {&#xa;            @Override&#xa;            public void actionPerformed(ActionEvent e) {&#xa;                f1Clicked();&#xa;            }&#xa;        };&#xa;&#xa;        AbstractAction esc = new AbstractAction() {&#xa;            @Override&#xa;            public void actionPerformed(ActionEvent e) {&#xa;                escClicked();&#xa;            }&#xa;        };&#xa;&#xa;keyBindBtn1.setOpaque(false);&#xa;keyBindBtn1.setContentAreaFilled(false);&#xa;keyBindBtn1.setBorderPainted(false);&#xa;&#xa;keyBindBtn1.addActionListener(f1);&#xa;keyBindBtn1.addActionListener(esc);&#xa;&#xa;keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn1.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn1.getActionMap().put(&quot;esc&quot;, esc);"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -174,7 +169,6 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn1.requestFocus();&#xa;Action getOut = new AbstractAction(&quot;getOut&quot;){&#xa;    public void actionPerformed(ActionEvent e){&#xa;        System.out.println(&quot;plesssssasee&quot;);&#xa;        System.exit(0);&#xa;   }&#xa;};&#xa;&#xa;String keyZ = &quot;z&quot;;&#xa;KeyStroke keyStroke = KeyStroke.getKeyStroke(keyZ);&#xa;keyBindBtn1.getActionMap().put(keyZ, getOut);&#xa;keyBindBtn1.getInputMap(keyBindBtn1.WHEN_IN_FOCUSED_WINDOW).put(keyStroke, keyZ);"/>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel()"/>
           </AuxValues>
           <Constraints>
@@ -204,16 +198,15 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="keyBindBtn1" min="-2" pref="7" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="keyBindBtn2" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="keyBindBtn1" min="-2" pref="0" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <EmptySpace pref="140" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -222,7 +215,8 @@
                               <Component id="highscoreButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="creditsButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="keyBindBtn2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel11" min="-2" pref="181" max="-2" attributes="0"/>
@@ -270,15 +264,12 @@
                 <Property name="toolTipText" type="java.lang.String" value="This is our logo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="keyBindBtn1">
+            <Component class="javax.swing.JButton" name="keyBindBtn2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="keyBindBtn1ActionPerformed"/>
-              </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn1.setOpaque(false);&#xa;keyBindBtn1.setContentAreaFilled(false);&#xa;keyBindBtn1.setBorderPainted(false);&#xa;&#xa;&#xa;&#xa;&#xa;keyBindBtn1.addActionListener(f1);&#xa;keyBindBtn1.addActionListener(esc);&#xa;&#xa;keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn1.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn1.getActionMap().put(&quot;esc&quot;, esc);"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn2.setOpaque(false);&#xa;keyBindBtn2.setContentAreaFilled(false);&#xa;keyBindBtn2.setBorderPainted(false);&#xa;&#xa;keyBindBtn2.addActionListener(f1);&#xa;keyBindBtn2.addActionListener(esc);&#xa;&#xa;keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn2.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn2.getActionMap().put(&quot;esc&quot;, esc);"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -315,17 +306,14 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="keyBindBtn3" min="-2" pref="3" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="keyBindBtn3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="keyBindBtn3" min="-2" pref="0" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -333,9 +321,10 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="backHighscoreButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" pref="136" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="150" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="keyBindBtn3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -381,9 +370,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JButton" name="keyBindBtn3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton4"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn3.setOpaque(false);&#xa;keyBindBtn3.setContentAreaFilled(false);&#xa;keyBindBtn3.setBorderPainted(false);&#xa;&#xa;keyBindBtn3.addActionListener(f1);&#xa;keyBindBtn3.addActionListener(esc);&#xa;&#xa;keyBindBtn3.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn3.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn3.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn3.getActionMap().put(&quot;esc&quot;, esc);"/>
               </AuxValues>
@@ -421,22 +407,18 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="1" pref="225" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" pref="214" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="keyBindBtn4" min="-2" pref="0" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" pref="214" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="keyBindBtn4" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -453,11 +435,10 @@
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="96" max="32767" attributes="0"/>
-                      <Component id="keyBindBtn4" min="-2" pref="2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <EmptySpace pref="117" max="32767" attributes="0"/>
                       <Component id="backCreditsButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="keyBindBtn4" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -508,9 +489,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="keyBindBtn4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jButton5"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn4.setOpaque(false);&#xa;keyBindBtn4.setContentAreaFilled(false);&#xa;keyBindBtn4.setBorderPainted(false);&#xa;&#xa;keyBindBtn4.addActionListener(f1);&#xa;keyBindBtn4.addActionListener(esc);&#xa;&#xa;keyBindBtn4.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn4.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn4.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn4.getActionMap().put(&quot;esc&quot;, esc);"/>
               </AuxValues>
@@ -1833,7 +1811,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="160" y="20" width="0" height="-1"/>
+                  <AbsoluteConstraints x="560" y="390" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1852,10 +1830,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="dateTextField1" min="-2" pref="170" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -1878,16 +1852,20 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="greenButton" min="-2" pref="96" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="purpleButton" alignment="1" min="-2" pref="96" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="greenButton" min="-2" pref="96" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="keyBindBtn6" min="-2" max="-2" attributes="0"/>
+                          <Component id="purpleButton" alignment="1" min="-2" pref="96" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <EmptySpace min="65" pref="65" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="dateTextField1" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="keyBindBtn6" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1897,9 +1875,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="dateTextField1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="keyBindBtn6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           </Group>
                           <Component id="answer" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
@@ -1917,9 +1893,17 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="purpleButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="greenButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      <Component id="greenButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="keyBindBtn6" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -2038,6 +2022,10 @@
                       <Component id="endButton2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="keyBindBtn7" min="-2" pref="0" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2050,7 +2038,8 @@
                       </Group>
                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                       <Component id="endButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="104" max="32767" attributes="0"/>
+                      <EmptySpace pref="95" max="32767" attributes="0"/>
+                      <Component id="keyBindBtn7" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2075,6 +2064,11 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endButton2ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="keyBindBtn7">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn7.setOpaque(false);&#xa;keyBindBtn7.setContentAreaFilled(false);&#xa;keyBindBtn7.setBorderPainted(false);&#xa;&#xa;keyBindBtn7.addActionListener(f1);&#xa;keyBindBtn7.addActionListener(esc);&#xa;&#xa;keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn7.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn7.getActionMap().put(&quot;esc&quot;, esc);"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -2104,11 +2098,7 @@
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="258" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="keyBindBtn7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="257" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2120,10 +2110,9 @@
                           <Component id="jLabel5" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="finalScoreTextBox" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="201" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="endButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="keyBindBtn7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2149,11 +2138,6 @@
                 <Property name="toolTipText" type="java.lang.String" value="This is you score. Good job!"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="keyBindBtn7">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn7.setOpaque(false);&#xa;keyBindBtn7.setContentAreaFilled(false);&#xa;keyBindBtn7.setBorderPainted(false);&#xa;&#xa;keyBindBtn7.addActionListener(f1);&#xa;keyBindBtn7.addActionListener(esc);&#xa;&#xa;keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn7.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn7.getActionMap().put(&quot;esc&quot;, esc);"/>
-              </AuxValues>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="sudokuGame">
@@ -2173,6 +2157,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextField" name="gridSpace1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2237,6 +2222,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace4">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2280,6 +2266,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace6">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2344,6 +2331,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace9">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2492,6 +2480,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace16">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2577,6 +2566,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace20">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2683,6 +2673,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace25">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2705,6 +2696,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace26">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2748,6 +2740,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace28">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2791,6 +2784,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace30">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2834,6 +2828,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace32">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2877,6 +2872,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace34">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -2899,6 +2895,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace35">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3026,6 +3023,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace41">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3153,6 +3151,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace47">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3175,6 +3174,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace48">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3218,6 +3218,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace50">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3261,6 +3262,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace52">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3304,6 +3306,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace54">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3347,6 +3350,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace56">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3369,6 +3373,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace57">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3475,6 +3480,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace62">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3560,6 +3566,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace66">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3708,6 +3715,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace73">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3772,6 +3780,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace76">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3815,6 +3824,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace78">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -3879,6 +3889,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="gridSpace81">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
@@ -4007,12 +4018,15 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JButton" name="keyBindBtn8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton1"/>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="keyBindBtn8.setOpaque(false);&#xa;keyBindBtn8.setContentAreaFilled(false);&#xa;keyBindBtn8.setBorderPainted(false);&#xa;&#xa;keyBindBtn8.addActionListener(f1);&#xa;keyBindBtn8.addActionListener(esc);&#xa;&#xa;keyBindBtn8.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), &quot;f1&quot;);&#xa;keyBindBtn8.getActionMap().put(&quot;f1&quot;, f1);&#xa;&#xa;keyBindBtn8.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), &quot;esc&quot;);&#xa;keyBindBtn8.getActionMap().put(&quot;esc&quot;, esc);"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="570" y="394" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="583" y="383" width="20" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -4045,7 +4059,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="keyBindBtn9" min="-2" max="-2" attributes="0"/>
+                      <Component id="keyBindBtn9" min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

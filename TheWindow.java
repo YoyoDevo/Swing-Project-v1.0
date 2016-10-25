@@ -16,7 +16,6 @@ import java.awt.Color;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -104,13 +103,13 @@ public class TheWindow extends javax.swing.JFrame {
         startUp = new javax.swing.JPanel();
         projectLabel = new javax.swing.JLabel();
         teamLabel = new javax.swing.JLabel();
-        keyBindBtn2 = new javax.swing.JButton();
+        keyBindBtn1 = new javax.swing.JButton();
         menu = new javax.swing.JPanel();
         playButton = new javax.swing.JButton();
         highscoreButton = new javax.swing.JButton();
         creditsButton = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        keyBindBtn1 = new javax.swing.JButton();
+        keyBindBtn2 = new javax.swing.JButton();
         highscores = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backHighscoreButton = new javax.swing.JButton();
@@ -198,11 +197,11 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         colorScoreText = new javax.swing.JLabel();
         endButton2 = new javax.swing.JButton();
+        keyBindBtn7 = new javax.swing.JButton();
         endPage = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         endButton = new javax.swing.JButton();
         finalScoreTextBox = new javax.swing.JTextField();
-        keyBindBtn7 = new javax.swing.JButton();
         sudokuGame = new javax.swing.JPanel();
 
         gridSpace1 = new javax.swing.JTextField();
@@ -322,8 +321,6 @@ public class TheWindow extends javax.swing.JFrame {
         teamLabel.setForeground(new java.awt.Color(255, 255, 255));
         teamLabel.setText("By: Team Stack Underflow");
 
-        keyBindBtn2.setText("jButton3");
-
         javax.swing.GroupLayout startUpLayout = new javax.swing.GroupLayout(startUp);
         startUp.setLayout(startUpLayout);
         startUpLayout.setHorizontalGroup(
@@ -337,25 +334,19 @@ public class TheWindow extends javax.swing.JFrame {
                 .addComponent(teamLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startUpLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(keyBindBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(keyBindBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         startUpLayout.setVerticalGroup(
             startUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(startUpLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(projectLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
                 .addComponent(teamLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(keyBindBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGap(98, 98, 98)
+                .addComponent(keyBindBtn1))
         );
-
-        keyBindBtn2.setOpaque(false);
-        keyBindBtn2.setContentAreaFilled(false);
-        keyBindBtn2.setBorderPainted(false);
 
         AbstractAction f1 = new AbstractAction() {
             @Override
@@ -371,14 +362,18 @@ public class TheWindow extends javax.swing.JFrame {
             }
         };
 
-        keyBindBtn2.addActionListener(f1);
-        keyBindBtn2.addActionListener(esc);
+        keyBindBtn1.setOpaque(false);
+        keyBindBtn1.setContentAreaFilled(false);
+        keyBindBtn1.setBorderPainted(false);
 
-        keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), "f1");
-        keyBindBtn2.getActionMap().put("f1", f1);
+        keyBindBtn1.addActionListener(f1);
+        keyBindBtn1.addActionListener(esc);
 
-        keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), "esc");
-        keyBindBtn2.getActionMap().put("esc", esc);
+        keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), "f1");
+        keyBindBtn1.getActionMap().put("f1", f1);
+
+        keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), "esc");
+        keyBindBtn1.getActionMap().put("esc", esc);
 
         mainPanel.add(startUp, "card7");
         ActionListener showMenu = new ActionListener() {
@@ -423,12 +418,7 @@ public class TheWindow extends javax.swing.JFrame {
         jLabel11.setText("jLabel11");
         jLabel11.setToolTipText("This is our logo");
 
-        keyBindBtn1.setText("jButton1");
-        keyBindBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                keyBindBtn1ActionPerformed(evt);
-            }
-        });
+        keyBindBtn2.setToolTipText("");
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -447,15 +437,14 @@ public class TheWindow extends javax.swing.JFrame {
                             .addComponent(playButton)
                             .addComponent(highscoreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
-            .addGroup(menuLayout.createSequentialGroup()
-                .addComponent(keyBindBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(keyBindBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
-                .addComponent(keyBindBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addContainerGap(140, Short.MAX_VALUE)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                         .addComponent(playButton)
@@ -463,38 +452,27 @@ public class TheWindow extends javax.swing.JFrame {
                         .addComponent(highscoreButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(creditsButton)
-                        .addGap(67, 67, 67))
+                        .addGap(44, 44, 44)
+                        .addComponent(keyBindBtn2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(79, 79, 79))))
         );
 
-        keyBindBtn1.setOpaque(false);
-        keyBindBtn1.setContentAreaFilled(false);
-        keyBindBtn1.setBorderPainted(false);
+        keyBindBtn2.setOpaque(false);
+        keyBindBtn2.setContentAreaFilled(false);
+        keyBindBtn2.setBorderPainted(false);
 
-        keyBindBtn1.addActionListener(f1);
-        keyBindBtn1.addActionListener(esc);
+        keyBindBtn2.addActionListener(f1);
+        keyBindBtn2.addActionListener(esc);
 
-        keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), "f1");
-        keyBindBtn1.getActionMap().put("f1", f1);
+        keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), "f1");
+        keyBindBtn2.getActionMap().put("f1", f1);
 
-        keyBindBtn1.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), "esc");
-        keyBindBtn1.getActionMap().put("esc", esc);
+        keyBindBtn2.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), "esc");
+        keyBindBtn2.getActionMap().put("esc", esc);
 
         mainPanel.add(menu, "card2");
-        keyBindBtn1.requestFocus();
-        Action getOut = new AbstractAction("getOut"){
-            public void actionPerformed(ActionEvent e){
-                System.out.println("plesssssasee");
-                System.exit(0);
-            }
-        };
-
-        String keyZ = "z";
-        KeyStroke keyStroke = KeyStroke.getKeyStroke(keyZ);
-        keyBindBtn1.getActionMap().put(keyZ, getOut);
-        keyBindBtn1.getInputMap(keyBindBtn1.WHEN_IN_FOCUSED_WINDOW).put(keyStroke, keyZ);
 
         highscores.setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -518,8 +496,6 @@ public class TheWindow extends javax.swing.JFrame {
         highscoresTextBox.setToolTipText("List of recorded highscores");
         jScrollPane1.setViewportView(highscoresTextBox);
 
-        keyBindBtn3.setText("jButton4");
-
         javax.swing.GroupLayout highscoresLayout = new javax.swing.GroupLayout(highscores);
         highscores.setLayout(highscoresLayout);
         highscoresLayout.setHorizontalGroup(
@@ -537,23 +513,21 @@ public class TheWindow extends javax.swing.JFrame {
                 .addContainerGap(240, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, highscoresLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(keyBindBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addComponent(keyBindBtn3))
         );
         highscoresLayout.setVerticalGroup(
             highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(highscoresLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(keyBindBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
+                .addGap(110, 110, 110)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(highscoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(highscoresLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(backHighscoreButton))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
-                .addGap(78, 78, 78))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(keyBindBtn3))
         );
 
         keyBindBtn3.setOpaque(false);
@@ -595,8 +569,6 @@ public class TheWindow extends javax.swing.JFrame {
 
         jLabel9.setText("Devin Wells        009235655");
 
-        keyBindBtn4.setText("jButton5");
-
         javax.swing.GroupLayout creditsLayout = new javax.swing.GroupLayout(credits);
         credits.setLayout(creditsLayout);
         creditsLayout.setHorizontalGroup(
@@ -613,17 +585,15 @@ public class TheWindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditsLayout.createSequentialGroup()
                 .addGap(1, 225, Short.MAX_VALUE)
                 .addGroup(creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditsLayout.createSequentialGroup()
-                        .addGroup(creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel8)))
-                        .addGap(161, 161, 161))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditsLayout.createSequentialGroup()
-                        .addComponent(keyBindBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel8)))
+                .addGap(161, 161, 161))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(keyBindBtn4))
         );
         creditsLayout.setVerticalGroup(
             creditsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,11 +608,10 @@ public class TheWindow extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addComponent(keyBindBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addComponent(backCreditsButton)
-                .addGap(51, 51, 51))
+                .addGap(28, 28, 28)
+                .addComponent(keyBindBtn4))
         );
 
         keyBindBtn4.setOpaque(false);
@@ -1401,7 +1370,7 @@ public class TheWindow extends javax.swing.JFrame {
         hangmanGame.add(theWrong);
         theWrong.setBounds(450, 126, 110, 30);
         hangmanGame.add(keyBindBtn5);
-        keyBindBtn5.setBounds(160, 20, 0, 9);
+        keyBindBtn5.setBounds(560, 390, 33, 9);
         keyBindBtn5.setOpaque(false);
         keyBindBtn5.setContentAreaFilled(false);
         keyBindBtn5.setBorderPainted(false);
@@ -1519,9 +1488,6 @@ public class TheWindow extends javax.swing.JFrame {
         colorGameLayout.setHorizontalGroup(
             colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(dateTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
                 .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(colorGameLayout.createSequentialGroup()
                         .addGap(104, 104, 104)
@@ -1538,13 +1504,16 @@ public class TheWindow extends javax.swing.JFrame {
                         .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
-                            .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(17, 17, 17))
-                        .addComponent(purpleButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(keyBindBtn6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
+                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addComponent(purpleButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(keyBindBtn6, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         colorGameLayout.setVerticalGroup(
             colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1552,9 +1521,7 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(colorGameLayout.createSequentialGroup()
                         .addComponent(dateTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(keyBindBtn6)
-                        .addGap(27, 27, 27))
+                        .addGap(82, 82, 82))
                     .addComponent(answer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(colorGameLayout.createSequentialGroup()
@@ -1568,9 +1535,14 @@ public class TheWindow extends javax.swing.JFrame {
                     .addGroup(colorGameLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(purpleButton)
-                        .addGap(32, 32, 32)
-                        .addComponent(greenButton)
-                        .addGap(66, 66, 66))))
+                        .addGroup(colorGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(colorGameLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(greenButton)
+                                .addGap(66, 66, 66))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(keyBindBtn6))))))
         );
 
         keyBindBtn6.setOpaque(false);
@@ -1615,6 +1587,9 @@ public class TheWindow extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(endButton2)
                 .addGap(84, 84, 84))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorGameEndLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(keyBindBtn7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         colorGameEndLayout.setVerticalGroup(
             colorGameEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1625,8 +1600,22 @@ public class TheWindow extends javax.swing.JFrame {
                     .addComponent(colorScoreText))
                 .addGap(91, 91, 91)
                 .addComponent(endButton2)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(keyBindBtn7))
         );
+
+        keyBindBtn7.setOpaque(false);
+        keyBindBtn7.setContentAreaFilled(false);
+        keyBindBtn7.setBorderPainted(false);
+
+        keyBindBtn7.addActionListener(f1);
+        keyBindBtn7.addActionListener(esc);
+
+        keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), "f1");
+        keyBindBtn7.getActionMap().put("f1", f1);
+
+        keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), "esc");
+        keyBindBtn7.getActionMap().put("esc", esc);
 
         mainPanel.add(colorGameEnd, "card9");
 
@@ -1658,10 +1647,7 @@ public class TheWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)))
-                .addContainerGap(258, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, endPageLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(keyBindBtn7))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
         endPageLayout.setVerticalGroup(
             endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1670,30 +1656,17 @@ public class TheWindow extends javax.swing.JFrame {
                 .addGroup(endPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(finalScoreTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(endButton)
-                .addGap(47, 47, 47)
-                .addComponent(keyBindBtn7))
+                .addGap(56, 56, 56))
         );
-
-        keyBindBtn7.setOpaque(false);
-        keyBindBtn7.setContentAreaFilled(false);
-        keyBindBtn7.setBorderPainted(false);
-
-        keyBindBtn7.addActionListener(f1);
-        keyBindBtn7.addActionListener(esc);
-
-        keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1,0), "f1");
-        keyBindBtn7.getActionMap().put("f1", f1);
-
-        keyBindBtn7.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE,0), "esc");
-        keyBindBtn7.getActionMap().put("esc", esc);
 
         mainPanel.add(endPage, "card6");
 
         initSudoGrid();
         sudokuGame.setLayout(null);
 
+        gridSpace1.setEditable(false);
         gridSpace1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace1.setText("8");
         gridSpace1.setBorder(null);
@@ -1728,6 +1701,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace3);
         gridSpace3.setBounds(200, 85, 10, 20);
 
+        gridSpace4.setEditable(false);
         gridSpace4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace4.setText("4");
         gridSpace4.setBorder(null);
@@ -1751,6 +1725,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace5);
         gridSpace5.setBounds(260, 85, 10, 20);
 
+        gridSpace6.setEditable(false);
         gridSpace6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace6.setText("6");
         gridSpace6.setBorder(null);
@@ -1785,6 +1760,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace8);
         gridSpace8.setBounds(350, 85, 10, 20);
 
+        gridSpace9.setEditable(false);
         gridSpace9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace9.setText("7");
         gridSpace9.setBorder(null);
@@ -1863,6 +1839,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace15);
         gridSpace15.setBounds(290, 115, 10, 20);
 
+        gridSpace16.setEditable(false);
         gridSpace16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace16.setText("4");
         gridSpace16.setBorder(null);
@@ -1908,6 +1885,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace19);
         gridSpace19.setBounds(140, 145, 10, 20);
 
+        gridSpace20.setEditable(false);
         gridSpace20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace20.setText("1");
         gridSpace20.setBorder(null);
@@ -1964,6 +1942,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace24);
         gridSpace24.setBounds(290, 145, 10, 20);
 
+        gridSpace25.setEditable(false);
         gridSpace25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace25.setText("6");
         gridSpace25.setBorder(null);
@@ -1976,6 +1955,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace25);
         gridSpace25.setBounds(320, 145, 10, 20);
 
+        gridSpace26.setEditable(false);
         gridSpace26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace26.setText("5");
         gridSpace26.setBorder(null);
@@ -1999,6 +1979,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace27);
         gridSpace27.setBounds(380, 145, 10, 20);
 
+        gridSpace28.setEditable(false);
         gridSpace28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace28.setText("5");
         gridSpace28.setBorder(null);
@@ -2022,6 +2003,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace29);
         gridSpace29.setBounds(170, 175, 10, 20);
 
+        gridSpace30.setEditable(false);
         gridSpace30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace30.setText("9");
         gridSpace30.setBorder(null);
@@ -2045,6 +2027,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace31);
         gridSpace31.setBounds(230, 175, 10, 20);
 
+        gridSpace32.setEditable(false);
         gridSpace32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace32.setText("3");
         gridSpace32.setBorder(null);
@@ -2068,6 +2051,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace33);
         gridSpace33.setBounds(290, 175, 10, 20);
 
+        gridSpace34.setEditable(false);
         gridSpace34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace34.setText("7");
         gridSpace34.setBorder(null);
@@ -2080,6 +2064,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace34);
         gridSpace34.setBounds(320, 175, 10, 20);
 
+        gridSpace35.setEditable(false);
         gridSpace35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace35.setText("8");
         gridSpace35.setBorder(null);
@@ -2147,6 +2132,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace40);
         gridSpace40.setBounds(230, 205, 10, 20);
 
+        gridSpace41.setEditable(false);
         gridSpace41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace41.setText("7");
         gridSpace41.setBorder(null);
@@ -2214,6 +2200,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace46);
         gridSpace46.setBounds(140, 235, 10, 20);
 
+        gridSpace47.setEditable(false);
         gridSpace47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace47.setText("4");
         gridSpace47.setBorder(null);
@@ -2226,6 +2213,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace47);
         gridSpace47.setBounds(170, 235, 10, 20);
 
+        gridSpace48.setEditable(false);
         gridSpace48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace48.setText("8");
         gridSpace48.setBorder(null);
@@ -2249,6 +2237,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace49);
         gridSpace49.setBounds(230, 235, 10, 20);
 
+        gridSpace50.setEditable(false);
         gridSpace50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace50.setText("2");
         gridSpace50.setBorder(null);
@@ -2272,6 +2261,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace51);
         gridSpace51.setBounds(290, 235, 10, 20);
 
+        gridSpace52.setEditable(false);
         gridSpace52.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace52.setText("1");
         gridSpace52.setBorder(null);
@@ -2295,6 +2285,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace53);
         gridSpace53.setBounds(350, 235, 10, 20);
 
+        gridSpace54.setEditable(false);
         gridSpace54.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace54.setText("3");
         gridSpace54.setBorder(null);
@@ -2318,6 +2309,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace55);
         gridSpace55.setBounds(140, 265, 10, 20);
 
+        gridSpace56.setEditable(false);
         gridSpace56.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace56.setText("5");
         gridSpace56.setBorder(null);
@@ -2330,6 +2322,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace56);
         gridSpace56.setBounds(170, 265, 10, 20);
 
+        gridSpace57.setEditable(false);
         gridSpace57.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace57.setText("2");
         gridSpace57.setBorder(null);
@@ -2386,6 +2379,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace61);
         gridSpace61.setBounds(320, 265, 10, 20);
 
+        gridSpace62.setEditable(false);
         gridSpace62.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace62.setText("9");
         gridSpace62.setBorder(null);
@@ -2431,6 +2425,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace65);
         gridSpace65.setBounds(170, 295, 10, 20);
 
+        gridSpace66.setEditable(false);
         gridSpace66.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace66.setText("1");
         gridSpace66.setBorder(null);
@@ -2509,6 +2504,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace72);
         gridSpace72.setBounds(380, 295, 10, 20);
 
+        gridSpace73.setEditable(false);
         gridSpace73.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace73.setText("3");
         gridSpace73.setBorder(null);
@@ -2543,6 +2539,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace75);
         gridSpace75.setBounds(200, 325, 10, 20);
 
+        gridSpace76.setEditable(false);
         gridSpace76.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace76.setText("9");
         gridSpace76.setBorder(null);
@@ -2566,6 +2563,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace77);
         gridSpace77.setBounds(260, 325, 10, 20);
 
+        gridSpace78.setEditable(false);
         gridSpace78.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace78.setText("2");
         gridSpace78.setBorder(null);
@@ -2600,6 +2598,7 @@ public class TheWindow extends javax.swing.JFrame {
         sudokuGame.add(gridSpace80);
         gridSpace80.setBounds(350, 325, 10, 20);
 
+        gridSpace81.setEditable(false);
         gridSpace81.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace81.setText("5");
         gridSpace81.setBorder(null);
@@ -2662,8 +2661,10 @@ public class TheWindow extends javax.swing.JFrame {
         sDateTextField.setToolTipText("Current date and time");
         sudokuGame.add(sDateTextField);
         sDateTextField.setBounds(420, 10, 160, 30);
+
+        keyBindBtn8.setText("jButton1");
         sudokuGame.add(keyBindBtn8);
-        keyBindBtn8.setBounds(570, 394, 33, 9);
+        keyBindBtn8.setBounds(583, 383, 20, 20);
         keyBindBtn8.setOpaque(false);
         keyBindBtn8.setContentAreaFilled(false);
         keyBindBtn8.setBorderPainted(false);
@@ -2708,7 +2709,7 @@ public class TheWindow extends javax.swing.JFrame {
                 .addContainerGap(256, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sudokuEndLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(keyBindBtn9))
+                .addComponent(keyBindBtn9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         sudokuEndLayout.setVerticalGroup(
             sudokuEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4282,15 +4283,6 @@ public class TheWindow extends javax.swing.JFrame {
         colorGame();
     }//GEN-LAST:event_yellowButtonActionPerformed
 
-    private void redButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseEntered
-        redButton.setBackground(Color.orange);
-      
-    }//GEN-LAST:event_redButtonMouseEntered
-
-    private void redButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseExited
-        redButton.setBackground(UIManager.getColor("control"));
-    }//GEN-LAST:event_redButtonMouseExited
-
     private void blueButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blueButtonMouseEntered
         blueButton.setBackground(Color.orange);
          
@@ -4317,25 +4309,6 @@ public class TheWindow extends javax.swing.JFrame {
     private void purpleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purpleButtonMouseExited
        purpleButton.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_purpleButtonMouseExited
-
-    //method: redButtonActionPerformed
-    //purpose: allow correct color to be matched with color of text and end game
-    private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
-        colorChoice = Color.red;
-        colorPlays += 1;
-       
-        if (colorChoice.getRGB() == colorCorrect.getRGB()){
-            colorScore += 100;  
-            
-        }
-        
-        
-        if (colorPlays == 5){
-              toSudoku();
-        } 
-         
-        colorGame();
-    }//GEN-LAST:event_redButtonActionPerformed
 
      //method: greenButtonActionPerformed
     //purpose: allow correct color to be matched with color of text and end game
@@ -4754,9 +4727,32 @@ public class TheWindow extends javax.swing.JFrame {
         reInit();
     }//GEN-LAST:event_endSudokuActionPerformed
 
-    private void keyBindBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keyBindBtn1ActionPerformed
-     
-    }//GEN-LAST:event_keyBindBtn1ActionPerformed
+    //method: redButtonActionPerformed
+    //purpose: allow correct color to be matched with color of text and end game
+    private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
+        colorChoice = Color.red;
+        colorPlays += 1;
+
+        if (colorChoice.getRGB() == colorCorrect.getRGB()){
+            colorScore += 100;
+
+        }
+
+        if (colorPlays == 5){
+            toSudoku();
+        }
+
+        colorGame();
+    }//GEN-LAST:event_redButtonActionPerformed
+
+    private void redButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseExited
+        redButton.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_redButtonMouseExited
+
+    private void redButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redButtonMouseEntered
+        redButton.setBackground(Color.orange);
+
+    }//GEN-LAST:event_redButtonMouseEntered
 
     //method:setTextField
     //purpose: sets all guess text areas visiblity to false and stores in array for later use
@@ -4807,6 +4803,49 @@ public class TheWindow extends javax.swing.JFrame {
       }
     }
     
+    //method: randCircles
+    //purpose: randomize position of circles
+    public void randCircles() {
+        colorGame.setLayout(null);
+        Random rand = new Random();
+        int chosen = rand.nextInt(5);
+        System.out.println(chosen);
+        if (chosen == 1 || chosen == 0) {
+            blueButton.setLocation(30, 110);
+            greenButton.setLocation(120, 220);
+            redButton.setLocation(220, 110);
+            purpleButton.setLocation(320, 220);
+            yellowButton.setLocation(420, 110);
+        }
+        else if (chosen == 2) {
+            greenButton.setLocation(30, 110);
+            blueButton.setLocation(120, 220);
+            purpleButton.setLocation(220, 110);
+            redButton.setLocation(320, 220);
+            yellowButton.setLocation(420, 110);
+        }
+        else if (chosen == 3) {
+            yellowButton.setLocation(30, 110);
+            purpleButton.setLocation(120, 220);
+            blueButton.setLocation(220, 110);
+            greenButton.setLocation(320, 220);
+            redButton.setLocation(420, 110);
+        }
+        else if (chosen == 4) {
+            redButton.setLocation(30, 110);
+            greenButton.setLocation(120, 220);
+            blueButton.setLocation(220, 110);
+            yellowButton.setLocation(320, 220);
+            purpleButton.setLocation(420, 110);
+        }
+        else if (chosen == 5) {
+            purpleButton.setLocation(30, 110);
+            redButton.setLocation(120, 220);
+            greenButton.setLocation(220, 110);
+            yellowButton.setLocation(320, 220);
+            blueButton.setLocation(420, 110);
+        }
+    }
     //method: startColor
     //purpose: starts the colorGame  
     public void startColor(){
@@ -4816,7 +4855,7 @@ public class TheWindow extends javax.swing.JFrame {
     //method: colorGame
     //purpose: starts the color game by selecting random word/ color combo   
     public void colorGame(){
-        
+            randCircles();
             Random r = new Random();
             int chosen = r.nextInt(5);
             int chosen2 = r.nextInt(5);
@@ -5070,7 +5109,7 @@ public class TheWindow extends javax.swing.JFrame {
     
     
     public void f1Clicked(){
-        JOptionPane.showMessageDialog(null, "     Nick Curinga 009556235\n     Tuan Pham 009222226\n     Cesar Pedroza 009977643\n     Devin Wells 009235655" +
+        JOptionPane.showMessageDialog(null, "     Nick Curinga 009556235\n     Tuan Pham 009222226\n     Cesar Pedroza 009977643\n     Devin Wells009235655" +
                                         "\n\n     Quarter Project, Fall 2016");    
     }
     
