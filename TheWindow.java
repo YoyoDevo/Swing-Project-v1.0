@@ -4868,7 +4868,7 @@ public class TheWindow extends javax.swing.JFrame {
     }
     
     public void escClicked(){
-        System.out(0);
+        System.exit(0);
     }
     
     
