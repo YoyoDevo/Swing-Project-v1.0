@@ -277,6 +277,7 @@ public class TheWindow extends javax.swing.JFrame {
         gridSpace79 = new javax.swing.JTextField();
         gridSpace80 = new javax.swing.JTextField();
         gridSpace81 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
         submitSudoku = new javax.swing.JButton();
         quitSudoku = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -1467,7 +1468,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         gridSpace1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace1.setText("8");
-        gridSpace1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace1.setBorder(null);
         gridSpace1.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1475,10 +1476,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace1);
-        gridSpace1.setBounds(130, 80, 30, 30);
+        gridSpace1.setBounds(140, 85, 10, 20);
 
         gridSpace2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace2.setBorder(null);
         gridSpace2.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1486,10 +1487,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace2);
-        gridSpace2.setBounds(160, 80, 30, 30);
+        gridSpace2.setBounds(170, 85, 10, 20);
 
         gridSpace3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace3.setBorder(null);
         gridSpace3.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1497,11 +1498,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace3);
-        gridSpace3.setBounds(190, 80, 30, 30);
+        gridSpace3.setBounds(200, 85, 10, 20);
 
         gridSpace4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace4.setText("4");
-        gridSpace4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace4.setBorder(null);
         gridSpace4.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1509,10 +1510,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace4);
-        gridSpace4.setBounds(220, 80, 30, 30);
+        gridSpace4.setBounds(230, 85, 10, 20);
 
         gridSpace5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace5.setBorder(null);
         gridSpace5.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1520,11 +1521,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace5);
-        gridSpace5.setBounds(250, 80, 30, 30);
+        gridSpace5.setBounds(260, 85, 10, 20);
 
         gridSpace6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace6.setText("6");
-        gridSpace6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace6.setBorder(null);
         gridSpace6.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1532,10 +1533,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace6);
-        gridSpace6.setBounds(280, 80, 30, 30);
+        gridSpace6.setBounds(290, 85, 10, 20);
 
         gridSpace7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace7.setBorder(null);
         gridSpace7.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1543,10 +1544,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace7);
-        gridSpace7.setBounds(310, 80, 30, 30);
+        gridSpace7.setBounds(320, 85, 10, 20);
 
         gridSpace8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace8.setBorder(null);
         gridSpace8.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1554,11 +1555,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace8);
-        gridSpace8.setBounds(340, 80, 30, 30);
+        gridSpace8.setBounds(350, 85, 10, 20);
 
         gridSpace9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace9.setText("7");
-        gridSpace9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace9.setBorder(null);
         gridSpace9.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1566,10 +1567,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace9);
-        gridSpace9.setBounds(370, 80, 30, 30);
+        gridSpace9.setBounds(380, 85, 10, 20);
 
         gridSpace10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace10.setBorder(null);
         gridSpace10.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1577,10 +1578,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace10);
-        gridSpace10.setBounds(130, 110, 30, 30);
+        gridSpace10.setBounds(140, 115, 10, 20);
 
         gridSpace11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace11.setBorder(null);
         gridSpace11.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1588,10 +1589,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace11);
-        gridSpace11.setBounds(160, 110, 30, 30);
+        gridSpace11.setBounds(170, 115, 10, 20);
 
         gridSpace12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace12.setBorder(null);
         gridSpace12.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1599,10 +1600,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace12);
-        gridSpace12.setBounds(190, 110, 30, 30);
+        gridSpace12.setBounds(200, 115, 10, 20);
 
         gridSpace13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace13.setBorder(null);
         gridSpace13.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1610,10 +1611,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace13);
-        gridSpace13.setBounds(220, 110, 30, 30);
+        gridSpace13.setBounds(230, 115, 10, 20);
 
         gridSpace14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace14.setBorder(null);
         gridSpace14.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1621,10 +1622,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace14);
-        gridSpace14.setBounds(250, 110, 30, 30);
+        gridSpace14.setBounds(260, 115, 10, 20);
 
         gridSpace15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace15.setBorder(null);
         gridSpace15.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1632,11 +1633,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace15);
-        gridSpace15.setBounds(280, 110, 30, 30);
+        gridSpace15.setBounds(290, 115, 10, 20);
 
         gridSpace16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace16.setText("4");
-        gridSpace16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace16.setBorder(null);
         gridSpace16.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1644,10 +1645,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace16);
-        gridSpace16.setBounds(310, 110, 30, 30);
+        gridSpace16.setBounds(320, 115, 10, 20);
 
         gridSpace17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace17.setBorder(null);
         gridSpace17.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1655,10 +1656,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace17);
-        gridSpace17.setBounds(340, 110, 30, 30);
+        gridSpace17.setBounds(350, 115, 10, 20);
 
         gridSpace18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace18.setBorder(null);
         gridSpace18.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1666,10 +1667,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace18);
-        gridSpace18.setBounds(370, 110, 30, 30);
+        gridSpace18.setBounds(380, 115, 10, 20);
 
         gridSpace19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace19.setBorder(null);
         gridSpace19.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1677,11 +1678,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace19);
-        gridSpace19.setBounds(130, 140, 30, 30);
+        gridSpace19.setBounds(140, 145, 10, 20);
 
         gridSpace20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace20.setText("1");
-        gridSpace20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace20.setBorder(null);
         gridSpace20.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1689,10 +1690,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace20);
-        gridSpace20.setBounds(160, 140, 30, 30);
+        gridSpace20.setBounds(170, 145, 10, 20);
 
         gridSpace21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace21.setBorder(null);
         gridSpace21.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1700,10 +1701,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace21);
-        gridSpace21.setBounds(190, 140, 30, 30);
+        gridSpace21.setBounds(200, 145, 10, 20);
 
         gridSpace22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace22.setBorder(null);
         gridSpace22.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1711,10 +1712,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace22);
-        gridSpace22.setBounds(220, 140, 30, 30);
+        gridSpace22.setBounds(230, 145, 10, 20);
 
         gridSpace23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace23.setBorder(null);
         gridSpace23.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1722,10 +1723,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace23);
-        gridSpace23.setBounds(250, 140, 30, 30);
+        gridSpace23.setBounds(260, 145, 10, 20);
 
         gridSpace24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace24.setBorder(null);
         gridSpace24.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1733,11 +1734,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace24);
-        gridSpace24.setBounds(280, 140, 30, 30);
+        gridSpace24.setBounds(290, 145, 10, 20);
 
         gridSpace25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace25.setText("6");
-        gridSpace25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace25.setBorder(null);
         gridSpace25.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1745,11 +1746,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace25);
-        gridSpace25.setBounds(310, 140, 30, 30);
+        gridSpace25.setBounds(320, 145, 10, 20);
 
         gridSpace26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace26.setText("5");
-        gridSpace26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace26.setBorder(null);
         gridSpace26.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1757,10 +1758,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace26);
-        gridSpace26.setBounds(340, 140, 30, 30);
+        gridSpace26.setBounds(350, 145, 10, 20);
 
         gridSpace27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace27.setBorder(null);
         gridSpace27.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1768,11 +1769,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace27);
-        gridSpace27.setBounds(370, 140, 30, 30);
+        gridSpace27.setBounds(380, 145, 10, 20);
 
         gridSpace28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace28.setText("5");
-        gridSpace28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace28.setBorder(null);
         gridSpace28.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1780,10 +1781,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace28);
-        gridSpace28.setBounds(130, 170, 30, 30);
+        gridSpace28.setBounds(140, 175, 10, 20);
 
         gridSpace29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace29.setBorder(null);
         gridSpace29.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1791,11 +1792,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace29);
-        gridSpace29.setBounds(160, 170, 30, 30);
+        gridSpace29.setBounds(170, 175, 10, 20);
 
         gridSpace30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace30.setText("9");
-        gridSpace30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace30.setBorder(null);
         gridSpace30.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1803,10 +1804,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace30);
-        gridSpace30.setBounds(190, 170, 30, 30);
+        gridSpace30.setBounds(200, 175, 10, 20);
 
         gridSpace31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace31.setBorder(null);
         gridSpace31.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1814,11 +1815,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace31);
-        gridSpace31.setBounds(220, 170, 30, 30);
+        gridSpace31.setBounds(230, 175, 10, 20);
 
         gridSpace32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace32.setText("3");
-        gridSpace32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace32.setBorder(null);
         gridSpace32.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1826,10 +1827,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace32);
-        gridSpace32.setBounds(250, 170, 30, 30);
+        gridSpace32.setBounds(260, 175, 10, 20);
 
         gridSpace33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace33.setBorder(null);
         gridSpace33.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1837,11 +1838,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace33);
-        gridSpace33.setBounds(280, 170, 30, 30);
+        gridSpace33.setBounds(290, 175, 10, 20);
 
         gridSpace34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace34.setText("7");
-        gridSpace34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace34.setBorder(null);
         gridSpace34.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1849,11 +1850,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace34);
-        gridSpace34.setBounds(310, 170, 30, 30);
+        gridSpace34.setBounds(320, 175, 10, 20);
 
         gridSpace35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace35.setText("8");
-        gridSpace35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace35.setBorder(null);
         gridSpace35.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1861,10 +1862,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace35);
-        gridSpace35.setBounds(340, 170, 30, 30);
+        gridSpace35.setBounds(350, 175, 10, 20);
 
         gridSpace36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace36.setBorder(null);
         gridSpace36.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1872,10 +1873,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace36);
-        gridSpace36.setBounds(370, 170, 30, 30);
+        gridSpace36.setBounds(380, 175, 10, 20);
 
         gridSpace37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace37.setBorder(null);
         gridSpace37.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1883,10 +1884,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace37);
-        gridSpace37.setBounds(130, 200, 30, 30);
+        gridSpace37.setBounds(140, 205, 10, 20);
 
         gridSpace38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace38.setBorder(null);
         gridSpace38.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1894,10 +1895,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace38);
-        gridSpace38.setBounds(160, 200, 30, 30);
+        gridSpace38.setBounds(170, 205, 10, 20);
 
         gridSpace39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace39.setBorder(null);
         gridSpace39.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace39.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1905,10 +1906,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace39);
-        gridSpace39.setBounds(190, 200, 30, 30);
+        gridSpace39.setBounds(200, 205, 10, 20);
 
         gridSpace40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace40.setBorder(null);
         gridSpace40.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1916,11 +1917,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace40);
-        gridSpace40.setBounds(220, 200, 30, 30);
+        gridSpace40.setBounds(230, 205, 10, 20);
 
         gridSpace41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace41.setText("7");
-        gridSpace41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace41.setBorder(null);
         gridSpace41.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1928,10 +1929,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace41);
-        gridSpace41.setBounds(250, 200, 30, 30);
+        gridSpace41.setBounds(260, 205, 10, 20);
 
         gridSpace42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace42.setBorder(null);
         gridSpace42.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1939,10 +1940,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace42);
-        gridSpace42.setBounds(280, 200, 30, 30);
+        gridSpace42.setBounds(290, 205, 10, 20);
 
         gridSpace43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace43.setBorder(null);
         gridSpace43.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1950,10 +1951,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace43);
-        gridSpace43.setBounds(310, 200, 30, 30);
+        gridSpace43.setBounds(320, 205, 10, 20);
 
         gridSpace44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace44.setBorder(null);
         gridSpace44.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1961,10 +1962,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace44);
-        gridSpace44.setBounds(340, 200, 30, 30);
+        gridSpace44.setBounds(350, 205, 10, 20);
 
         gridSpace45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace45.setBorder(null);
         gridSpace45.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace45.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1972,10 +1973,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace45);
-        gridSpace45.setBounds(370, 200, 30, 30);
+        gridSpace45.setBounds(380, 205, 10, 20);
 
         gridSpace46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace46.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace46.setBorder(null);
         gridSpace46.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace46.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1983,11 +1984,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace46);
-        gridSpace46.setBounds(130, 230, 30, 30);
+        gridSpace46.setBounds(140, 235, 10, 20);
 
         gridSpace47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace47.setText("4");
-        gridSpace47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace47.setBorder(null);
         gridSpace47.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace47.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1995,11 +1996,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace47);
-        gridSpace47.setBounds(160, 230, 30, 30);
+        gridSpace47.setBounds(170, 235, 10, 20);
 
         gridSpace48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace48.setText("8");
-        gridSpace48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace48.setBorder(null);
         gridSpace48.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace48.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2007,10 +2008,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace48);
-        gridSpace48.setBounds(190, 230, 30, 30);
+        gridSpace48.setBounds(200, 235, 10, 20);
 
         gridSpace49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace49.setBorder(null);
         gridSpace49.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace49.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2018,11 +2019,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace49);
-        gridSpace49.setBounds(220, 230, 30, 30);
+        gridSpace49.setBounds(230, 235, 10, 20);
 
         gridSpace50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace50.setText("2");
-        gridSpace50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace50.setBorder(null);
         gridSpace50.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2030,10 +2031,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace50);
-        gridSpace50.setBounds(250, 230, 30, 30);
+        gridSpace50.setBounds(260, 235, 10, 20);
 
         gridSpace51.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace51.setBorder(null);
         gridSpace51.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace51.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2041,11 +2042,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace51);
-        gridSpace51.setBounds(280, 230, 30, 30);
+        gridSpace51.setBounds(290, 235, 10, 20);
 
         gridSpace52.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace52.setText("1");
-        gridSpace52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace52.setBorder(null);
         gridSpace52.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace52.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2053,10 +2054,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace52);
-        gridSpace52.setBounds(310, 230, 30, 30);
+        gridSpace52.setBounds(320, 235, 10, 20);
 
         gridSpace53.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace53.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace53.setBorder(null);
         gridSpace53.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace53.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2064,11 +2065,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace53);
-        gridSpace53.setBounds(340, 230, 30, 30);
+        gridSpace53.setBounds(350, 235, 10, 20);
 
         gridSpace54.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace54.setText("3");
-        gridSpace54.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace54.setBorder(null);
         gridSpace54.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2076,10 +2077,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace54);
-        gridSpace54.setBounds(370, 230, 30, 30);
+        gridSpace54.setBounds(380, 235, 10, 20);
 
         gridSpace55.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace55.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace55.setBorder(null);
         gridSpace55.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2087,11 +2088,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace55);
-        gridSpace55.setBounds(130, 260, 30, 30);
+        gridSpace55.setBounds(140, 265, 10, 20);
 
         gridSpace56.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace56.setText("5");
-        gridSpace56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace56.setBorder(null);
         gridSpace56.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace56.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2099,11 +2100,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace56);
-        gridSpace56.setBounds(160, 260, 30, 30);
+        gridSpace56.setBounds(170, 265, 10, 20);
 
         gridSpace57.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace57.setText("2");
-        gridSpace57.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace57.setBorder(null);
         gridSpace57.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace57.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2111,10 +2112,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace57);
-        gridSpace57.setBounds(190, 260, 30, 30);
+        gridSpace57.setBounds(200, 265, 10, 20);
 
         gridSpace58.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace58.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace58.setBorder(null);
         gridSpace58.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace58.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2122,10 +2123,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace58);
-        gridSpace58.setBounds(220, 260, 30, 30);
+        gridSpace58.setBounds(230, 265, 10, 20);
 
         gridSpace59.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace59.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace59.setBorder(null);
         gridSpace59.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace59.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2133,10 +2134,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace59);
-        gridSpace59.setBounds(250, 260, 30, 30);
+        gridSpace59.setBounds(260, 265, 10, 20);
 
         gridSpace60.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace60.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace60.setBorder(null);
         gridSpace60.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace60.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2144,10 +2145,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace60);
-        gridSpace60.setBounds(280, 260, 30, 30);
+        gridSpace60.setBounds(290, 265, 10, 20);
 
         gridSpace61.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace61.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace61.setBorder(null);
         gridSpace61.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2155,11 +2156,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace61);
-        gridSpace61.setBounds(310, 260, 30, 30);
+        gridSpace61.setBounds(320, 265, 10, 20);
 
         gridSpace62.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace62.setText("9");
-        gridSpace62.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace62.setBorder(null);
         gridSpace62.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace62.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2167,10 +2168,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace62);
-        gridSpace62.setBounds(340, 260, 30, 30);
+        gridSpace62.setBounds(350, 265, 10, 20);
 
         gridSpace63.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace63.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace63.setBorder(null);
         gridSpace63.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace63.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2178,10 +2179,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace63);
-        gridSpace63.setBounds(370, 260, 30, 30);
+        gridSpace63.setBounds(380, 265, 10, 20);
 
         gridSpace64.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace64.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace64.setBorder(null);
         gridSpace64.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2189,10 +2190,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace64);
-        gridSpace64.setBounds(130, 290, 30, 30);
+        gridSpace64.setBounds(140, 295, 10, 20);
 
         gridSpace65.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace65.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace65.setBorder(null);
         gridSpace65.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace65.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2200,11 +2201,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace65);
-        gridSpace65.setBounds(160, 290, 30, 30);
+        gridSpace65.setBounds(170, 295, 10, 20);
 
         gridSpace66.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace66.setText("1");
-        gridSpace66.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace66.setBorder(null);
         gridSpace66.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2212,10 +2213,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace66);
-        gridSpace66.setBounds(190, 290, 30, 30);
+        gridSpace66.setBounds(200, 295, 10, 20);
 
         gridSpace67.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace67.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace67.setBorder(null);
         gridSpace67.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace67.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2223,10 +2224,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace67);
-        gridSpace67.setBounds(220, 290, 30, 30);
+        gridSpace67.setBounds(230, 295, 10, 20);
 
         gridSpace68.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace68.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace68.setBorder(null);
         gridSpace68.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace68.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2234,10 +2235,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace68);
-        gridSpace68.setBounds(250, 290, 30, 30);
+        gridSpace68.setBounds(260, 295, 10, 20);
 
         gridSpace69.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace69.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace69.setBorder(null);
         gridSpace69.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace69.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2245,10 +2246,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace69);
-        gridSpace69.setBounds(280, 290, 30, 30);
+        gridSpace69.setBounds(290, 295, 10, 20);
 
         gridSpace70.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace70.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace70.setBorder(null);
         gridSpace70.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace70.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2256,10 +2257,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace70);
-        gridSpace70.setBounds(310, 290, 30, 30);
+        gridSpace70.setBounds(320, 295, 10, 20);
 
         gridSpace71.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace71.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace71.setBorder(null);
         gridSpace71.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace71.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2267,10 +2268,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace71);
-        gridSpace71.setBounds(340, 290, 30, 30);
+        gridSpace71.setBounds(350, 295, 10, 20);
 
         gridSpace72.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace72.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace72.setBorder(null);
         gridSpace72.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace72.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2278,11 +2279,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace72);
-        gridSpace72.setBounds(370, 290, 30, 30);
+        gridSpace72.setBounds(380, 295, 10, 20);
 
         gridSpace73.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace73.setText("3");
-        gridSpace73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace73.setBorder(null);
         gridSpace73.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace73.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2290,10 +2291,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace73);
-        gridSpace73.setBounds(130, 320, 30, 30);
+        gridSpace73.setBounds(140, 325, 10, 20);
 
         gridSpace74.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace74.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace74.setBorder(null);
         gridSpace74.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace74.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2301,10 +2302,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace74);
-        gridSpace74.setBounds(160, 320, 30, 30);
+        gridSpace74.setBounds(170, 325, 10, 20);
 
         gridSpace75.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace75.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace75.setBorder(null);
         gridSpace75.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace75.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2312,11 +2313,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace75);
-        gridSpace75.setBounds(190, 320, 30, 30);
+        gridSpace75.setBounds(200, 325, 10, 20);
 
         gridSpace76.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace76.setText("9");
-        gridSpace76.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace76.setBorder(null);
         gridSpace76.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace76.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2324,10 +2325,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace76);
-        gridSpace76.setBounds(220, 320, 30, 30);
+        gridSpace76.setBounds(230, 325, 10, 20);
 
         gridSpace77.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace77.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace77.setBorder(null);
         gridSpace77.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace77.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2335,11 +2336,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace77);
-        gridSpace77.setBounds(250, 320, 30, 30);
+        gridSpace77.setBounds(260, 325, 10, 20);
 
         gridSpace78.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace78.setText("2");
-        gridSpace78.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace78.setBorder(null);
         gridSpace78.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace78.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2347,10 +2348,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace78);
-        gridSpace78.setBounds(280, 320, 30, 30);
+        gridSpace78.setBounds(290, 325, 10, 20);
 
         gridSpace79.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace79.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace79.setBorder(null);
         gridSpace79.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace79.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2358,10 +2359,10 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace79);
-        gridSpace79.setBounds(310, 320, 30, 30);
+        gridSpace79.setBounds(320, 325, 10, 20);
 
         gridSpace80.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        gridSpace80.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace80.setBorder(null);
         gridSpace80.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace80.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2369,11 +2370,11 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace80);
-        gridSpace80.setBounds(340, 320, 30, 30);
+        gridSpace80.setBounds(350, 325, 10, 20);
 
         gridSpace81.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gridSpace81.setText("5");
-        gridSpace81.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gridSpace81.setBorder(null);
         gridSpace81.setPreferredSize(new java.awt.Dimension(30, 30));
         gridSpace81.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2381,7 +2382,12 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(gridSpace81);
-        gridSpace81.setBounds(370, 320, 30, 30);
+        gridSpace81.setBounds(380, 325, 10, 20);
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/grid.jpg"))); // NOI18N
+        jLabel15.setText("jLabel15");
+        sudokuGame.add(jLabel15);
+        jLabel15.setBounds(130, 80, 270, 270);
 
         submitSudoku.setText("Submit");
         submitSudoku.addActionListener(new java.awt.event.ActionListener() {
@@ -4948,6 +4954,7 @@ public class TheWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
