@@ -1354,7 +1354,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         hangmanGame.add(skipButton);
-        skipButton.setBounds(500, 70, 80, 23);
+        skipButton.setBounds(500, 70, 80, 25);
 
         dateTextField.setToolTipText("Current Date and Time");
         dateTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -2613,6 +2613,7 @@ public class TheWindow extends javax.swing.JFrame {
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SwingProjectv1/grid.jpg"))); // NOI18N
         jLabel15.setText("jLabel15");
+        jLabel15.setToolTipText("Select a number from 1-9.");
         sudokuGame.add(jLabel15);
         jLabel15.setBounds(130, 80, 270, 270);
 
@@ -2624,7 +2625,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(submitSudoku);
-        submitSudoku.setBounds(20, 300, 80, 23);
+        submitSudoku.setBounds(20, 300, 80, 25);
 
         quitSudoku.setText("Quit");
         quitSudoku.setToolTipText("Click to go to menu screen");
@@ -2634,7 +2635,7 @@ public class TheWindow extends javax.swing.JFrame {
             }
         });
         sudokuGame.add(quitSudoku);
-        quitSudoku.setBounds(430, 300, 53, 23);
+        quitSudoku.setBounds(430, 300, 55, 25);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 102, 255));
@@ -4366,328 +4367,407 @@ public class TheWindow extends javax.swing.JFrame {
 
     private void gridSpace9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace9ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[8].getText());
     }//GEN-LAST:event_gridSpace9ActionPerformed
 
     private void gridSpace1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace1ActionPerformed
         // TODO add your handling code here:
-    
+     checkValue(grid[0].getText());
     }//GEN-LAST:event_gridSpace1ActionPerformed
 
     private void gridSpace2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace2ActionPerformed
         // TODO add your handling code here:
-      
+      checkValue(grid[1].getText());
     }//GEN-LAST:event_gridSpace2ActionPerformed
 
     private void gridSpace3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace3ActionPerformed
         // TODO add your handling code here:
+          checkValue(grid[2].getText());
     }//GEN-LAST:event_gridSpace3ActionPerformed
 
     private void gridSpace4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace4ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[3].getText());
     }//GEN-LAST:event_gridSpace4ActionPerformed
 
     private void gridSpace5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace5ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[4].getText());
     }//GEN-LAST:event_gridSpace5ActionPerformed
 
     private void gridSpace6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace6ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[5].getText());
     }//GEN-LAST:event_gridSpace6ActionPerformed
 
     private void gridSpace7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace7ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[6].getText());
     }//GEN-LAST:event_gridSpace7ActionPerformed
 
     private void gridSpace8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace8ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[7].getText());
     }//GEN-LAST:event_gridSpace8ActionPerformed
 
     private void gridSpace18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace18ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[17].getText());
     }//GEN-LAST:event_gridSpace18ActionPerformed
 
     private void gridSpace10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace10ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[9].getText());
     }//GEN-LAST:event_gridSpace10ActionPerformed
 
     private void gridSpace11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace11ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[10].getText());
     }//GEN-LAST:event_gridSpace11ActionPerformed
 
     private void gridSpace12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace12ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[11].getText());
     }//GEN-LAST:event_gridSpace12ActionPerformed
 
     private void gridSpace13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace13ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[12].getText());
     }//GEN-LAST:event_gridSpace13ActionPerformed
 
     private void gridSpace14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace14ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[13].getText());
     }//GEN-LAST:event_gridSpace14ActionPerformed
 
     private void gridSpace15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace15ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[14].getText());
     }//GEN-LAST:event_gridSpace15ActionPerformed
 
     private void gridSpace16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace16ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[15].getText());
     }//GEN-LAST:event_gridSpace16ActionPerformed
 
     private void gridSpace17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace17ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[16].getText());
     }//GEN-LAST:event_gridSpace17ActionPerformed
 
     private void gridSpace27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace27ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[26].getText());
     }//GEN-LAST:event_gridSpace27ActionPerformed
 
     private void gridSpace19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace19ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[18].getText());
     }//GEN-LAST:event_gridSpace19ActionPerformed
 
     private void gridSpace20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace20ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[19].getText());
     }//GEN-LAST:event_gridSpace20ActionPerformed
 
     private void gridSpace21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace21ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[20].getText());
     }//GEN-LAST:event_gridSpace21ActionPerformed
 
     private void gridSpace22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace22ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[21].getText());
     }//GEN-LAST:event_gridSpace22ActionPerformed
 
     private void gridSpace23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace23ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[22].getText());
     }//GEN-LAST:event_gridSpace23ActionPerformed
 
     private void gridSpace24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace24ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[23].getText());
     }//GEN-LAST:event_gridSpace24ActionPerformed
 
     private void gridSpace25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace25ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[24].getText());
     }//GEN-LAST:event_gridSpace25ActionPerformed
 
     private void gridSpace26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace26ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[25].getText());
     }//GEN-LAST:event_gridSpace26ActionPerformed
 
     private void gridSpace36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace36ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[35].getText());
     }//GEN-LAST:event_gridSpace36ActionPerformed
 
     private void gridSpace28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace28ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[27].getText());
     }//GEN-LAST:event_gridSpace28ActionPerformed
 
     private void gridSpace29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace29ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[28].getText());
     }//GEN-LAST:event_gridSpace29ActionPerformed
 
     private void gridSpace30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace30ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[29].getText());
     }//GEN-LAST:event_gridSpace30ActionPerformed
 
     private void gridSpace31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace31ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[30].getText());
     }//GEN-LAST:event_gridSpace31ActionPerformed
 
     private void gridSpace32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace32ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[31].getText());
     }//GEN-LAST:event_gridSpace32ActionPerformed
 
     private void gridSpace33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace33ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[32].getText());
     }//GEN-LAST:event_gridSpace33ActionPerformed
 
     private void gridSpace34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace34ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[33].getText());
     }//GEN-LAST:event_gridSpace34ActionPerformed
 
     private void gridSpace35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace35ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[34].getText());
     }//GEN-LAST:event_gridSpace35ActionPerformed
 
     private void gridSpace45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace45ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[44].getText());
     }//GEN-LAST:event_gridSpace45ActionPerformed
 
     private void gridSpace37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace37ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[36].getText());
     }//GEN-LAST:event_gridSpace37ActionPerformed
 
     private void gridSpace38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace38ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[37].getText());
     }//GEN-LAST:event_gridSpace38ActionPerformed
 
     private void gridSpace39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace39ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[38].getText());
     }//GEN-LAST:event_gridSpace39ActionPerformed
 
     private void gridSpace40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace40ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[39].getText());
     }//GEN-LAST:event_gridSpace40ActionPerformed
 
     private void gridSpace41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace41ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[40].getText());
     }//GEN-LAST:event_gridSpace41ActionPerformed
 
     private void gridSpace42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace42ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[41].getText());
     }//GEN-LAST:event_gridSpace42ActionPerformed
 
     private void gridSpace43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace43ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[42].getText());
     }//GEN-LAST:event_gridSpace43ActionPerformed
 
     private void gridSpace44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace44ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[43].getText());
     }//GEN-LAST:event_gridSpace44ActionPerformed
 
     private void gridSpace54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace54ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[53].getText());
     }//GEN-LAST:event_gridSpace54ActionPerformed
 
     private void gridSpace46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace46ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[45].getText());
     }//GEN-LAST:event_gridSpace46ActionPerformed
 
     private void gridSpace47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace47ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[46].getText());
     }//GEN-LAST:event_gridSpace47ActionPerformed
 
     private void gridSpace48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace48ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[47].getText());
     }//GEN-LAST:event_gridSpace48ActionPerformed
 
     private void gridSpace49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace49ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[48].getText());
     }//GEN-LAST:event_gridSpace49ActionPerformed
 
     private void gridSpace50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace50ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[49].getText());
     }//GEN-LAST:event_gridSpace50ActionPerformed
 
     private void gridSpace51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace51ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[50].getText());
     }//GEN-LAST:event_gridSpace51ActionPerformed
 
     private void gridSpace52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace52ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[51].getText());
     }//GEN-LAST:event_gridSpace52ActionPerformed
 
     private void gridSpace53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace53ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[52].getText());
     }//GEN-LAST:event_gridSpace53ActionPerformed
 
     private void gridSpace63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace63ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[62].getText());
     }//GEN-LAST:event_gridSpace63ActionPerformed
 
     private void gridSpace55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace55ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[54].getText());
     }//GEN-LAST:event_gridSpace55ActionPerformed
 
     private void gridSpace56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace56ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[55].getText());
     }//GEN-LAST:event_gridSpace56ActionPerformed
 
     private void gridSpace57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace57ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[56].getText());
     }//GEN-LAST:event_gridSpace57ActionPerformed
 
     private void gridSpace58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace58ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[57].getText());
     }//GEN-LAST:event_gridSpace58ActionPerformed
 
     private void gridSpace59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace59ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[58].getText());
     }//GEN-LAST:event_gridSpace59ActionPerformed
 
     private void gridSpace60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace60ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[59].getText());
     }//GEN-LAST:event_gridSpace60ActionPerformed
 
     private void gridSpace61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace61ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[60].getText());
     }//GEN-LAST:event_gridSpace61ActionPerformed
 
     private void gridSpace62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace62ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[61].getText());
     }//GEN-LAST:event_gridSpace62ActionPerformed
 
     private void gridSpace72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace72ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[71].getText());
     }//GEN-LAST:event_gridSpace72ActionPerformed
 
     private void gridSpace64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace64ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[63].getText());
     }//GEN-LAST:event_gridSpace64ActionPerformed
 
     private void gridSpace65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace65ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[64].getText());
     }//GEN-LAST:event_gridSpace65ActionPerformed
 
     private void gridSpace66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace66ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[65].getText());
     }//GEN-LAST:event_gridSpace66ActionPerformed
 
     private void gridSpace67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace67ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[66].getText());
     }//GEN-LAST:event_gridSpace67ActionPerformed
 
     private void gridSpace68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace68ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[67].getText());
     }//GEN-LAST:event_gridSpace68ActionPerformed
 
     private void gridSpace69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace69ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[68].getText());
     }//GEN-LAST:event_gridSpace69ActionPerformed
 
     private void gridSpace70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace70ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[69].getText());
     }//GEN-LAST:event_gridSpace70ActionPerformed
 
     private void gridSpace71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace71ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[70].getText());
     }//GEN-LAST:event_gridSpace71ActionPerformed
 
     private void gridSpace81ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace81ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[80].getText());
     }//GEN-LAST:event_gridSpace81ActionPerformed
 
     private void gridSpace73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace73ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[72].getText());
     }//GEN-LAST:event_gridSpace73ActionPerformed
 
     private void gridSpace74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace74ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[73].getText());
     }//GEN-LAST:event_gridSpace74ActionPerformed
 
     private void gridSpace75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace75ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[74].getText());
     }//GEN-LAST:event_gridSpace75ActionPerformed
 
     private void gridSpace76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace76ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[75].getText());
     }//GEN-LAST:event_gridSpace76ActionPerformed
 
     private void gridSpace77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace77ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[76].getText());
     }//GEN-LAST:event_gridSpace77ActionPerformed
 
     private void gridSpace78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace78ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[77].getText());
     }//GEN-LAST:event_gridSpace78ActionPerformed
 
     private void gridSpace79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace79ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[78].getText());
     }//GEN-LAST:event_gridSpace79ActionPerformed
 
     private void gridSpace80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gridSpace80ActionPerformed
         // TODO add your handling code here:
+         checkValue(grid[79].getText());
     }//GEN-LAST:event_gridSpace80ActionPerformed
 
     private void submitSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitSudokuActionPerformed
@@ -4782,25 +4862,28 @@ public class TheWindow extends javax.swing.JFrame {
     //method: checkValue
     //purpose: Checks whether or not a user inputs a 1-9 input 
     // for sudoku game
-    public void checkValue()
+   public void checkValue(String a)
     {
         int check = 0;
-      for(int i = 0; i < grid.length; i++)
-      {
-          if(grid[i].getText().equals(""))
+     
+          if(a.equals(""))
           {
               check = 0;
           }
           else
           {
-              check = Integer.parseInt(grid[i].getText());
+              check = Integer.parseInt(a);
           }
           
           if(check < 1 || check > 9 )
           {
               sudoErrorMessage.setVisible(true);
           }
-      }
+          else
+          {
+              sudoErrorMessage.setVisible(false);
+          }
+      
     }
     
     //method: randCircles

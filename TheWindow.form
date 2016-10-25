@@ -3916,6 +3916,7 @@
                   <Image iconType="3" name="/SwingProjectv1/grid.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
+                <Property name="toolTipText" type="java.lang.String" value="Select a number from 1-9."/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
